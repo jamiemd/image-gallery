@@ -2,9 +2,11 @@
 import React, { Component } from "react";
 import { styled } from "fusion-plugin-styletron-react";
 import { Router, Route, Link } from "fusion-plugin-react-router";
+import { connect } from "react-redux";
 
 import Album from "./album.js";
 import AddImage from "../components/AddImage.js";
+import { getAlbums } from "../actions/albums";
 
 class Home extends Component {
   constructor() {
@@ -68,7 +70,7 @@ class Home extends Component {
   };
 
   render() {
-    console.log("this.state.albumsArray", this.state.albumsArray);
+    // console.log("this.state.albumsArray", this.state.albumsArray);
     return (
       <HomeContainer>
         <h1>Image Gallery</h1>
@@ -103,4 +105,11 @@ const AlbumContainer = styled("div", {
   backgroundColor: "gray"
 });
 
-export default Home;
+const mapStateToProps = state => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  { getAlbums }
+)(Home);
