@@ -28,7 +28,7 @@ class Album extends Component {
   };
 
   render() {
-    console.log("this.state.albumArray", this.state.albumArray);
+    // console.log("this.state.albumArray", this.state.albumArray);
     return (
       <div style={albumContainer}>
         {this.state.albumArray.map((image, i) => (

@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "4d0ce90a2554aabd4b83";
+/******/ 	var hotCurrentHash = "cdac324bd682391041a8";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1363,32 +1363,6 @@ const getAlbums = array => {
 
 /***/ }),
 
-/***/ "./src/components/AddImage.js":
-/*!************************************!*\
-  !*** ./src/components/AddImage.js ***!
-  \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-const AddImage = () => {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    name: "albumName"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: undefined.handleSave
-  }, "Save")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (AddImage);
-
-/***/ }),
-
 /***/ "./src/main.js":
 /*!*********************!*\
   !*** ./src/main.js ***!
@@ -1411,21 +1385,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var fusion_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! fusion-react */ "fusion-react");
 /* harmony import */ var fusion_react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(fusion_react__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _reducers_albums__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reducers/albums */ "./src/reducers/albums.js");
+/* harmony import */ var _server_routes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./server/routes */ "./src/server/routes.js");
 
 
 
 
 
 
- // import Albums from "./plugins/albums";
+
 
 function start() {
   const app = new fusion_react__WEBPACK_IMPORTED_MODULE_5___default.a(_root_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
   app.register(fusion_plugin_react_redux__WEBPACK_IMPORTED_MODULE_4__["ReduxToken"], fusion_plugin_react_redux__WEBPACK_IMPORTED_MODULE_4___default.a);
   app.register(fusion_plugin_react_redux__WEBPACK_IMPORTED_MODULE_4__["ReducerToken"], _reducers_albums__WEBPACK_IMPORTED_MODULE_6__["default"]);
   app.register(fusion_plugin_styletron_react__WEBPACK_IMPORTED_MODULE_1___default.a);
-  app.register(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_0___default.a); // app.register(Albums);
-
+  app.register(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_0___default.a);
+  true && app.register(_server_routes__WEBPACK_IMPORTED_MODULE_7__["default"]);
   true && app.register(fusion_plugin_react_redux__WEBPACK_IMPORTED_MODULE_4__["GetInitialStateToken"], async ctx => ({}));
   return app;
 }
@@ -1443,12 +1418,9 @@ function start() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var fusion_plugin_styletron_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fusion-plugin-styletron-react */ "fusion-plugin-styletron-react");
-/* harmony import */ var fusion_plugin_styletron_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(fusion_plugin_styletron_react__WEBPACK_IMPORTED_MODULE_1__);
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -1475,7 +1447,7 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    console.log("this.state.albumArray", this.state.albumArray);
+    // console.log("this.state.albumArray", this.state.albumArray);
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: albumContainer
     }, this.state.albumArray.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1519,12 +1491,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _album_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./album.js */ "./src/pages/album.js");
-/* harmony import */ var _components_AddImage_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/AddImage.js */ "./src/components/AddImage.js");
-/* harmony import */ var _actions_albums__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../actions/albums */ "./src/actions/albums.js");
+/* harmony import */ var _actions_albums__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/albums */ "./src/actions/albums.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
 
 
 
@@ -1609,7 +1577,7 @@ const mapStateToProps = state => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, {
-  getAlbums: _actions_albums__WEBPACK_IMPORTED_MODULE_6__["getAlbums"]
+  getAlbums: _actions_albums__WEBPACK_IMPORTED_MODULE_4__["getAlbums"]
 })(Home));
 
 /***/ }),
@@ -1699,6 +1667,70 @@ const root = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_p
   component: _pages_pageNotFound_js__WEBPACK_IMPORTED_MODULE_4__["default"]
 }));
 /* harmony default export */ __webpack_exports__["default"] = (root);
+
+/***/ }),
+
+/***/ "./src/server/AlbumModel.js":
+/*!**********************************!*\
+  !*** ./src/server/AlbumModel.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const mongoose = __webpack_require__(/*! mongoose */ "mongoose");
+
+const AlbumSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  images: {
+    type: Array,
+    required: true
+  }
+});
+module.exports = mongoose.model("AlbumSchema", AlbumSchema);
+
+/***/ }),
+
+/***/ "./src/server/routes.js":
+/*!******************************!*\
+  !*** ./src/server/routes.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var fusion_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fusion-core */ "fusion-core");
+/* harmony import */ var fusion_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(fusion_core__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var koa_bodyparser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! koa-bodyparser */ "koa-bodyparser");
+/* harmony import */ var koa_bodyparser__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(koa_bodyparser__WEBPACK_IMPORTED_MODULE_1__);
+const AlbumModel = __webpack_require__(/*! ./AlbumModel */ "./src/server/AlbumModel.js");
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (true &&
+/*#__PURE__*/
+Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
+  middleware() {
+    const parseBody = koa_bodyparser__WEBPACK_IMPORTED_MODULE_1___default()();
+    return async (ctx, next) => {
+      if (ctx.method === "GET" && ctx.path === "/api/album") {
+        const albums = await AlbumModel.find({}).exec();
+        ctx.body = albums;
+      } else if (ctx.method === "GET" && ctx.path === "/api/album/:id") {
+        return next();
+      } else if (ctx.method === "POST" && ctx.path === "/api/create-album") {
+        await parseBody(ctx, () => Promise.resolve());
+        ctx.body = ctx.request.body;
+      }
+
+      return next();
+    };
+  }
+
+}));
 
 /***/ }),
 
@@ -1792,6 +1824,17 @@ module.exports = require("http");
 
 /***/ }),
 
+/***/ "koa-bodyparser":
+/*!*****************************************************************************************!*\
+  !*** external "/Users/jamie/GitHub/image-gallery/node_modules/koa-bodyparser/index.js" ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("/Users/jamie/GitHub/image-gallery/node_modules/koa-bodyparser/index.js");
+
+/***/ }),
+
 /***/ "koa-mount":
 /*!************************************************************************************!*\
   !*** external "/Users/jamie/GitHub/image-gallery/node_modules/koa-mount/index.js" ***!
@@ -1811,6 +1854,17 @@ module.exports = require("/Users/jamie/GitHub/image-gallery/node_modules/koa-mou
 /***/ (function(module, exports) {
 
 module.exports = require("/Users/jamie/GitHub/image-gallery/node_modules/koa-static/index.js");
+
+/***/ }),
+
+/***/ "mongoose":
+/*!***********************************************************************************!*\
+  !*** external "/Users/jamie/GitHub/image-gallery/node_modules/mongoose/index.js" ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("/Users/jamie/GitHub/image-gallery/node_modules/mongoose/index.js");
 
 /***/ }),
 

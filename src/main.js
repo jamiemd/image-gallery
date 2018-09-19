@@ -10,7 +10,7 @@ import Redux, {
 } from "fusion-plugin-react-redux";
 import App from "fusion-react";
 import reducer from "./reducers/albums";
-// import Albums from "./plugins/albums";
+import routes from "./server/routes";
 
 export default function start() {
   const app = new App(root);
@@ -18,7 +18,7 @@ export default function start() {
   app.register(ReducerToken, reducer);
   app.register(Styletron);
   app.register(Router);
-  // app.register(Albums);
+  __NODE__ && app.register(routes);
   __NODE__ && app.register(GetInitialStateToken, async ctx => ({}));
 
   return app;
