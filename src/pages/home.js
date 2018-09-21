@@ -5,82 +5,47 @@ import { Router, Route, Link } from "fusion-plugin-react-router";
 import { connect } from "react-redux";
 
 import Album from "./album.js";
-import AddImage from "../components/AddImage.js";
-import { getAlbums } from "../actions/albums";
+import { getAlbums, createAlbumName } from "../actions/albums";
 
 class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      albumsArray: [
-        [
-          {
-            height: 100,
-            width: 300
-          },
-          {
-            height: 200,
-            width: 300
-          },
-          {
-            height: 250,
-            width: 200
-          }
-        ],
-        [
-          {
-            height: 420,
-            width: 300
-          },
-          {
-            height: 200,
-            width: 300
-          },
-          {
-            height: 500,
-            width: 300
-          }
-        ],
-        [
-          {
-            height: 360,
-            width: 300
-          },
-          {
-            height: 200,
-            width: 300
-          }
-        ],
-        [
-          {
-            height: 360,
-            width: 300
-          },
-          {
-            height: 200,
-            width: 300
-          }
-        ]
-      ]
-    };
+  constructor(props) {
+    super(props);
+    this.state = { value: "" };
   }
 
-  handleAddImage = () => {
-    console.log("add image clicked");
+  componentDidMount() {
+    this.props.getAlbums();
+  }
+
+  handleChange = event => {
+    this.setState({ value: event.target.value });
+  };
+
+  handleSubmit = event => {
+    const albumName = this.state.value;
+    this.props.createAlbumName({ albumName });
+    const { history } = this.props;
+    history.push("/create-album");
+    event.preventDefault();
   };
 
   render() {
-    // console.log("this.state.albumsArray", this.state.albumsArray);
     return (
       <HomeContainer>
         <h1>Image Gallery</h1>
-        <button onClick={this.handleAddImage}>+</button>
+        <form onSubmit={this.handleSubmit}>
+          <label>Create New Album</label>
+          <input type="text" onChange={this.handleChange} />
+          <button type="submit">Continue</button>
+        </form>
         <Link to={"/album"}>
-          <AlbumsContainer>
-            {this.state.albumsArray.map((album, i) => (
-              <AlbumContainer key={i}>{album[0].height}</AlbumContainer>
-            ))}
-          </AlbumsContainer>
+          {this.props.albumsArray ? (
+            <AlbumsContainer>
+              {this.props.albumsArray.map((album, i) => (
+                <AlbumContainer key={i}>{album[0].height}</AlbumContainer>
+              ))}
+            </AlbumsContainer>
+          ) : null}
         </Link>
       </HomeContainer>
     );
@@ -106,10 +71,11 @@ const AlbumContainer = styled("div", {
 });
 
 const mapStateToProps = state => {
+  console.log("state", state);
   return {};
 };
 
 export default connect(
   mapStateToProps,
-  { getAlbums }
+  { getAlbums, createAlbumName }
 )(Home);

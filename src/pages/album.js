@@ -5,22 +5,6 @@ import { styled } from "fusion-plugin-styletron-react";
 class Album extends Component {
   constructor() {
     super();
-    this.state = {
-      albumArray: [
-        {
-          height: 100,
-          width: 300
-        },
-        {
-          height: 200,
-          width: 300
-        },
-        {
-          height: 250,
-          width: 200
-        }
-      ]
-    };
   }
 
   handleSave = () => {

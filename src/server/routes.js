@@ -7,14 +7,24 @@ export default __NODE__ &&
     middleware() {
       const parseBody = bodyParser();
       return async (ctx, next) => {
-        if (ctx.method === "GET" && ctx.path === "/api/album") {
-          const albums = await AlbumModel.find({}).exec();
+        // get all albums
+        if (ctx.method === "GET" && ctx.path === "/api/albums") {
+          const albums = await AlbumModel.find({});
+          console.log("albums");
           ctx.body = albums;
+          // get album by id
         } else if (ctx.method === "GET" && ctx.path === "/api/album/:id") {
+          let { id } = ctx.request.body;
+          const albums = await AlbumModel.find({ id }).exec();
           return next();
+          // create album
         } else if (ctx.method === "POST" && ctx.path === "/api/create-album") {
           await parseBody(ctx, () => Promise.resolve());
-          ctx.body = ctx.request.body;
+          let { name, images } = ctx.request.body;
+          const newAlbum = new AlbumModel({ name, images });
+          const result = await newAlbum.save();
+          console.log("result", result);
+          ctx.body = { message: "status ok", result };
         }
         return next();
       };
