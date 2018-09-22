@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "d9059964d225c9a81942";
+/******/ 	var hotCurrentHash = "1e03aa21ff58a8d2fd77";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1355,7 +1355,7 @@ __webpack_require__.r(__webpack_exports__);
 const GET_ALBUMS = "GET_ALBUMS";
 const CREATE_ALBUM_NAME = "CREATE_ALBUM_NAME";
 const CREATE_ALBUM = "CREATE_ALBUM";
-const ROOT_URL = "http://localhost:8000/api"; // get all albums
+const ROOT_URL = "http://localhost:3000/api"; // get all albums
 
 const getAlbums = () => {
   return dispatch => {
@@ -1377,15 +1377,26 @@ const createAlbumName = albumName => {
   };
 }; // create album
 
-const createAlbum = albumData => {
+const createAlbum = (name, image) => {
+  console.log("name", name);
+  const images = [];
+  images.push({
+    file: image.file.name,
+    imagePreviewUrl: image.imagePreviewUrl
+  });
+  console.log("imagesArray", images);
   return dispatch => {
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(`${ROOT_URL}/create-album`).then(res => {
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(`${ROOT_URL}/create-album`, {
+      name,
+      images
+    }).then(res => {
+      console.log("res", res);
       dispatch({
         type: CREATE_ALBUM,
         payload: res.data
       });
     }).catch(error => {
-      console.log("error".error.response);
+      console.log("error.response", error.response);
     });
   };
 };
@@ -1510,7 +1521,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _actions_albums__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/albums */ "./src/actions/albums.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1520,35 +1533,48 @@ class CreateAlbum extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     super(props);
 
     _defineProperty(this, "handleUpload", event => {
-      const reader = new FileReader();
-      console.log("event.target.files", event.target.files);
-      let files = event.target.files;
-      console.log("file", files);
+      let reader = new FileReader();
+      let file = event.target.files[0];
+
+      reader.onloadend = () => {
+        this.setState({
+          file: file,
+          imagePreviewUrl: reader.result
+        });
+      };
+
       reader.readAsDataURL(file);
     });
 
-    _defineProperty(this, "handleSave", () => {
-      console.log("saved");
+    _defineProperty(this, "handleSave", event => {
+      event.preventDefault();
+      const name = this.props.albumName;
+      const images = {
+        file: this.state.file,
+        imagePreviewUrl: this.state.imagePreviewUrl
+      };
+      this.props.createAlbum(name, images);
     });
 
     this.state = {
-      filesArray: [],
-      imagePreviewUrlArray: []
+      file: "",
+      imagePreviewUrl: ""
     };
   }
 
   render() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.albumName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
       type: "file",
-      onChange: e => this.handleUpload(e),
-      multiple: true
+      onChange: e => this.handleUpload(e)
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       onClick: this.handleSave
     }, "Save")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "example__images-container"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "example__images"
-    })));
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: this.state.imagePreviewUrl
+    }));
   }
 
 }
@@ -1559,7 +1585,9 @@ const mapStateToProps = state => {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, {})(CreateAlbum));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, {
+  createAlbum: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["createAlbum"]
+})(CreateAlbum));
 
 /***/ }),
 
@@ -1787,7 +1815,14 @@ const AlbumSchema = new mongoose.Schema({
     required: true
   },
   images: [{
-    type: String
+    file: {
+      type: String,
+      required: true
+    },
+    imagePreviewUrl: {
+      type: String,
+      required: true
+    }
   }]
 });
 module.exports = mongoose.model("AlbumSchema", AlbumSchema);
@@ -1820,7 +1855,6 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
       // get all albums
       if (ctx.method === "GET" && ctx.path === "/api/albums") {
         const albums = await AlbumModel.find({});
-        console.log("albums");
         ctx.body = albums; // get album by id
       } else if (ctx.method === "GET" && ctx.path === "/api/album/:id") {
         let {
@@ -1835,7 +1869,9 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
         let {
           name,
           images
-        } = ctx.request.body;
+        } = ctx.request.body; // console.log("name", name);
+        // console.log("images", images);
+
         const newAlbum = new AlbumModel({
           name,
           images

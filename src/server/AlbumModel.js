@@ -13,7 +13,14 @@ const AlbumSchema = new mongoose.Schema({
   },
   images: [
     {
-      type: String
+      file: {
+        type: String,
+        required: true
+      },
+      imagePreviewUrl: {
+        type: String,
+        required: true
+      }
     }
   ]
 });

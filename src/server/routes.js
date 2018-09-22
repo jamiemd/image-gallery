@@ -10,7 +10,6 @@ export default __NODE__ &&
         // get all albums
         if (ctx.method === "GET" && ctx.path === "/api/albums") {
           const albums = await AlbumModel.find({});
-          console.log("albums");
           ctx.body = albums;
           // get album by id
         } else if (ctx.method === "GET" && ctx.path === "/api/album/:id") {
@@ -21,6 +20,8 @@ export default __NODE__ &&
         } else if (ctx.method === "POST" && ctx.path === "/api/create-album") {
           await parseBody(ctx, () => Promise.resolve());
           let { name, images } = ctx.request.body;
+          // console.log("name", name);
+          // console.log("images", images);
           const newAlbum = new AlbumModel({ name, images });
           const result = await newAlbum.save();
           console.log("result", result);
