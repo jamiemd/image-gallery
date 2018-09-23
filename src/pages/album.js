@@ -1,10 +1,14 @@
 // @flow
 import React, { Component } from "react";
 import { styled } from "fusion-plugin-styletron-react";
+import { findAlbum } from "../actions/albums";
+import { connect } from "react-redux";
 
 class Album extends Component {
-  constructor() {
-    super();
+  componentDidMount() {
+    const albumId = this.props.match.params.id;
+    console.log("albumId", albumId);
+    this.props.findAlbum(albumId);
   }
 
   handleSave = () => {
@@ -12,10 +16,10 @@ class Album extends Component {
   };
 
   render() {
-    // console.log("this.state.albumArray", this.state.albumArray);
+    console.log("this.props.album.images", this.props.album.images);
     return (
       <div style={albumContainer}>
-        {this.state.albumArray.map((image, i) => (
+        {this.props.album.images.map((image, i) => (
           <div
             key={i}
             style={{
@@ -24,7 +28,7 @@ class Album extends Component {
               ...bg
             }}
           >
-            {image.height}
+            <img src={image.imagePreviewUrl} />
           </div>
         ))}
       </div>
@@ -43,4 +47,14 @@ const bg = {
   margin: "20px"
 };
 
-export default Album;
+const mapStateToProps = state => {
+  console.log("state", state);
+  return {
+    album: state.album || { images: [] }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { findAlbum }
+)(Album);

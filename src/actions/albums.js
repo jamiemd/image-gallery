@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const GET_ALBUMS = "GET_ALBUMS";
+export const GET_ALBUM = "GET_ALBUM";
 export const CREATE_ALBUM_NAME = "CREATE_ALBUM_NAME";
 export const CREATE_ALBUM = "CREATE_ALBUM";
 
@@ -12,8 +13,27 @@ export const getAlbums = () => {
     axios
       .get(`${ROOT_URL}/getAlbums`)
       .then(res => {
+        console.log("res", res);
         dispatch({
           type: GET_ALBUMS,
+          payload: res.data
+        });
+      })
+      .catch(error => {
+        console.log("error", error.response);
+      });
+  };
+};
+
+// find album
+export const findAlbum = albumId => {
+  return dispatch => {
+    axios
+      .get(`${ROOT_URL}/findAlbum/${albumId}`)
+      .then(res => {
+        console.log("res", res);
+        dispatch({
+          type: GET_ALBUM,
           payload: res.data
         });
       })

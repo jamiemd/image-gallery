@@ -38,15 +38,21 @@ class Home extends Component {
           <input type="text" onChange={this.handleChange} />
           <button type="submit">Continue</button>
         </form>
-        <Link to={"/album"}>
+        <div>
           {this.props.albumsArray ? (
             <AlbumsContainer>
               {this.props.albumsArray.map((album, i) => (
-                <AlbumContainer key={i}>{album[0].height}</AlbumContainer>
+                <div key={i}>
+                  {album.images.map((image, i) => (
+                    <Link key={i} to={`/findAlbum/${album._id}`}>
+                      <img src={image.imagePreviewUrl} />
+                    </Link>
+                  ))}
+                </div>
               ))}
             </AlbumsContainer>
           ) : null}
-        </Link>
+        </div>
       </HomeContainer>
     );
   }
@@ -71,8 +77,9 @@ const AlbumContainer = styled("div", {
 });
 
 const mapStateToProps = state => {
-  console.log("state", state);
-  return {};
+  return {
+    albumsArray: state.albums
+  };
 };
 
 export default connect(

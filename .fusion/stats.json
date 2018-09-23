@@ -2,26 +2,28 @@
   "errors": [],
   "warnings": [],
   "version": "4.16.4",
-  "hash": "1e03aa21ff58a8d2fd77",
+  "hash": "c4e1fb6b7c57d6b6ddda",
   "children": [
     {
       "errors": [],
       "warnings": [],
-      "hash": "1e03aa21ff58a8d2fd77",
-      "time": 312,
-      "builtAt": 1537598048045,
+      "hash": "c4e1fb6b7c57d6b6ddda",
+      "time": 508,
+      "builtAt": 1537682249443,
       "publicPath": "",
       "outputPath": "/Users/jamie/GitHub/image-gallery/.fusion/dist/development/server",
       "assetsByChunkName": {
         "main": [
           "server-main.js",
-          "server-main.js.map"
+          "main.fb403830a052864a1810.hot-update.js",
+          "server-main.js.map",
+          "main.fb403830a052864a1810.hot-update.js.map"
         ]
       },
       "assets": [
         {
           "name": "server-main.js",
-          "size": 80730,
+          "size": 82916,
           "chunks": [
             "main"
           ],
@@ -31,8 +33,37 @@
           "emitted": true
         },
         {
+          "name": "main.fb403830a052864a1810.hot-update.js",
+          "size": 3746,
+          "chunks": [
+            "main"
+          ],
+          "chunkNames": [
+            "main"
+          ],
+          "emitted": true
+        },
+        {
+          "name": "fb403830a052864a1810.hot-update.json",
+          "size": 46,
+          "chunks": [],
+          "chunkNames": [],
+          "emitted": true
+        },
+        {
           "name": "server-main.js.map",
-          "size": 60192,
+          "size": 61829,
+          "chunks": [
+            "main"
+          ],
+          "chunkNames": [
+            "main"
+          ],
+          "emitted": true
+        },
+        {
+          "name": "main.fb403830a052864a1810.hot-update.js.map",
+          "size": 1838,
           "chunks": [
             "main"
           ],
@@ -50,7 +81,9 @@
           ],
           "assets": [
             "server-main.js",
-            "server-main.js.map"
+            "main.fb403830a052864a1810.hot-update.js",
+            "server-main.js.map",
+            "main.fb403830a052864a1810.hot-update.js.map"
           ],
           "children": {},
           "childAssets": {}
@@ -63,7 +96,9 @@
           ],
           "assets": [
             "server-main.js",
-            "server-main.js.map"
+            "main.fb403830a052864a1810.hot-update.js",
+            "server-main.js.map",
+            "main.fb403830a052864a1810.hot-update.js.map"
           ],
           "children": {},
           "childAssets": {}
@@ -72,18 +107,20 @@
       "chunks": [
         {
           "id": "main",
-          "rendered": false,
+          "rendered": true,
           "initial": true,
           "entry": true,
-          "size": 23659,
+          "size": 24951,
           "names": [
             "main"
           ],
           "files": [
             "server-main.js",
-            "server-main.js.map"
+            "main.fb403830a052864a1810.hot-update.js",
+            "server-main.js.map",
+            "main.fb403830a052864a1810.hot-update.js.map"
           ],
-          "hash": "43a9662548dd7b58ed0e",
+          "hash": "2daad723f2d3f02f6d0d",
           "siblings": [],
           "parents": [],
           "children": [],
@@ -815,9 +852,9 @@
               "name": "./src/actions/albums.js",
               "index": 19,
               "index2": 15,
-              "size": 1230,
+              "size": 1632,
               "cacheable": true,
-              "built": true,
+              "built": false,
               "optional": false,
               "prefetched": false,
               "chunks": [
@@ -854,6 +891,24 @@
               "assets": [],
               "reasons": [
                 {
+                  "moduleId": "./src/pages/album.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+                  "module": "./src/pages/album.js",
+                  "moduleName": "./src/pages/album.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "../actions/albums",
+                  "loc": "6:0-46"
+                },
+                {
+                  "moduleId": "./src/pages/album.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+                  "module": "./src/pages/album.js",
+                  "moduleName": "./src/pages/album.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../actions/albums",
+                  "loc": "61:2-11"
+                },
+                {
                   "moduleId": "./src/pages/create-album.js",
                   "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/create-album.js",
                   "module": "./src/pages/create-album.js",
@@ -887,7 +942,7 @@
                   "moduleName": "./src/pages/home.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "79:2-11"
+                  "loc": "83:2-11"
                 },
                 {
                   "moduleId": "./src/pages/home.js",
@@ -896,7 +951,7 @@
                   "moduleName": "./src/pages/home.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "80:2-17"
+                  "loc": "84:2-17"
                 },
                 {
                   "moduleId": "./src/reducers/albums.js",
@@ -905,7 +960,7 @@
                   "moduleName": "./src/reducers/albums.js",
                   "type": "harmony side effect evaluation",
                   "userRequest": "../actions/albums",
-                  "loc": "5:0-80"
+                  "loc": "5:0-91"
                 },
                 {
                   "moduleId": "./src/reducers/albums.js",
@@ -923,7 +978,7 @@
                   "moduleName": "./src/reducers/albums.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "17:9-26"
+                  "loc": "17:9-18"
                 },
                 {
                   "moduleId": "./src/reducers/albums.js",
@@ -932,20 +987,31 @@
                   "moduleName": "./src/reducers/albums.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "20:9-21"
+                  "loc": "20:9-26"
+                },
+                {
+                  "moduleId": "./src/reducers/albums.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/reducers/albums.js",
+                  "module": "./src/reducers/albums.js",
+                  "moduleName": "./src/reducers/albums.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../actions/albums",
+                  "loc": "23:9-21"
                 }
               ],
               "providedExports": [
                 "GET_ALBUMS",
+                "GET_ALBUM",
                 "CREATE_ALBUM_NAME",
                 "CREATE_ALBUM",
                 "getAlbums",
+                "findAlbum",
                 "createAlbumName",
                 "createAlbum"
               ],
               "optimizationBailout": [],
               "depth": 4,
-              "source": "import axios from \"axios\";\nexport const GET_ALBUMS = \"GET_ALBUMS\";\nexport const CREATE_ALBUM_NAME = \"CREATE_ALBUM_NAME\";\nexport const CREATE_ALBUM = \"CREATE_ALBUM\";\nconst ROOT_URL = \"http://localhost:3000/api\"; // get all albums\n\nexport const getAlbums = () => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/getAlbums`).then(res => {\n      dispatch({\n        type: GET_ALBUMS,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // add album name to pass into create-album page\n\nexport const createAlbumName = albumName => {\n  return {\n    type: CREATE_ALBUM_NAME,\n    payload: albumName\n  };\n}; // create album\n\nexport const createAlbum = (name, image) => {\n  console.log(\"name\", name);\n  const images = [];\n  images.push({\n    file: image.file.name,\n    imagePreviewUrl: image.imagePreviewUrl\n  });\n  console.log(\"imagesArray\", images);\n  return dispatch => {\n    axios.post(`${ROOT_URL}/create-album`, {\n      name,\n      images\n    }).then(res => {\n      console.log(\"res\", res);\n      dispatch({\n        type: CREATE_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n};"
+              "source": "import axios from \"axios\";\nexport const GET_ALBUMS = \"GET_ALBUMS\";\nexport const GET_ALBUM = \"GET_ALBUM\";\nexport const CREATE_ALBUM_NAME = \"CREATE_ALBUM_NAME\";\nexport const CREATE_ALBUM = \"CREATE_ALBUM\";\nconst ROOT_URL = \"http://localhost:3000/api\"; // get all albums\n\nexport const getAlbums = () => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/getAlbums`).then(res => {\n      console.log(\"res\", res);\n      dispatch({\n        type: GET_ALBUMS,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // find album\n\nexport const findAlbum = albumId => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/findAlbum/${albumId}`).then(res => {\n      console.log(\"res\", res);\n      dispatch({\n        type: GET_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // add album name to pass into create-album page\n\nexport const createAlbumName = albumName => {\n  return {\n    type: CREATE_ALBUM_NAME,\n    payload: albumName\n  };\n}; // create album\n\nexport const createAlbum = (name, image) => {\n  console.log(\"name\", name);\n  const images = [];\n  images.push({\n    file: image.file.name,\n    imagePreviewUrl: image.imagePreviewUrl\n  });\n  console.log(\"imagesArray\", images);\n  return dispatch => {\n    axios.post(`${ROOT_URL}/create-album`, {\n      name,\n      images\n    }).then(res => {\n      console.log(\"res\", res);\n      dispatch({\n        type: CREATE_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n};"
             },
             {
               "id": "./src/main.js",
@@ -1022,9 +1088,9 @@
               "name": "./src/pages/album.js",
               "index": 21,
               "index2": 17,
-              "size": 1445,
+              "size": 1934,
               "cacheable": true,
-              "built": false,
+              "built": true,
               "optional": false,
               "prefetched": false,
               "chunks": [
@@ -1084,7 +1150,7 @@
               ],
               "optimizationBailout": [],
               "depth": 4,
-              "source": "function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\n\nclass Album extends Component {\n  constructor() {\n    super();\n\n    _defineProperty(this, \"handleSave\", () => {\n      console.log(\"save button clicked\");\n    });\n  }\n\n  render() {\n    // console.log(\"this.state.albumArray\", this.state.albumArray);\n    return React.createElement(\"div\", {\n      style: albumContainer\n    }, this.state.albumArray.map((image, i) => React.createElement(\"div\", {\n      key: i,\n      style: _objectSpread({\n        height: image.height,\n        width: image.width\n      }, bg)\n    }, image.height)));\n  }\n\n}\n\nconst albumContainer = {\n  width: \"80%\",\n  display: \"flex\",\n  justifyContent: \"center\"\n};\nconst bg = {\n  backgroundColor: \"gray\",\n  margin: \"20px\"\n};\nexport default Album;"
+              "source": "function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { findAlbum } from \"../actions/albums\";\nimport { connect } from \"react-redux\";\n\nclass Album extends Component {\n  constructor(...args) {\n    super(...args);\n\n    _defineProperty(this, \"handleSave\", () => {\n      console.log(\"save button clicked\");\n    });\n  }\n\n  componentDidMount() {\n    const albumId = this.props.match.params.id;\n    console.log(\"albumId\", albumId);\n    this.props.findAlbum(albumId);\n  }\n\n  render() {\n    console.log(\"this.props.album.images\", this.props.album.images);\n    return React.createElement(\"div\", {\n      style: albumContainer\n    }, this.props.album.images.map((image, i) => React.createElement(\"div\", {\n      key: i,\n      style: _objectSpread({\n        height: image.height,\n        width: image.width\n      }, bg)\n    }, React.createElement(\"img\", {\n      src: image.imagePreviewUrl\n    }))));\n  }\n\n}\n\nconst albumContainer = {\n  width: \"80%\",\n  display: \"flex\",\n  justifyContent: \"center\"\n};\nconst bg = {\n  backgroundColor: \"gray\",\n  margin: \"20px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state\", state);\n  return {\n    album: state.album || {\n      images: []\n    }\n  };\n};\n\nexport default connect(mapStateToProps, {\n  findAlbum\n})(Album);"
             },
             {
               "id": "./src/pages/create-album.js",
@@ -1162,7 +1228,7 @@
               "name": "./src/pages/home.js",
               "index": 17,
               "index2": 16,
-              "size": 2211,
+              "size": 2354,
               "cacheable": true,
               "built": false,
               "optional": false,
@@ -1224,7 +1290,7 @@
               ],
               "optimizationBailout": [],
               "depth": 4,
-              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { styled } from \"fusion-plugin-styletron-react\";\nimport { Link } from \"fusion-plugin-react-router\";\nimport { connect } from \"react-redux\";\nimport { getAlbums, createAlbumName } from \"../actions/albums\";\n\nclass Home extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleChange\", event => {\n      this.setState({\n        value: event.target.value\n      });\n    });\n\n    _defineProperty(this, \"handleSubmit\", event => {\n      const albumName = this.state.value;\n      this.props.createAlbumName({\n        albumName\n      });\n      const {\n        history\n      } = this.props;\n      history.push(\"/create-album\");\n      event.preventDefault();\n    });\n\n    this.state = {\n      value: \"\"\n    };\n  }\n\n  componentDidMount() {\n    this.props.getAlbums();\n  }\n\n  render() {\n    return React.createElement(HomeContainer, null, React.createElement(\"h1\", null, \"Image Gallery\"), React.createElement(\"form\", {\n      onSubmit: this.handleSubmit\n    }, React.createElement(\"label\", null, \"Create New Album\"), React.createElement(\"input\", {\n      type: \"text\",\n      onChange: this.handleChange\n    }), React.createElement(\"button\", {\n      type: \"submit\"\n    }, \"Continue\")), React.createElement(Link, {\n      to: \"/album\"\n    }, this.props.albumsArray ? React.createElement(AlbumsContainer, null, this.props.albumsArray.map((album, i) => React.createElement(AlbumContainer, {\n      key: i\n    }, album[0].height))) : null));\n  }\n\n}\n\nconst HomeContainer = styled(\"div\", {\n  fontFamily: \"HelveticaNeue-Light, Arial\",\n  margin: \"auto\",\n  width: \"80%\"\n});\nconst AlbumsContainer = styled(\"div\", {\n  margin: \"30px\",\n  display: \"flex\"\n});\nconst AlbumContainer = styled(\"div\", {\n  margin: \"20px\",\n  width: \"300px\",\n  height: \"300px\",\n  backgroundColor: \"gray\"\n});\n\nconst mapStateToProps = state => {\n  console.log(\"state\", state);\n  return {};\n};\n\nexport default connect(mapStateToProps, {\n  getAlbums,\n  createAlbumName\n})(Home);"
+              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { styled } from \"fusion-plugin-styletron-react\";\nimport { Link } from \"fusion-plugin-react-router\";\nimport { connect } from \"react-redux\";\nimport { getAlbums, createAlbumName } from \"../actions/albums\";\n\nclass Home extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleChange\", event => {\n      this.setState({\n        value: event.target.value\n      });\n    });\n\n    _defineProperty(this, \"handleSubmit\", event => {\n      const albumName = this.state.value;\n      this.props.createAlbumName({\n        albumName\n      });\n      const {\n        history\n      } = this.props;\n      history.push(\"/create-album\");\n      event.preventDefault();\n    });\n\n    this.state = {\n      value: \"\"\n    };\n  }\n\n  componentDidMount() {\n    this.props.getAlbums();\n  }\n\n  render() {\n    return React.createElement(HomeContainer, null, React.createElement(\"h1\", null, \"Image Gallery\"), React.createElement(\"form\", {\n      onSubmit: this.handleSubmit\n    }, React.createElement(\"label\", null, \"Create New Album\"), React.createElement(\"input\", {\n      type: \"text\",\n      onChange: this.handleChange\n    }), React.createElement(\"button\", {\n      type: \"submit\"\n    }, \"Continue\")), React.createElement(\"div\", null, this.props.albumsArray ? React.createElement(AlbumsContainer, null, this.props.albumsArray.map((album, i) => React.createElement(\"div\", {\n      key: i\n    }, album.images.map((image, i) => React.createElement(Link, {\n      key: i,\n      to: `/findAlbum/${album._id}`\n    }, React.createElement(\"img\", {\n      src: image.imagePreviewUrl\n    })))))) : null));\n  }\n\n}\n\nconst HomeContainer = styled(\"div\", {\n  fontFamily: \"HelveticaNeue-Light, Arial\",\n  margin: \"auto\",\n  width: \"80%\"\n});\nconst AlbumsContainer = styled(\"div\", {\n  margin: \"30px\",\n  display: \"flex\"\n});\nconst AlbumContainer = styled(\"div\", {\n  margin: \"20px\",\n  width: \"300px\",\n  height: \"300px\",\n  backgroundColor: \"gray\"\n});\n\nconst mapStateToProps = state => {\n  return {\n    albumsArray: state.albums\n  };\n};\n\nexport default connect(mapStateToProps, {\n  getAlbums,\n  createAlbumName\n})(Home);"
             },
             {
               "id": "./src/pages/pageNotFound.js",
@@ -1302,7 +1368,7 @@
               "name": "./src/reducers/albums.js",
               "index": 24,
               "index2": 21,
-              "size": 1228,
+              "size": 1317,
               "cacheable": true,
               "built": false,
               "optional": false,
@@ -1359,7 +1425,7 @@
               ],
               "optimizationBailout": [],
               "depth": 3,
-              "source": "function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport { GET_ALBUMS, CREATE_ALBUM_NAME, CREATE_ALBUM } from \"../actions/albums\";\nconst initialState = {\n  albumsArray: [],\n  imagePreview: \"\"\n};\nexport default ((state = initialState, action) => {\n  console.log(\"state\", state);\n\n  switch (action.type) {\n    case GET_ALBUMS:\n      return _objectSpread({}, state, action.payload);\n\n    case CREATE_ALBUM_NAME:\n      return _objectSpread({}, state, action.payload);\n\n    case CREATE_ALBUM:\n      return _objectSpread({}, state, action.payload);\n\n    default:\n      return state;\n  }\n});"
+              "source": "function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport { GET_ALBUMS, GET_ALBUM, CREATE_ALBUM_NAME, CREATE_ALBUM } from \"../actions/albums\";\nconst initialState = {\n  albumsArray: [],\n  imagePreview: \"\"\n};\nexport default ((state = initialState, action) => {\n  console.log(\"action\", action);\n\n  switch (action.type) {\n    case GET_ALBUMS:\n      return _objectSpread({}, state, action.payload);\n\n    case GET_ALBUM:\n      return _objectSpread({}, state, action.payload);\n\n    case CREATE_ALBUM_NAME:\n      return _objectSpread({}, state, action.payload);\n\n    case CREATE_ALBUM:\n      return _objectSpread({}, state, action.payload);\n\n    default:\n      return state;\n  }\n});"
             },
             {
               "id": "./src/root.js",
@@ -1367,7 +1433,7 @@
               "name": "./src/root.js",
               "index": 16,
               "index2": 20,
-              "size": 653,
+              "size": 661,
               "cacheable": true,
               "built": false,
               "optional": false,
@@ -1424,7 +1490,7 @@
               ],
               "optimizationBailout": [],
               "depth": 3,
-              "source": "import React from \"react\";\nimport { Route, Switch } from \"fusion-plugin-react-router\";\nimport Home from \"./pages/home.js\";\nimport Album from \"./pages/album.js\";\nimport CreateAlbum from \"./pages/create-album.js\";\nimport PageNotFound from \"./pages/pageNotFound.js\";\nconst root = React.createElement(Switch, null, React.createElement(Route, {\n  exact: true,\n  path: \"/\",\n  component: Home\n}), React.createElement(Route, {\n  exact: true,\n  path: \"/album\",\n  component: Album\n}), React.createElement(Route, {\n  exact: true,\n  path: \"/create-album\",\n  component: CreateAlbum\n}), React.createElement(Route, {\n  component: PageNotFound\n}));\nexport default root;"
+              "source": "import React from \"react\";\nimport { Route, Switch } from \"fusion-plugin-react-router\";\nimport Home from \"./pages/home.js\";\nimport Album from \"./pages/album.js\";\nimport CreateAlbum from \"./pages/create-album.js\";\nimport PageNotFound from \"./pages/pageNotFound.js\";\nconst root = React.createElement(Switch, null, React.createElement(Route, {\n  exact: true,\n  path: \"/\",\n  component: Home\n}), React.createElement(Route, {\n  exact: true,\n  path: \"/findAlbum/:id\",\n  component: Album\n}), React.createElement(Route, {\n  exact: true,\n  path: \"/create-album\",\n  component: CreateAlbum\n}), React.createElement(Route, {\n  component: PageNotFound\n}));\nexport default root;"
             },
             {
               "id": "./src/server/AlbumModel.js",
@@ -1491,7 +1557,7 @@
               "name": "./src/server/routes.js",
               "index": 25,
               "index2": 25,
-              "size": 1283,
+              "size": 1444,
               "cacheable": true,
               "built": false,
               "optional": false,
@@ -1548,7 +1614,7 @@
               ],
               "optimizationBailout": [],
               "depth": 3,
-              "source": "const AlbumModel = require(\"./AlbumModel\");\n\nimport { createPlugin } from \"fusion-core\";\nimport bodyParser from \"koa-bodyparser\";\nexport default true &&\n/*#__PURE__*/\ncreatePlugin({\n  middleware() {\n    const parseBody = bodyParser();\n    return async (ctx, next) => {\n      // get all albums\n      if (ctx.method === \"GET\" && ctx.path === \"/api/albums\") {\n        const albums = await AlbumModel.find({});\n        ctx.body = albums; // get album by id\n      } else if (ctx.method === \"GET\" && ctx.path === \"/api/album/:id\") {\n        let {\n          id\n        } = ctx.request.body;\n        const albums = await AlbumModel.find({\n          id\n        }).exec();\n        return next(); // create album\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/create-album\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          name,\n          images\n        } = ctx.request.body; // console.log(\"name\", name);\n        // console.log(\"images\", images);\n\n        const newAlbum = new AlbumModel({\n          name,\n          images\n        });\n        const result = await newAlbum.save();\n        console.log(\"result\", result);\n        ctx.body = {\n          message: \"status ok\",\n          result\n        };\n      }\n\n      return next();\n    };\n  }\n\n});"
+              "source": "const AlbumModel = require(\"./AlbumModel\");\n\nimport { createPlugin } from \"fusion-core\";\nimport bodyParser from \"koa-bodyparser\";\nexport default true &&\n/*#__PURE__*/\ncreatePlugin({\n  middleware() {\n    const parseBody = bodyParser();\n    return async (ctx, next) => {\n      // get all albums\n      if (ctx.method === \"GET\" && ctx.path === \"/api/getAlbums\") {\n        const albums = await AlbumModel.find({});\n        ctx.body = {\n          message: \"status ok\",\n          albums\n        }; // find album by id\n      } else if (ctx.method === \"GET\" && ctx.path.startsWith(\"/api/findAlbum/\")) {\n        const id = ctx.path.match(/findAlbum\\/(.*)/)[1];\n        const album = await AlbumModel.findOne({\n          _id: id\n        });\n        console.log(\"album\", album);\n        ctx.body = {\n          message: \"status ok\",\n          album\n        }; // create album\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/create-album\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          name,\n          images\n        } = ctx.request.body; // console.log(\"name\", name);\n        // console.log(\"images\", images);\n\n        const newAlbum = new AlbumModel({\n          name,\n          images\n        });\n        const result = await newAlbum.save();\n        console.log(\"result\", result);\n        ctx.body = {\n          message: \"status ok\",\n          result\n        };\n      }\n\n      return next();\n    };\n  }\n\n});"
             },
             {
               "id": "axios",
@@ -1614,7 +1680,7 @@
                   "moduleName": "./src/actions/albums.js",
                   "type": "harmony import specifier",
                   "userRequest": "axios",
-                  "loc": "9:4-9"
+                  "loc": "10:4-9"
                 },
                 {
                   "moduleId": "./src/actions/albums.js",
@@ -1623,7 +1689,16 @@
                   "moduleName": "./src/actions/albums.js",
                   "type": "harmony import specifier",
                   "userRequest": "axios",
-                  "loc": "36:4-9"
+                  "loc": "24:4-9"
+                },
+                {
+                  "moduleId": "./src/actions/albums.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/actions/albums.js",
+                  "module": "./src/actions/albums.js",
+                  "moduleName": "./src/actions/albums.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "axios",
+                  "loc": "52:4-9"
                 }
               ],
               "providedExports": null,
@@ -1918,7 +1993,7 @@
                   "moduleName": "./src/pages/home.js",
                   "type": "harmony import specifier",
                   "userRequest": "fusion-plugin-react-router",
-                  "loc": "48:41-45"
+                  "loc": "50:58-62"
                 },
                 {
                   "moduleId": "./src/pages/pageNotFound.js",
@@ -2069,7 +2144,7 @@
                   "moduleName": "./src/pages/home.js",
                   "type": "harmony import specifier",
                   "userRequest": "fusion-plugin-styletron-react",
-                  "loc": "57:22-28"
+                  "loc": "60:22-28"
                 },
                 {
                   "moduleId": "./src/pages/home.js",
@@ -2078,7 +2153,7 @@
                   "moduleName": "./src/pages/home.js",
                   "type": "harmony import specifier",
                   "userRequest": "fusion-plugin-styletron-react",
-                  "loc": "62:24-30"
+                  "loc": "65:24-30"
                 },
                 {
                   "moduleId": "./src/pages/home.js",
@@ -2087,7 +2162,7 @@
                   "moduleName": "./src/pages/home.js",
                   "type": "harmony import specifier",
                   "userRequest": "fusion-plugin-styletron-react",
-                  "loc": "66:23-29"
+                  "loc": "69:23-29"
                 }
               ],
               "providedExports": null,
@@ -2558,7 +2633,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "7:20-29"
+                  "loc": "9:20-29"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -2567,7 +2642,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "18:11-16"
+                  "loc": "26:11-16"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -2576,7 +2651,16 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "20:47-52"
+                  "loc": "28:49-54"
+                },
+                {
+                  "moduleId": "./src/pages/album.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+                  "module": "./src/pages/album.js",
+                  "moduleName": "./src/pages/album.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "react",
+                  "loc": "34:7-12"
                 },
                 {
                   "moduleId": "./src/pages/create-album.js",
@@ -2756,7 +2840,7 @@
                   "moduleName": "./src/pages/home.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "50:32-37"
+                  "loc": "48:79-84"
                 },
                 {
                   "moduleId": "./src/pages/home.js",
@@ -2765,7 +2849,25 @@
                   "moduleName": "./src/pages/home.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "50:116-121"
+                  "loc": "48:163-168"
+                },
+                {
+                  "moduleId": "./src/pages/home.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
+                  "module": "./src/pages/home.js",
+                  "moduleName": "./src/pages/home.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "react",
+                  "loc": "50:38-43"
+                },
+                {
+                  "moduleId": "./src/pages/home.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
+                  "module": "./src/pages/home.js",
+                  "moduleName": "./src/pages/home.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "react",
+                  "loc": "53:7-12"
                 },
                 {
                   "moduleId": "./src/pages/pageNotFound.js",
@@ -2936,6 +3038,24 @@
               "assets": [],
               "reasons": [
                 {
+                  "moduleId": "./src/pages/album.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+                  "module": "./src/pages/album.js",
+                  "moduleName": "./src/pages/album.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "react-redux",
+                  "loc": "7:0-38"
+                },
+                {
+                  "moduleId": "./src/pages/album.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+                  "module": "./src/pages/album.js",
+                  "moduleName": "./src/pages/album.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "react-redux",
+                  "loc": "60:15-22"
+                },
+                {
                   "moduleId": "./src/pages/create-album.js",
                   "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/create-album.js",
                   "module": "./src/pages/create-album.js",
@@ -2969,7 +3089,7 @@
                   "moduleName": "./src/pages/home.js",
                   "type": "harmony import specifier",
                   "userRequest": "react-redux",
-                  "loc": "78:15-22"
+                  "loc": "82:15-22"
                 }
               ],
               "providedExports": null,
@@ -3839,9 +3959,9 @@
           "name": "./src/actions/albums.js",
           "index": 19,
           "index2": 15,
-          "size": 1230,
+          "size": 1632,
           "cacheable": true,
-          "built": true,
+          "built": false,
           "optional": false,
           "prefetched": false,
           "chunks": [
@@ -3878,6 +3998,24 @@
           "assets": [],
           "reasons": [
             {
+              "moduleId": "./src/pages/album.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+              "module": "./src/pages/album.js",
+              "moduleName": "./src/pages/album.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "../actions/albums",
+              "loc": "6:0-46"
+            },
+            {
+              "moduleId": "./src/pages/album.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+              "module": "./src/pages/album.js",
+              "moduleName": "./src/pages/album.js",
+              "type": "harmony import specifier",
+              "userRequest": "../actions/albums",
+              "loc": "61:2-11"
+            },
+            {
               "moduleId": "./src/pages/create-album.js",
               "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/create-album.js",
               "module": "./src/pages/create-album.js",
@@ -3911,7 +4049,7 @@
               "moduleName": "./src/pages/home.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "79:2-11"
+              "loc": "83:2-11"
             },
             {
               "moduleId": "./src/pages/home.js",
@@ -3920,7 +4058,7 @@
               "moduleName": "./src/pages/home.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "80:2-17"
+              "loc": "84:2-17"
             },
             {
               "moduleId": "./src/reducers/albums.js",
@@ -3929,7 +4067,7 @@
               "moduleName": "./src/reducers/albums.js",
               "type": "harmony side effect evaluation",
               "userRequest": "../actions/albums",
-              "loc": "5:0-80"
+              "loc": "5:0-91"
             },
             {
               "moduleId": "./src/reducers/albums.js",
@@ -3947,7 +4085,7 @@
               "moduleName": "./src/reducers/albums.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "17:9-26"
+              "loc": "17:9-18"
             },
             {
               "moduleId": "./src/reducers/albums.js",
@@ -3956,20 +4094,31 @@
               "moduleName": "./src/reducers/albums.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "20:9-21"
+              "loc": "20:9-26"
+            },
+            {
+              "moduleId": "./src/reducers/albums.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/reducers/albums.js",
+              "module": "./src/reducers/albums.js",
+              "moduleName": "./src/reducers/albums.js",
+              "type": "harmony import specifier",
+              "userRequest": "../actions/albums",
+              "loc": "23:9-21"
             }
           ],
           "providedExports": [
             "GET_ALBUMS",
+            "GET_ALBUM",
             "CREATE_ALBUM_NAME",
             "CREATE_ALBUM",
             "getAlbums",
+            "findAlbum",
             "createAlbumName",
             "createAlbum"
           ],
           "optimizationBailout": [],
           "depth": 4,
-          "source": "import axios from \"axios\";\nexport const GET_ALBUMS = \"GET_ALBUMS\";\nexport const CREATE_ALBUM_NAME = \"CREATE_ALBUM_NAME\";\nexport const CREATE_ALBUM = \"CREATE_ALBUM\";\nconst ROOT_URL = \"http://localhost:3000/api\"; // get all albums\n\nexport const getAlbums = () => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/getAlbums`).then(res => {\n      dispatch({\n        type: GET_ALBUMS,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // add album name to pass into create-album page\n\nexport const createAlbumName = albumName => {\n  return {\n    type: CREATE_ALBUM_NAME,\n    payload: albumName\n  };\n}; // create album\n\nexport const createAlbum = (name, image) => {\n  console.log(\"name\", name);\n  const images = [];\n  images.push({\n    file: image.file.name,\n    imagePreviewUrl: image.imagePreviewUrl\n  });\n  console.log(\"imagesArray\", images);\n  return dispatch => {\n    axios.post(`${ROOT_URL}/create-album`, {\n      name,\n      images\n    }).then(res => {\n      console.log(\"res\", res);\n      dispatch({\n        type: CREATE_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n};"
+          "source": "import axios from \"axios\";\nexport const GET_ALBUMS = \"GET_ALBUMS\";\nexport const GET_ALBUM = \"GET_ALBUM\";\nexport const CREATE_ALBUM_NAME = \"CREATE_ALBUM_NAME\";\nexport const CREATE_ALBUM = \"CREATE_ALBUM\";\nconst ROOT_URL = \"http://localhost:3000/api\"; // get all albums\n\nexport const getAlbums = () => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/getAlbums`).then(res => {\n      console.log(\"res\", res);\n      dispatch({\n        type: GET_ALBUMS,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // find album\n\nexport const findAlbum = albumId => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/findAlbum/${albumId}`).then(res => {\n      console.log(\"res\", res);\n      dispatch({\n        type: GET_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // add album name to pass into create-album page\n\nexport const createAlbumName = albumName => {\n  return {\n    type: CREATE_ALBUM_NAME,\n    payload: albumName\n  };\n}; // create album\n\nexport const createAlbum = (name, image) => {\n  console.log(\"name\", name);\n  const images = [];\n  images.push({\n    file: image.file.name,\n    imagePreviewUrl: image.imagePreviewUrl\n  });\n  console.log(\"imagesArray\", images);\n  return dispatch => {\n    axios.post(`${ROOT_URL}/create-album`, {\n      name,\n      images\n    }).then(res => {\n      console.log(\"res\", res);\n      dispatch({\n        type: CREATE_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n};"
         },
         {
           "id": "./src/main.js",
@@ -4046,9 +4195,9 @@
           "name": "./src/pages/album.js",
           "index": 21,
           "index2": 17,
-          "size": 1445,
+          "size": 1934,
           "cacheable": true,
-          "built": false,
+          "built": true,
           "optional": false,
           "prefetched": false,
           "chunks": [
@@ -4108,7 +4257,7 @@
           ],
           "optimizationBailout": [],
           "depth": 4,
-          "source": "function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\n\nclass Album extends Component {\n  constructor() {\n    super();\n\n    _defineProperty(this, \"handleSave\", () => {\n      console.log(\"save button clicked\");\n    });\n  }\n\n  render() {\n    // console.log(\"this.state.albumArray\", this.state.albumArray);\n    return React.createElement(\"div\", {\n      style: albumContainer\n    }, this.state.albumArray.map((image, i) => React.createElement(\"div\", {\n      key: i,\n      style: _objectSpread({\n        height: image.height,\n        width: image.width\n      }, bg)\n    }, image.height)));\n  }\n\n}\n\nconst albumContainer = {\n  width: \"80%\",\n  display: \"flex\",\n  justifyContent: \"center\"\n};\nconst bg = {\n  backgroundColor: \"gray\",\n  margin: \"20px\"\n};\nexport default Album;"
+          "source": "function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { findAlbum } from \"../actions/albums\";\nimport { connect } from \"react-redux\";\n\nclass Album extends Component {\n  constructor(...args) {\n    super(...args);\n\n    _defineProperty(this, \"handleSave\", () => {\n      console.log(\"save button clicked\");\n    });\n  }\n\n  componentDidMount() {\n    const albumId = this.props.match.params.id;\n    console.log(\"albumId\", albumId);\n    this.props.findAlbum(albumId);\n  }\n\n  render() {\n    console.log(\"this.props.album.images\", this.props.album.images);\n    return React.createElement(\"div\", {\n      style: albumContainer\n    }, this.props.album.images.map((image, i) => React.createElement(\"div\", {\n      key: i,\n      style: _objectSpread({\n        height: image.height,\n        width: image.width\n      }, bg)\n    }, React.createElement(\"img\", {\n      src: image.imagePreviewUrl\n    }))));\n  }\n\n}\n\nconst albumContainer = {\n  width: \"80%\",\n  display: \"flex\",\n  justifyContent: \"center\"\n};\nconst bg = {\n  backgroundColor: \"gray\",\n  margin: \"20px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state\", state);\n  return {\n    album: state.album || {\n      images: []\n    }\n  };\n};\n\nexport default connect(mapStateToProps, {\n  findAlbum\n})(Album);"
         },
         {
           "id": "./src/pages/create-album.js",
@@ -4186,7 +4335,7 @@
           "name": "./src/pages/home.js",
           "index": 17,
           "index2": 16,
-          "size": 2211,
+          "size": 2354,
           "cacheable": true,
           "built": false,
           "optional": false,
@@ -4248,7 +4397,7 @@
           ],
           "optimizationBailout": [],
           "depth": 4,
-          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { styled } from \"fusion-plugin-styletron-react\";\nimport { Link } from \"fusion-plugin-react-router\";\nimport { connect } from \"react-redux\";\nimport { getAlbums, createAlbumName } from \"../actions/albums\";\n\nclass Home extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleChange\", event => {\n      this.setState({\n        value: event.target.value\n      });\n    });\n\n    _defineProperty(this, \"handleSubmit\", event => {\n      const albumName = this.state.value;\n      this.props.createAlbumName({\n        albumName\n      });\n      const {\n        history\n      } = this.props;\n      history.push(\"/create-album\");\n      event.preventDefault();\n    });\n\n    this.state = {\n      value: \"\"\n    };\n  }\n\n  componentDidMount() {\n    this.props.getAlbums();\n  }\n\n  render() {\n    return React.createElement(HomeContainer, null, React.createElement(\"h1\", null, \"Image Gallery\"), React.createElement(\"form\", {\n      onSubmit: this.handleSubmit\n    }, React.createElement(\"label\", null, \"Create New Album\"), React.createElement(\"input\", {\n      type: \"text\",\n      onChange: this.handleChange\n    }), React.createElement(\"button\", {\n      type: \"submit\"\n    }, \"Continue\")), React.createElement(Link, {\n      to: \"/album\"\n    }, this.props.albumsArray ? React.createElement(AlbumsContainer, null, this.props.albumsArray.map((album, i) => React.createElement(AlbumContainer, {\n      key: i\n    }, album[0].height))) : null));\n  }\n\n}\n\nconst HomeContainer = styled(\"div\", {\n  fontFamily: \"HelveticaNeue-Light, Arial\",\n  margin: \"auto\",\n  width: \"80%\"\n});\nconst AlbumsContainer = styled(\"div\", {\n  margin: \"30px\",\n  display: \"flex\"\n});\nconst AlbumContainer = styled(\"div\", {\n  margin: \"20px\",\n  width: \"300px\",\n  height: \"300px\",\n  backgroundColor: \"gray\"\n});\n\nconst mapStateToProps = state => {\n  console.log(\"state\", state);\n  return {};\n};\n\nexport default connect(mapStateToProps, {\n  getAlbums,\n  createAlbumName\n})(Home);"
+          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { styled } from \"fusion-plugin-styletron-react\";\nimport { Link } from \"fusion-plugin-react-router\";\nimport { connect } from \"react-redux\";\nimport { getAlbums, createAlbumName } from \"../actions/albums\";\n\nclass Home extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleChange\", event => {\n      this.setState({\n        value: event.target.value\n      });\n    });\n\n    _defineProperty(this, \"handleSubmit\", event => {\n      const albumName = this.state.value;\n      this.props.createAlbumName({\n        albumName\n      });\n      const {\n        history\n      } = this.props;\n      history.push(\"/create-album\");\n      event.preventDefault();\n    });\n\n    this.state = {\n      value: \"\"\n    };\n  }\n\n  componentDidMount() {\n    this.props.getAlbums();\n  }\n\n  render() {\n    return React.createElement(HomeContainer, null, React.createElement(\"h1\", null, \"Image Gallery\"), React.createElement(\"form\", {\n      onSubmit: this.handleSubmit\n    }, React.createElement(\"label\", null, \"Create New Album\"), React.createElement(\"input\", {\n      type: \"text\",\n      onChange: this.handleChange\n    }), React.createElement(\"button\", {\n      type: \"submit\"\n    }, \"Continue\")), React.createElement(\"div\", null, this.props.albumsArray ? React.createElement(AlbumsContainer, null, this.props.albumsArray.map((album, i) => React.createElement(\"div\", {\n      key: i\n    }, album.images.map((image, i) => React.createElement(Link, {\n      key: i,\n      to: `/findAlbum/${album._id}`\n    }, React.createElement(\"img\", {\n      src: image.imagePreviewUrl\n    })))))) : null));\n  }\n\n}\n\nconst HomeContainer = styled(\"div\", {\n  fontFamily: \"HelveticaNeue-Light, Arial\",\n  margin: \"auto\",\n  width: \"80%\"\n});\nconst AlbumsContainer = styled(\"div\", {\n  margin: \"30px\",\n  display: \"flex\"\n});\nconst AlbumContainer = styled(\"div\", {\n  margin: \"20px\",\n  width: \"300px\",\n  height: \"300px\",\n  backgroundColor: \"gray\"\n});\n\nconst mapStateToProps = state => {\n  return {\n    albumsArray: state.albums\n  };\n};\n\nexport default connect(mapStateToProps, {\n  getAlbums,\n  createAlbumName\n})(Home);"
         },
         {
           "id": "./src/pages/pageNotFound.js",
@@ -4326,7 +4475,7 @@
           "name": "./src/reducers/albums.js",
           "index": 24,
           "index2": 21,
-          "size": 1228,
+          "size": 1317,
           "cacheable": true,
           "built": false,
           "optional": false,
@@ -4383,7 +4532,7 @@
           ],
           "optimizationBailout": [],
           "depth": 3,
-          "source": "function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport { GET_ALBUMS, CREATE_ALBUM_NAME, CREATE_ALBUM } from \"../actions/albums\";\nconst initialState = {\n  albumsArray: [],\n  imagePreview: \"\"\n};\nexport default ((state = initialState, action) => {\n  console.log(\"state\", state);\n\n  switch (action.type) {\n    case GET_ALBUMS:\n      return _objectSpread({}, state, action.payload);\n\n    case CREATE_ALBUM_NAME:\n      return _objectSpread({}, state, action.payload);\n\n    case CREATE_ALBUM:\n      return _objectSpread({}, state, action.payload);\n\n    default:\n      return state;\n  }\n});"
+          "source": "function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport { GET_ALBUMS, GET_ALBUM, CREATE_ALBUM_NAME, CREATE_ALBUM } from \"../actions/albums\";\nconst initialState = {\n  albumsArray: [],\n  imagePreview: \"\"\n};\nexport default ((state = initialState, action) => {\n  console.log(\"action\", action);\n\n  switch (action.type) {\n    case GET_ALBUMS:\n      return _objectSpread({}, state, action.payload);\n\n    case GET_ALBUM:\n      return _objectSpread({}, state, action.payload);\n\n    case CREATE_ALBUM_NAME:\n      return _objectSpread({}, state, action.payload);\n\n    case CREATE_ALBUM:\n      return _objectSpread({}, state, action.payload);\n\n    default:\n      return state;\n  }\n});"
         },
         {
           "id": "./src/root.js",
@@ -4391,7 +4540,7 @@
           "name": "./src/root.js",
           "index": 16,
           "index2": 20,
-          "size": 653,
+          "size": 661,
           "cacheable": true,
           "built": false,
           "optional": false,
@@ -4448,7 +4597,7 @@
           ],
           "optimizationBailout": [],
           "depth": 3,
-          "source": "import React from \"react\";\nimport { Route, Switch } from \"fusion-plugin-react-router\";\nimport Home from \"./pages/home.js\";\nimport Album from \"./pages/album.js\";\nimport CreateAlbum from \"./pages/create-album.js\";\nimport PageNotFound from \"./pages/pageNotFound.js\";\nconst root = React.createElement(Switch, null, React.createElement(Route, {\n  exact: true,\n  path: \"/\",\n  component: Home\n}), React.createElement(Route, {\n  exact: true,\n  path: \"/album\",\n  component: Album\n}), React.createElement(Route, {\n  exact: true,\n  path: \"/create-album\",\n  component: CreateAlbum\n}), React.createElement(Route, {\n  component: PageNotFound\n}));\nexport default root;"
+          "source": "import React from \"react\";\nimport { Route, Switch } from \"fusion-plugin-react-router\";\nimport Home from \"./pages/home.js\";\nimport Album from \"./pages/album.js\";\nimport CreateAlbum from \"./pages/create-album.js\";\nimport PageNotFound from \"./pages/pageNotFound.js\";\nconst root = React.createElement(Switch, null, React.createElement(Route, {\n  exact: true,\n  path: \"/\",\n  component: Home\n}), React.createElement(Route, {\n  exact: true,\n  path: \"/findAlbum/:id\",\n  component: Album\n}), React.createElement(Route, {\n  exact: true,\n  path: \"/create-album\",\n  component: CreateAlbum\n}), React.createElement(Route, {\n  component: PageNotFound\n}));\nexport default root;"
         },
         {
           "id": "./src/server/AlbumModel.js",
@@ -4515,7 +4664,7 @@
           "name": "./src/server/routes.js",
           "index": 25,
           "index2": 25,
-          "size": 1283,
+          "size": 1444,
           "cacheable": true,
           "built": false,
           "optional": false,
@@ -4572,7 +4721,7 @@
           ],
           "optimizationBailout": [],
           "depth": 3,
-          "source": "const AlbumModel = require(\"./AlbumModel\");\n\nimport { createPlugin } from \"fusion-core\";\nimport bodyParser from \"koa-bodyparser\";\nexport default true &&\n/*#__PURE__*/\ncreatePlugin({\n  middleware() {\n    const parseBody = bodyParser();\n    return async (ctx, next) => {\n      // get all albums\n      if (ctx.method === \"GET\" && ctx.path === \"/api/albums\") {\n        const albums = await AlbumModel.find({});\n        ctx.body = albums; // get album by id\n      } else if (ctx.method === \"GET\" && ctx.path === \"/api/album/:id\") {\n        let {\n          id\n        } = ctx.request.body;\n        const albums = await AlbumModel.find({\n          id\n        }).exec();\n        return next(); // create album\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/create-album\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          name,\n          images\n        } = ctx.request.body; // console.log(\"name\", name);\n        // console.log(\"images\", images);\n\n        const newAlbum = new AlbumModel({\n          name,\n          images\n        });\n        const result = await newAlbum.save();\n        console.log(\"result\", result);\n        ctx.body = {\n          message: \"status ok\",\n          result\n        };\n      }\n\n      return next();\n    };\n  }\n\n});"
+          "source": "const AlbumModel = require(\"./AlbumModel\");\n\nimport { createPlugin } from \"fusion-core\";\nimport bodyParser from \"koa-bodyparser\";\nexport default true &&\n/*#__PURE__*/\ncreatePlugin({\n  middleware() {\n    const parseBody = bodyParser();\n    return async (ctx, next) => {\n      // get all albums\n      if (ctx.method === \"GET\" && ctx.path === \"/api/getAlbums\") {\n        const albums = await AlbumModel.find({});\n        ctx.body = {\n          message: \"status ok\",\n          albums\n        }; // find album by id\n      } else if (ctx.method === \"GET\" && ctx.path.startsWith(\"/api/findAlbum/\")) {\n        const id = ctx.path.match(/findAlbum\\/(.*)/)[1];\n        const album = await AlbumModel.findOne({\n          _id: id\n        });\n        console.log(\"album\", album);\n        ctx.body = {\n          message: \"status ok\",\n          album\n        }; // create album\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/create-album\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          name,\n          images\n        } = ctx.request.body; // console.log(\"name\", name);\n        // console.log(\"images\", images);\n\n        const newAlbum = new AlbumModel({\n          name,\n          images\n        });\n        const result = await newAlbum.save();\n        console.log(\"result\", result);\n        ctx.body = {\n          message: \"status ok\",\n          result\n        };\n      }\n\n      return next();\n    };\n  }\n\n});"
         },
         {
           "id": "axios",
@@ -4638,7 +4787,7 @@
               "moduleName": "./src/actions/albums.js",
               "type": "harmony import specifier",
               "userRequest": "axios",
-              "loc": "9:4-9"
+              "loc": "10:4-9"
             },
             {
               "moduleId": "./src/actions/albums.js",
@@ -4647,7 +4796,16 @@
               "moduleName": "./src/actions/albums.js",
               "type": "harmony import specifier",
               "userRequest": "axios",
-              "loc": "36:4-9"
+              "loc": "24:4-9"
+            },
+            {
+              "moduleId": "./src/actions/albums.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/actions/albums.js",
+              "module": "./src/actions/albums.js",
+              "moduleName": "./src/actions/albums.js",
+              "type": "harmony import specifier",
+              "userRequest": "axios",
+              "loc": "52:4-9"
             }
           ],
           "providedExports": null,
@@ -4942,7 +5100,7 @@
               "moduleName": "./src/pages/home.js",
               "type": "harmony import specifier",
               "userRequest": "fusion-plugin-react-router",
-              "loc": "48:41-45"
+              "loc": "50:58-62"
             },
             {
               "moduleId": "./src/pages/pageNotFound.js",
@@ -5093,7 +5251,7 @@
               "moduleName": "./src/pages/home.js",
               "type": "harmony import specifier",
               "userRequest": "fusion-plugin-styletron-react",
-              "loc": "57:22-28"
+              "loc": "60:22-28"
             },
             {
               "moduleId": "./src/pages/home.js",
@@ -5102,7 +5260,7 @@
               "moduleName": "./src/pages/home.js",
               "type": "harmony import specifier",
               "userRequest": "fusion-plugin-styletron-react",
-              "loc": "62:24-30"
+              "loc": "65:24-30"
             },
             {
               "moduleId": "./src/pages/home.js",
@@ -5111,7 +5269,7 @@
               "moduleName": "./src/pages/home.js",
               "type": "harmony import specifier",
               "userRequest": "fusion-plugin-styletron-react",
-              "loc": "66:23-29"
+              "loc": "69:23-29"
             }
           ],
           "providedExports": null,
@@ -5582,7 +5740,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "7:20-29"
+              "loc": "9:20-29"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -5591,7 +5749,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "18:11-16"
+              "loc": "26:11-16"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -5600,7 +5758,16 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "20:47-52"
+              "loc": "28:49-54"
+            },
+            {
+              "moduleId": "./src/pages/album.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+              "module": "./src/pages/album.js",
+              "moduleName": "./src/pages/album.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "34:7-12"
             },
             {
               "moduleId": "./src/pages/create-album.js",
@@ -5780,7 +5947,7 @@
               "moduleName": "./src/pages/home.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "50:32-37"
+              "loc": "48:79-84"
             },
             {
               "moduleId": "./src/pages/home.js",
@@ -5789,7 +5956,25 @@
               "moduleName": "./src/pages/home.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "50:116-121"
+              "loc": "48:163-168"
+            },
+            {
+              "moduleId": "./src/pages/home.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
+              "module": "./src/pages/home.js",
+              "moduleName": "./src/pages/home.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "50:38-43"
+            },
+            {
+              "moduleId": "./src/pages/home.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
+              "module": "./src/pages/home.js",
+              "moduleName": "./src/pages/home.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "53:7-12"
             },
             {
               "moduleId": "./src/pages/pageNotFound.js",
@@ -5926,6 +6111,24 @@
           "assets": [],
           "reasons": [
             {
+              "moduleId": "./src/pages/album.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+              "module": "./src/pages/album.js",
+              "moduleName": "./src/pages/album.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "react-redux",
+              "loc": "7:0-38"
+            },
+            {
+              "moduleId": "./src/pages/album.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+              "module": "./src/pages/album.js",
+              "moduleName": "./src/pages/album.js",
+              "type": "harmony import specifier",
+              "userRequest": "react-redux",
+              "loc": "60:15-22"
+            },
+            {
               "moduleId": "./src/pages/create-album.js",
               "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/create-album.js",
               "module": "./src/pages/create-album.js",
@@ -5959,7 +6162,7 @@
               "moduleName": "./src/pages/home.js",
               "type": "harmony import specifier",
               "userRequest": "react-redux",
-              "loc": "78:15-22"
+              "loc": "82:15-22"
             }
           ],
           "providedExports": null,

@@ -11,7 +11,7 @@ import PageNotFound from "./pages/pageNotFound.js";
 const root = (
   <Switch>
     <Route exact path="/" component={Home} />
-    <Route exact path="/album" component={Album} />
+    <Route exact path="/findAlbum/:id" component={Album} />
     <Route exact path="/create-album" component={CreateAlbum} />
     <Route component={PageNotFound} />
   </Switch>

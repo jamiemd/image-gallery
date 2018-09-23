@@ -8,14 +8,18 @@ export default __NODE__ &&
       const parseBody = bodyParser();
       return async (ctx, next) => {
         // get all albums
-        if (ctx.method === "GET" && ctx.path === "/api/albums") {
+        if (ctx.method === "GET" && ctx.path === "/api/getAlbums") {
           const albums = await AlbumModel.find({});
-          ctx.body = albums;
-          // get album by id
-        } else if (ctx.method === "GET" && ctx.path === "/api/album/:id") {
-          let { id } = ctx.request.body;
-          const albums = await AlbumModel.find({ id }).exec();
-          return next();
+          ctx.body = { message: "status ok", albums };
+          // find album by id
+        } else if (
+          ctx.method === "GET" &&
+          ctx.path.startsWith("/api/findAlbum/")
+        ) {
+          const id = ctx.path.match(/findAlbum\/(.*)/)[1];
+          const album = await AlbumModel.findOne({ _id: id });
+          console.log("album", album);
+          ctx.body = { message: "status ok", album };
           // create album
         } else if (ctx.method === "POST" && ctx.path === "/api/create-album") {
           await parseBody(ctx, () => Promise.resolve());
