@@ -42,13 +42,14 @@ class Home extends Component {
           {this.props.albumsArray ? (
             <AlbumsContainer>
               {this.props.albumsArray.map((album, i) => (
-                <div key={i}>
+                <AlbumContainer key={i}>
+                  <h4>{album.name}</h4>
                   {album.images.map((image, i) => (
                     <Link key={i} to={`/findAlbum/${album._id}`}>
-                      <img src={image.imagePreviewUrl} />
+                      <img style={imageContainer} src={image.imagePreviewUrl} />
                     </Link>
                   ))}
-                </div>
+                </AlbumContainer>
               ))}
             </AlbumsContainer>
           ) : null}
@@ -71,10 +72,13 @@ const AlbumsContainer = styled("div", {
 
 const AlbumContainer = styled("div", {
   margin: "20px",
-  width: "300px",
-  height: "300px",
-  backgroundColor: "gray"
+  backgroundColor: "white"
 });
+
+const imageContainer = {
+  maxWidth: "300px",
+  maxHeight: "300px"
+};
 
 const mapStateToProps = state => {
   return {

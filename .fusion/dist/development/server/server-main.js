@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "c4e1fb6b7c57d6b6ddda";
+/******/ 	var hotCurrentHash = "7513e434c4ec407373e9";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1486,8 +1486,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_albums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/albums */ "./src/actions/albums.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
@@ -1513,13 +1511,11 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     console.log("this.props.album.images", this.props.album.images);
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: albumContainer
-    }, this.props.album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.album.name), this.props.album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: i,
-      style: _objectSpread({
-        height: image.height,
-        width: image.width
-      }, bg)
+      style: bg
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      style: imageContainer,
       src: image.imagePreviewUrl
     }))));
   }
@@ -1534,6 +1530,10 @@ const albumContainer = {
 const bg = {
   backgroundColor: "gray",
   margin: "20px"
+};
+const imageContainer = {
+  maxWidth: "300px",
+  maxHeight: "300px"
 };
 
 const mapStateToProps = state => {
@@ -1699,12 +1699,13 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onChange: this.handleChange
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       type: "submit"
-    }, "Continue")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.albumsArray ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AlbumsContainer, null, this.props.albumsArray.map((album, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, "Continue")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.albumsArray ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AlbumsContainer, null, this.props.albumsArray.map((album, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AlbumContainer, {
       key: i
-    }, album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, album.name), album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       key: i,
       to: `/findAlbum/${album._id}`
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      style: imageContainer,
       src: image.imagePreviewUrl
     })))))) : null));
   }
@@ -1722,10 +1723,12 @@ const AlbumsContainer = Object(fusion_plugin_styletron_react__WEBPACK_IMPORTED_M
 });
 const AlbumContainer = Object(fusion_plugin_styletron_react__WEBPACK_IMPORTED_MODULE_1__["styled"])("div", {
   margin: "20px",
-  width: "300px",
-  height: "300px",
-  backgroundColor: "gray"
+  backgroundColor: "white"
 });
+const imageContainer = {
+  maxWidth: "300px",
+  maxHeight: "300px"
+};
 
 const mapStateToProps = state => {
   return {

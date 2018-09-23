@@ -19,16 +19,10 @@ class Album extends Component {
     console.log("this.props.album.images", this.props.album.images);
     return (
       <div style={albumContainer}>
+        <div>{this.props.album.name}</div>
         {this.props.album.images.map((image, i) => (
-          <div
-            key={i}
-            style={{
-              height: image.height,
-              width: image.width,
-              ...bg
-            }}
-          >
-            <img src={image.imagePreviewUrl} />
+          <div key={i} style={bg}>
+            <img style={imageContainer} src={image.imagePreviewUrl} />
           </div>
         ))}
       </div>
@@ -45,6 +39,11 @@ const albumContainer = {
 const bg = {
   backgroundColor: "gray",
   margin: "20px"
+};
+
+const imageContainer = {
+  maxWidth: "300px",
+  maxHeight: "300px"
 };
 
 const mapStateToProps = state => {
