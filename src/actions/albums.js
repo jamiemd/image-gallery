@@ -3,7 +3,7 @@ import axios from "axios";
 export const GET_ALBUMS = "GET_ALBUMS";
 export const GET_ALBUM = "GET_ALBUM";
 export const CREATE_ALBUM = "CREATE_ALBUM";
-export const ADD_IMAGES = "ADD_IMAGES";
+export const ADD_IMAGE = "ADD_IMAGE";
 
 const ROOT_URL = "http://localhost:3000/api";
 
@@ -61,18 +61,15 @@ export const createAlbum = (albumName, history) => {
 };
 
 // add images
-export const addImages = image => {
-  const images = [];
-  images.push({
-    file: image.file.name,
-    imagePreviewUrl: image.imagePreviewUrl
-  });
+export const addImage = (image, albumId) => {
+  console.log("image", image);
   return dispatch => {
     axios
-      .post(`${ROOT_URL}/add-images`, { images })
+      .put(`${ROOT_URL}/add-image/${albumId}`, { image })
       .then(res => {
+        console.log("res.data in add image", res.data);
         dispatch({
-          type: ADD_IMAGES,
+          type: ADD_IMAGE,
           payload: res.data
         });
       })

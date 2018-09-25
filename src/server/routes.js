@@ -16,8 +16,8 @@ export default __NODE__ &&
           ctx.method === "GET" &&
           ctx.path.startsWith("/api/findAlbum/")
         ) {
-          const id = ctx.path.match(/findAlbum\/(.*)/)[1];
-          const album = await AlbumModel.findOne({ _id: id });
+          const albumId = ctx.path.match(/findAlbum\/(.*)/)[1];
+          const album = await AlbumModel.findOne({ _id: albumId });
           ctx.body = { message: "status ok", album };
           // create album
         } else if (ctx.method === "POST" && ctx.path === "/api/create-album") {
@@ -27,11 +27,27 @@ export default __NODE__ &&
           const result = await newAlbum.save();
           ctx.body = { message: "status ok", albumId: result._id };
           // add images
-        } else if (ctx.method === "POST" && ctx.path === "/api/add-images") {
+        } else if (
+          ctx.method === "PUT" &&
+          ctx.path.startsWith("/api/add-image")
+        ) {
+          const albumId = ctx.path.match(/add-image\/(.*)/)[1];
           await parseBody(ctx, () => Promise.resolve());
-          let { images } = ctx.request.body;
-          const newAlbum = new AlbumModel({ images });
-          const result = await newAlbum.save();
+          let { image } = ctx.request.body;
+
+          const album = await AlbumModel.findOne({ _id: albumId });
+          let currentAlbum = album.images;
+
+          currentAlbum.push(image);
+
+          const result = await AlbumModel.findOneAndUpdate(
+            { _id: albumId },
+            {
+              $set: { images: currentAlbum }
+            },
+            { new: true }
+          );
+          console.log("result", result);
           ctx.body = { message: "status ok", result };
         }
         return next();

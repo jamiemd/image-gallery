@@ -17,26 +17,10 @@ class Home extends Component {
   }
 
   render() {
-    console.log("this.props.columns", this.props.columns);
     return (
       <div style={homeContainer}>
         <h1>Image Gallery</h1>
         <CreateAlbum history={this.props.history} />
-        {/* <div style={albumsContainer}>
-          {this.props.columns.map((column, i) => (
-            <div
-              key={i}
-              style={{
-                backgroundColor: "gray",
-                height: "300px",
-                width: "300px",
-                margin: "20px"
-              }}
-            >
-              {column}
-            </div>
-          ))}
-        </div> */}
         <div style={albumsContainer}>
           {this.props.albumsArray.map((album, i) => (
             <Link style={albumContainer} key={i} to={`/findAlbum/${album._id}`}>
@@ -80,7 +64,6 @@ const imageContainer = {
 };
 
 const mapStateToProps = state => {
-  console.log("state", state);
   return {
     albumsArray: state.albums || [],
     columns: state.columns || []

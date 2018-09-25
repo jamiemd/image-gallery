@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "e0c9da1aa5143f6e8e57";
+/******/ 	var hotCurrentHash = "b6cff6d76f904673a3a5";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1334,6 +1334,86 @@ if (true) {
 
 /***/ }),
 
+/***/ "./src/Components/add-image.js":
+/*!*************************************!*\
+  !*** ./src/Components/add-image.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _actions_albums__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/albums */ "./src/actions/albums.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+class AddImage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+
+    _defineProperty(this, "handleUpload", event => {
+      console.log("event.target.files", event.target.files);
+      let reader = new FileReader();
+      let file = event.target.files[0];
+
+      reader.onloadend = () => {
+        this.setState({
+          file: file.name,
+          imagePreviewUrl: reader.result
+        });
+      };
+
+      reader.readAsDataURL(file);
+    });
+
+    _defineProperty(this, "handleSubmit", event => {
+      event.preventDefault();
+      const image = {
+        file: this.state.file,
+        imagePreviewUrl: this.state.imagePreviewUrl
+      };
+      this.props.addImage(image, this.props.albumId);
+    });
+
+    this.state = {
+      file: "",
+      imagePreviewUrl: ""
+    };
+  }
+
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      onSubmit: this.handleSubmit
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      type: "file",
+      accept: ".jpg, .jpeg, .png",
+      onChange: e => this.handleUpload(e)
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Save")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "example__images-container"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "example__images"
+    })));
+  }
+
+}
+
+const mapStateToProps = state => {
+  return {};
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, {
+  addImage: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["addImage"]
+})(AddImage));
+
+/***/ }),
+
 /***/ "./src/Components/create-album.js":
 /*!****************************************!*\
   !*** ./src/Components/create-album.js ***!
@@ -1404,7 +1484,7 @@ const mapStateToProps = state => {
 /*!*******************************!*\
   !*** ./src/actions/albums.js ***!
   \*******************************/
-/*! exports provided: GET_ALBUMS, GET_ALBUM, CREATE_ALBUM, ADD_IMAGES, getAlbums, findAlbum, createAlbum, addImages */
+/*! exports provided: GET_ALBUMS, GET_ALBUM, CREATE_ALBUM, ADD_IMAGE, getAlbums, findAlbum, createAlbum, addImage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1412,18 +1492,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_ALBUMS", function() { return GET_ALBUMS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_ALBUM", function() { return GET_ALBUM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_ALBUM", function() { return CREATE_ALBUM; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_IMAGES", function() { return ADD_IMAGES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_IMAGE", function() { return ADD_IMAGE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAlbums", function() { return getAlbums; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findAlbum", function() { return findAlbum; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createAlbum", function() { return createAlbum; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addImages", function() { return addImages; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addImage", function() { return addImage; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 const GET_ALBUMS = "GET_ALBUMS";
 const GET_ALBUM = "GET_ALBUM";
 const CREATE_ALBUM = "CREATE_ALBUM";
-const ADD_IMAGES = "ADD_IMAGES";
+const ADD_IMAGE = "ADD_IMAGE";
 const ROOT_URL = "http://localhost:3000/api"; // get all albums
 
 const getAlbums = () => {
@@ -1469,18 +1549,15 @@ const createAlbum = (albumName, history) => {
   };
 }; // add images
 
-const addImages = image => {
-  const images = [];
-  images.push({
-    file: image.file.name,
-    imagePreviewUrl: image.imagePreviewUrl
-  });
+const addImage = (image, albumId) => {
+  console.log("image", image);
   return dispatch => {
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(`${ROOT_URL}/add-images`, {
-      images
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.put(`${ROOT_URL}/add-image/${albumId}`, {
+      image
     }).then(res => {
+      console.log("res.data in add image", res.data);
       dispatch({
-        type: ADD_IMAGES,
+        type: ADD_IMAGE,
         payload: res.data
       });
     }).catch(error => {
@@ -1537,9 +1614,7 @@ function start() {
   app.register(fusion_plugin_react_redux__WEBPACK_IMPORTED_MODULE_4__["EnhancerToken"], Object(redux__WEBPACK_IMPORTED_MODULE_6__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_5___default.a));
   true && app.register(_server_routes__WEBPACK_IMPORTED_MODULE_9__["default"]);
   true && app.register(fusion_plugin_react_redux__WEBPACK_IMPORTED_MODULE_4__["GetInitialStateToken"], async ctx => ({
-    columns: [[], [], [], [], []],
-    albumsArray: [],
-    imagePreview: ""
+    albumsArray: []
   }));
   return app;
 }
@@ -1562,7 +1637,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! fusion-plugin-react-router */ "fusion-plugin-react-router");
 /* harmony import */ var fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__);
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+/* harmony import */ var _Components_add_image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/add-image */ "./src/Components/add-image.js");
 
 
 
@@ -1570,27 +1645,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  constructor(...args) {
-    super(...args);
-
-    _defineProperty(this, "handleSave", () => {
-      console.log("save button clicked");
-    });
-  }
-
   componentDidMount() {
     const albumId = this.props.match.params.id;
-    console.log("albumId", albumId);
     this.props.findAlbum(albumId);
   }
 
   render() {
-    console.log("this.props.album.images", this.props.album.images);
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: albumContainer
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
       to: "/"
-    }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.album.name), this.props.album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.album.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_add_image__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      albumId: this.props.match.params.id
+    }), this.props.album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: i,
       style: bg
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1616,7 +1683,6 @@ const imageContainer = {
 };
 
 const mapStateToProps = state => {
-  console.log("state", state);
   return {
     album: state.album || {
       images: []
@@ -1663,7 +1729,6 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    console.log("this.props.columns", this.props.columns);
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: homeContainer
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Image Gallery"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_create_album_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1707,7 +1772,6 @@ const imageContainer = {
 };
 
 const mapStateToProps = state => {
-  console.log("state", state);
   return {
     albumsArray: state.albums || [],
     columns: state.columns || []
@@ -1765,12 +1829,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return _objectSpread({}, state, action.payload);
 
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["GET_ALBUM"]:
-      return _objectSpread({}, state, action.payload);
+      return _objectSpread({}, action.payload);
 
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["CREATE_ALBUM"]:
       return _objectSpread({}, action.payload);
 
-    case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["ADD_IMAGES"]:
+    case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["ADD_IMAGE"]:
       return _objectSpread({}, state, action.payload);
 
     default:
@@ -1879,9 +1943,9 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
           albums
         }; // find album by id
       } else if (ctx.method === "GET" && ctx.path.startsWith("/api/findAlbum/")) {
-        const id = ctx.path.match(/findAlbum\/(.*)/)[1];
+        const albumId = ctx.path.match(/findAlbum\/(.*)/)[1];
         const album = await AlbumModel.findOne({
-          _id: id
+          _id: albumId
         });
         ctx.body = {
           message: "status ok",
@@ -1900,15 +1964,27 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
           message: "status ok",
           albumId: result._id
         }; // add images
-      } else if (ctx.method === "POST" && ctx.path === "/api/add-images") {
+      } else if (ctx.method === "PUT" && ctx.path.startsWith("/api/add-image")) {
+        const albumId = ctx.path.match(/add-image\/(.*)/)[1];
         await parseBody(ctx, () => Promise.resolve());
         let {
-          images
+          image
         } = ctx.request.body;
-        const newAlbum = new AlbumModel({
-          images
+        const album = await AlbumModel.findOne({
+          _id: albumId
         });
-        const result = await newAlbum.save();
+        let currentAlbum = album.images;
+        currentAlbum.push(image);
+        const result = await AlbumModel.findOneAndUpdate({
+          _id: albumId
+        }, {
+          $set: {
+            images: currentAlbum
+          }
+        }, {
+          new: true
+        });
+        console.log("result", result);
         ctx.body = {
           message: "status ok",
           result

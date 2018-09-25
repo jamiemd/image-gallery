@@ -1,7 +1,7 @@
 import {
   GET_ALBUMS,
   GET_ALBUM,
-  ADD_IMAGES,
+  ADD_IMAGE,
   CREATE_ALBUM
 } from "../actions/albums";
 
@@ -15,14 +15,13 @@ export default (state, action) => {
       };
     case GET_ALBUM:
       return {
-        ...state,
         ...action.payload
       };
     case CREATE_ALBUM:
       return {
         ...action.payload
       };
-    case ADD_IMAGES:
+    case ADD_IMAGE:
       return {
         ...state,
         ...action.payload
