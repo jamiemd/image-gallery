@@ -18,17 +18,20 @@ export default __NODE__ &&
         ) {
           const id = ctx.path.match(/findAlbum\/(.*)/)[1];
           const album = await AlbumModel.findOne({ _id: id });
-          console.log("album", album);
           ctx.body = { message: "status ok", album };
           // create album
         } else if (ctx.method === "POST" && ctx.path === "/api/create-album") {
           await parseBody(ctx, () => Promise.resolve());
-          let { name, images } = ctx.request.body;
-          // console.log("name", name);
-          // console.log("images", images);
-          const newAlbum = new AlbumModel({ name, images });
+          let { albumName } = ctx.request.body;
+          const newAlbum = new AlbumModel({ name: albumName });
           const result = await newAlbum.save();
-          console.log("result", result);
+          ctx.body = { message: "status ok", albumId: result._id };
+          // add images
+        } else if (ctx.method === "POST" && ctx.path === "/api/add-images") {
+          await parseBody(ctx, () => Promise.resolve());
+          let { images } = ctx.request.body;
+          const newAlbum = new AlbumModel({ images });
+          const result = await newAlbum.save();
           ctx.body = { message: "status ok", result };
         }
         return next();

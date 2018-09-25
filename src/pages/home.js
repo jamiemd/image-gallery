@@ -3,77 +3,76 @@ import React, { Component } from "react";
 import { styled } from "fusion-plugin-styletron-react";
 import { Router, Route, Link } from "fusion-plugin-react-router";
 import { connect } from "react-redux";
-
 import Album from "./album.js";
-import { getAlbums, createAlbumName } from "../actions/albums";
+import CreateAlbum from "../Components/create-album.js";
+import { getAlbums, createAlbum } from "../actions/albums";
 
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
   }
 
   componentDidMount() {
     this.props.getAlbums();
   }
 
-  handleChange = event => {
-    this.setState({ value: event.target.value });
-  };
-
-  handleSubmit = event => {
-    const albumName = this.state.value;
-    this.props.createAlbumName({ albumName });
-    const { history } = this.props;
-    history.push("/create-album");
-    event.preventDefault();
-  };
-
   render() {
+    console.log("this.props.columns", this.props.columns);
     return (
-      <HomeContainer>
+      <div style={homeContainer}>
         <h1>Image Gallery</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label>Create New Album</label>
-          <input type="text" onChange={this.handleChange} />
-          <button type="submit">Continue</button>
-        </form>
-        <div>
-          {this.props.albumsArray ? (
-            <AlbumsContainer>
-              {this.props.albumsArray.map((album, i) => (
-                <AlbumContainer key={i}>
-                  <h4>{album.name}</h4>
-                  {album.images.map((image, i) => (
-                    <Link key={i} to={`/findAlbum/${album._id}`}>
-                      <img style={imageContainer} src={image.imagePreviewUrl} />
-                    </Link>
-                  ))}
-                </AlbumContainer>
+        <CreateAlbum history={this.props.history} />
+        {/* <div style={albumsContainer}>
+          {this.props.columns.map((column, i) => (
+            <div
+              key={i}
+              style={{
+                backgroundColor: "gray",
+                height: "300px",
+                width: "300px",
+                margin: "20px"
+              }}
+            >
+              {column}
+            </div>
+          ))}
+        </div> */}
+        <div style={albumsContainer}>
+          {this.props.albumsArray.map((album, i) => (
+            <Link style={albumContainer} key={i} to={`/findAlbum/${album._id}`}>
+              <h4>{album.name}</h4>
+              {album.images.map((image, i) => (
+                <div key={i}>
+                  <img style={imageContainer} src={image.imagePreviewUrl} />
+                </div>
               ))}
-            </AlbumsContainer>
-          ) : null}
+            </Link>
+          ))}
         </div>
-      </HomeContainer>
+      </div>
     );
   }
 }
 
-const HomeContainer = styled("div", {
+const homeContainer = {
   fontFamily: "HelveticaNeue-Light, Arial",
   margin: "auto",
-  width: "80%"
-});
+  width: "95%"
+};
 
-const AlbumsContainer = styled("div", {
+const albumsContainer = {
   margin: "30px",
-  display: "flex"
-});
+  display: "grid",
+  gridTemplateColumns: "repeat(4, 350px)",
+  gridGap: "5px"
+};
 
-const AlbumContainer = styled("div", {
+const albumContainer = {
+  backgroundColor: "gray",
   margin: "20px",
-  backgroundColor: "white"
-});
+  width: "300px",
+  height: "300px"
+};
 
 const imageContainer = {
   maxWidth: "300px",
@@ -81,12 +80,14 @@ const imageContainer = {
 };
 
 const mapStateToProps = state => {
+  console.log("state", state);
   return {
-    albumsArray: state.albums
+    albumsArray: state.albums || [],
+    columns: state.columns || []
   };
 };
 
 export default connect(
   mapStateToProps,
-  { getAlbums, createAlbumName }
+  { getAlbums, createAlbum }
 )(Home);

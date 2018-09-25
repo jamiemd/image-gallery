@@ -2,8 +2,8 @@ import axios from "axios";
 
 export const GET_ALBUMS = "GET_ALBUMS";
 export const GET_ALBUM = "GET_ALBUM";
-export const CREATE_ALBUM_NAME = "CREATE_ALBUM_NAME";
 export const CREATE_ALBUM = "CREATE_ALBUM";
+export const ADD_IMAGES = "ADD_IMAGES";
 
 const ROOT_URL = "http://localhost:3000/api";
 
@@ -13,7 +13,6 @@ export const getAlbums = () => {
     axios
       .get(`${ROOT_URL}/getAlbums`)
       .then(res => {
-        console.log("res", res);
         dispatch({
           type: GET_ALBUMS,
           payload: res.data
@@ -31,7 +30,6 @@ export const findAlbum = albumId => {
     axios
       .get(`${ROOT_URL}/findAlbum/${albumId}`)
       .then(res => {
-        console.log("res", res);
         dispatch({
           type: GET_ALBUM,
           payload: res.data
@@ -43,30 +41,38 @@ export const findAlbum = albumId => {
   };
 };
 
-// add album name to pass into create-album page
-export const createAlbumName = albumName => {
-  return {
-    type: CREATE_ALBUM_NAME,
-    payload: albumName
+// create album
+export const createAlbum = (albumName, history) => {
+  return dispatch => {
+    axios
+      .post(`${ROOT_URL}/create-album`, { albumName })
+      .then(res => {
+        console.log("res in create album", res);
+        dispatch({
+          type: CREATE_ALBUM,
+          payload: res.data
+        });
+        history.push("/findAlbum/" + res.data.albumId);
+      })
+      .catch(error => {
+        console.log("error.response in create album", error.response);
+      });
   };
 };
 
-// create album
-export const createAlbum = (name, image) => {
-  console.log("name", name);
+// add images
+export const addImages = image => {
   const images = [];
   images.push({
     file: image.file.name,
     imagePreviewUrl: image.imagePreviewUrl
   });
-  console.log("imagesArray", images);
   return dispatch => {
     axios
-      .post(`${ROOT_URL}/create-album`, { name, images })
+      .post(`${ROOT_URL}/add-images`, { images })
       .then(res => {
-        console.log("res", res);
         dispatch({
-          type: CREATE_ALBUM,
+          type: ADD_IMAGES,
           payload: res.data
         });
       })

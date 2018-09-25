@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { styled } from "fusion-plugin-styletron-react";
 import { findAlbum } from "../actions/albums";
 import { connect } from "react-redux";
+import { Router, Route, Link } from "fusion-plugin-react-router";
 
 class Album extends Component {
   componentDidMount() {
@@ -19,6 +20,7 @@ class Album extends Component {
     console.log("this.props.album.images", this.props.album.images);
     return (
       <div style={albumContainer}>
+        <Link to="/">Home</Link>
         <div>{this.props.album.name}</div>
         {this.props.album.images.map((image, i) => (
           <div key={i} style={bg}>
@@ -37,7 +39,7 @@ const albumContainer = {
 };
 
 const bg = {
-  backgroundColor: "gray",
+  backgroundColor: "white",
   margin: "20px"
 };
 

@@ -1,17 +1,12 @@
 import {
   GET_ALBUMS,
   GET_ALBUM,
-  CREATE_ALBUM_NAME,
+  ADD_IMAGES,
   CREATE_ALBUM
 } from "../actions/albums";
 
-const initialState = {
-  albumsArray: [],
-  imagePreview: ""
-};
-
-export default (state = initialState, action) => {
-  console.log("action", action);
+export default (state, action) => {
+  // console.log("action", action);
   switch (action.type) {
     case GET_ALBUMS:
       return {
@@ -23,12 +18,11 @@ export default (state = initialState, action) => {
         ...state,
         ...action.payload
       };
-    case CREATE_ALBUM_NAME:
+    case CREATE_ALBUM:
       return {
-        ...state,
         ...action.payload
       };
-    case CREATE_ALBUM:
+    case ADD_IMAGES:
       return {
         ...state,
         ...action.payload

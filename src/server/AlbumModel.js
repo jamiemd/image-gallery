@@ -9,17 +9,16 @@ mongoose.Promise = global.Promise;
 const AlbumSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   images: [
     {
       file: {
-        type: String,
-        required: true
+        type: String
       },
       imagePreviewUrl: {
-        type: String,
-        required: true
+        type: String
       }
     }
   ]

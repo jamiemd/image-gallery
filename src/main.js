@@ -22,7 +22,12 @@ export default function start() {
   app.register(Router);
   app.register(EnhancerToken, applyMiddleware(ReduxThunk));
   __NODE__ && app.register(routes);
-  __NODE__ && app.register(GetInitialStateToken, async ctx => ({}));
+  __NODE__ &&
+    app.register(GetInitialStateToken, async ctx => ({
+      columns: [[], [], [], [], []],
+      albumsArray: [],
+      imagePreview: ""
+    }));
 
   return app;
 }
