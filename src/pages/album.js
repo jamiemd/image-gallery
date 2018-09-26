@@ -15,33 +15,58 @@ class Album extends Component {
   render() {
     return (
       <div style={albumContainer}>
-        <Link to="/">Home</Link>
-        <div>{this.props.album.name}</div>
+        <Link style={homeLink} to="/">
+          Home
+        </Link>
+        <div style={albumName}>{this.props.album.name}</div>
         <AddImage albumId={this.props.match.params.id} />
-        {this.props.album.images.map((image, i) => (
-          <div key={i} style={bg}>
-            <img style={imageContainer} src={image.imagePreviewUrl} />
+        <div style={imagesBox}>
+          <div style={imagesContainer}>
+            {this.props.album.images.map((image, i) => (
+              <img style={imageContainer} src={image.imagePreviewUrl} />
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     );
   }
 }
 
 const albumContainer = {
+  fontFamily: "HelveticaNeue-Light, Arial",
   width: "80%",
-  display: "flex",
-  justifyContent: "center"
+  margin: "auto",
+  paddingTop: "20px"
 };
 
-const bg = {
-  backgroundColor: "white",
-  margin: "20px"
+const imagesBox = {
+  justifyContent: "center",
+  margin: "40px"
+};
+
+const imagesContainer = {
+  margin: "5px",
+  display: "grid",
+  gridTemplateColumns: "repeat(4, 300px)",
+  justifyContent: "space-around"
 };
 
 const imageContainer = {
   maxWidth: "300px",
-  maxHeight: "300px"
+  maxHeight: "300px",
+  backgroundColor: "#F0F0F0"
+};
+
+const homeLink = {
+  textDecoration: "none",
+  fontSize: "20px",
+  fontWeight: "600"
+};
+
+const albumName = {
+  fontSize: "25px",
+  textAlign: "center",
+  fontWeight: "500"
 };
 
 const mapStateToProps = state => {

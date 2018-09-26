@@ -17,6 +17,7 @@ class Home extends Component {
   }
 
   render() {
+    console.log("this.props", this.props);
     return (
       <div style={homeContainer}>
         <h1>Image Gallery</h1>
@@ -24,12 +25,11 @@ class Home extends Component {
         <div style={albumsContainer}>
           {this.props.albumsArray.map((album, i) => (
             <Link style={albumContainer} key={i} to={`/findAlbum/${album._id}`}>
-              <h4>{album.name}</h4>
-              {album.images.map((image, i) => (
-                <div key={i}>
-                  <img style={imageContainer} src={image.imagePreviewUrl} />
-                </div>
-              ))}
+              <h4 style={h4Styles}>{album.name}</h4>
+              <img
+                style={imageContainer}
+                src={album.images[0].imagePreviewUrl}
+              />
             </Link>
           ))}
         </div>
@@ -45,22 +45,30 @@ const homeContainer = {
 };
 
 const albumsContainer = {
-  margin: "30px",
+  margin: "5px",
   display: "grid",
   gridTemplateColumns: "repeat(4, 350px)",
-  gridGap: "5px"
+  justifyContent: "center"
 };
 
 const albumContainer = {
-  backgroundColor: "gray",
+  backgroundColor: "#F0F0F0",
   margin: "20px",
   width: "300px",
-  height: "300px"
+  height: "300px",
+  borderRadius: "12px",
+  padding: "5px",
+  textDecoration: "none"
 };
 
 const imageContainer = {
   maxWidth: "300px",
   maxHeight: "300px"
+};
+
+const h4Styles = {
+  textAlign: "center",
+  color: "black"
 };
 
 const mapStateToProps = state => {

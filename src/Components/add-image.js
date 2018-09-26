@@ -39,6 +39,7 @@ class AddImage extends Component {
   render() {
     return (
       <div>
+        <label>Add Image</label>
         <form onSubmit={this.handleSubmit}>
           <input
             type="file"

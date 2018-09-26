@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "b6cff6d76f904673a3a5";
+/******/ 	var hotCurrentHash = "dd8ea0b5483b624c6b8f";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1389,7 +1389,7 @@ class AddImage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Add Image"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
       onSubmit: this.handleSubmit
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
       type: "file",
@@ -1654,32 +1654,54 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: albumContainer
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+      style: homeLink,
       to: "/"
-    }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.album.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_add_image__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: albumName
+    }, this.props.album.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_add_image__WEBPACK_IMPORTED_MODULE_4__["default"], {
       albumId: this.props.match.params.id
-    }), this.props.album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      key: i,
-      style: bg
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: imagesBox
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: imagesContainer
+    }, this.props.album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       style: imageContainer,
       src: image.imagePreviewUrl
-    }))));
+    })))));
   }
 
 }
 
 const albumContainer = {
+  fontFamily: "HelveticaNeue-Light, Arial",
   width: "80%",
-  display: "flex",
-  justifyContent: "center"
+  margin: "auto",
+  paddingTop: "20px"
 };
-const bg = {
-  backgroundColor: "white",
-  margin: "20px"
+const imagesBox = {
+  justifyContent: "center",
+  margin: "40px"
+};
+const imagesContainer = {
+  margin: "5px",
+  display: "grid",
+  gridTemplateColumns: "repeat(4, 300px)",
+  justifyContent: "space-around"
 };
 const imageContainer = {
   maxWidth: "300px",
-  maxHeight: "300px"
+  maxHeight: "300px",
+  backgroundColor: "#F0F0F0"
+};
+const homeLink = {
+  textDecoration: "none",
+  fontSize: "20px",
+  fontWeight: "600"
+};
+const albumName = {
+  fontSize: "25px",
+  textAlign: "center",
+  fontWeight: "500"
 };
 
 const mapStateToProps = state => {
@@ -1729,6 +1751,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
+    console.log("this.props", this.props);
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: homeContainer
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Image Gallery"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_create_album_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1739,12 +1762,12 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: albumContainer,
       key: i,
       to: `/findAlbum/${album._id}`
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, album.name), album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      key: i
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+      style: h4Styles
+    }, album.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       style: imageContainer,
-      src: image.imagePreviewUrl
-    })))))));
+      src: album.images[0].imagePreviewUrl
+    })))));
   }
 
 }
@@ -1755,20 +1778,27 @@ const homeContainer = {
   width: "95%"
 };
 const albumsContainer = {
-  margin: "30px",
+  margin: "5px",
   display: "grid",
   gridTemplateColumns: "repeat(4, 350px)",
-  gridGap: "5px"
+  justifyContent: "center"
 };
 const albumContainer = {
-  backgroundColor: "gray",
+  backgroundColor: "#F0F0F0",
   margin: "20px",
   width: "300px",
-  height: "300px"
+  height: "300px",
+  borderRadius: "12px",
+  padding: "5px",
+  textDecoration: "none"
 };
 const imageContainer = {
   maxWidth: "300px",
   maxHeight: "300px"
+};
+const h4Styles = {
+  textAlign: "center",
+  color: "black"
 };
 
 const mapStateToProps = state => {
