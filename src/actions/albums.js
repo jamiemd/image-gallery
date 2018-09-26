@@ -4,6 +4,7 @@ export const GET_ALBUMS = "GET_ALBUMS";
 export const GET_ALBUM = "GET_ALBUM";
 export const CREATE_ALBUM = "CREATE_ALBUM";
 export const ADD_IMAGE = "ADD_IMAGE";
+export const POPUP_TOGGLE = "POPUP_TOGGLE";
 
 const ROOT_URL = "http://localhost:3000/api";
 
@@ -76,5 +77,12 @@ export const addImage = (image, albumId) => {
       .catch(error => {
         console.log("error.response", error.response);
       });
+  };
+};
+
+// popup
+export const popupToggle = () => {
+  return {
+    type: POPUP_TOGGLE
   };
 };

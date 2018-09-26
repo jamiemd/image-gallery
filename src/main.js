@@ -24,7 +24,8 @@ export default function start() {
   __NODE__ && app.register(routes);
   __NODE__ &&
     app.register(GetInitialStateToken, async ctx => ({
-      albumsArray: []
+      albumsArray: [],
+      togglePopup: false
     }));
 
   return app;

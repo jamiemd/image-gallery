@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "dd8ea0b5483b624c6b8f";
+/******/ 	var hotCurrentHash = "45bd9357526ebd91d05c";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1480,11 +1480,80 @@ const mapStateToProps = state => {
 
 /***/ }),
 
+/***/ "./src/Components/pop-up.js":
+/*!**********************************!*\
+  !*** ./src/Components/pop-up.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _actions_albums__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/albums */ "./src/actions/albums.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+class Popup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+
+    _defineProperty(this, "handleToggle", () => {
+      this.props.popupToggle();
+    });
+
+    _defineProperty(this, "handleDelete", () => {
+      this.props.popupToggle();
+    });
+  }
+
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: popUpContainer
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: popup
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Delete this image?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      onClick: this.handleToggle
+    }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      onClick: this.handleDelete
+    }, "Yes")));
+  }
+
+}
+
+const popUpContainer = {
+  borderRadius: "12px",
+  width: "300px",
+  backgroundColor: "red"
+};
+const popup = {
+  width: "200px",
+  height: "100px"
+};
+
+const mapStateToProps = state => {
+  console.log("state", state);
+  return {};
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, {
+  findAlbum: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["findAlbum"],
+  popupToggle: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["popupToggle"]
+})(Popup));
+
+/***/ }),
+
 /***/ "./src/actions/albums.js":
 /*!*******************************!*\
   !*** ./src/actions/albums.js ***!
   \*******************************/
-/*! exports provided: GET_ALBUMS, GET_ALBUM, CREATE_ALBUM, ADD_IMAGE, getAlbums, findAlbum, createAlbum, addImage */
+/*! exports provided: GET_ALBUMS, GET_ALBUM, CREATE_ALBUM, ADD_IMAGE, POPUP_TOGGLE, getAlbums, findAlbum, createAlbum, addImage, popupToggle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1493,10 +1562,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_ALBUM", function() { return GET_ALBUM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_ALBUM", function() { return CREATE_ALBUM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_IMAGE", function() { return ADD_IMAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "POPUP_TOGGLE", function() { return POPUP_TOGGLE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAlbums", function() { return getAlbums; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findAlbum", function() { return findAlbum; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createAlbum", function() { return createAlbum; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addImage", function() { return addImage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupToggle", function() { return popupToggle; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
@@ -1504,6 +1575,7 @@ const GET_ALBUMS = "GET_ALBUMS";
 const GET_ALBUM = "GET_ALBUM";
 const CREATE_ALBUM = "CREATE_ALBUM";
 const ADD_IMAGE = "ADD_IMAGE";
+const POPUP_TOGGLE = "POPUP_TOGGLE";
 const ROOT_URL = "http://localhost:3000/api"; // get all albums
 
 const getAlbums = () => {
@@ -1564,6 +1636,12 @@ const addImage = (image, albumId) => {
       console.log("error.response", error.response);
     });
   };
+}; // popup
+
+const popupToggle = () => {
+  return {
+    type: POPUP_TOGGLE
+  };
 };
 
 /***/ }),
@@ -1614,7 +1692,8 @@ function start() {
   app.register(fusion_plugin_react_redux__WEBPACK_IMPORTED_MODULE_4__["EnhancerToken"], Object(redux__WEBPACK_IMPORTED_MODULE_6__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_5___default.a));
   true && app.register(_server_routes__WEBPACK_IMPORTED_MODULE_9__["default"]);
   true && app.register(fusion_plugin_react_redux__WEBPACK_IMPORTED_MODULE_4__["GetInitialStateToken"], async ctx => ({
-    albumsArray: []
+    albumsArray: [],
+    togglePopup: false
   }));
   return app;
 }
@@ -1638,6 +1717,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! fusion-plugin-react-router */ "fusion-plugin-react-router");
 /* harmony import */ var fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Components_add_image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/add-image */ "./src/Components/add-image.js");
+/* harmony import */ var _Components_pop_up__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Components/pop-up */ "./src/Components/pop-up.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -1645,13 +1728,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+
+    _defineProperty(this, "handleClick", () => {
+      this.props.popupToggle();
+    });
+  }
+
   componentDidMount() {
     const albumId = this.props.match.params.id;
     this.props.findAlbum(albumId);
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    if (this.props.togglePopup === true) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_pop_up__WEBPACK_IMPORTED_MODULE_5__["default"], null);
+    } else return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: albumContainer
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
       style: homeLink,
@@ -1664,10 +1757,15 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: imagesBox
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: imagesContainer
-    }, this.props.album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    }, this.props.album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: i
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: removeImage,
+      onClick: this.handleClick
+    }, "x"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       style: imageContainer,
       src: image.imagePreviewUrl
-    })))));
+    }))))));
   }
 
 }
@@ -1680,10 +1778,10 @@ const albumContainer = {
 };
 const imagesBox = {
   justifyContent: "center",
-  margin: "40px"
+  marginTop: "40px"
 };
 const imagesContainer = {
-  margin: "5px",
+  margin: "auto",
   display: "grid",
   gridTemplateColumns: "repeat(4, 300px)",
   justifyContent: "space-around"
@@ -1691,7 +1789,8 @@ const imagesContainer = {
 const imageContainer = {
   maxWidth: "300px",
   maxHeight: "300px",
-  backgroundColor: "#F0F0F0"
+  backgroundColor: "#F0F0F0",
+  borderRadius: "12px"
 };
 const homeLink = {
   textDecoration: "none",
@@ -1703,17 +1802,21 @@ const albumName = {
   textAlign: "center",
   fontWeight: "500"
 };
+const removeImage = {};
 
 const mapStateToProps = state => {
+  console.log("state", state);
   return {
     album: state.album || {
       images: []
-    }
+    },
+    togglePopup: state.togglePopup
   };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, {
-  findAlbum: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["findAlbum"]
+  findAlbum: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["findAlbum"],
+  popupToggle: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["popupToggle"]
 })(Album));
 
 /***/ }),
@@ -1854,6 +1957,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ((state, action) => {
   // console.log("action", action);
+  console.log("state", state);
+
   switch (action.type) {
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["GET_ALBUMS"]:
       return _objectSpread({}, state, action.payload);
@@ -1866,6 +1971,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["ADD_IMAGE"]:
       return _objectSpread({}, state, action.payload);
+
+    case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["POPUP_TOGGLE"]:
+      if (state.togglePopup == true) {
+        return _objectSpread({}, state, {
+          togglePopup: false
+        });
+      } else {
+        return _objectSpread({}, state, {
+          togglePopup: true
+        });
+      }
 
     default:
       return state;
