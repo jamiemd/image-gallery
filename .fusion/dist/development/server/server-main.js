@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "45bd9357526ebd91d05c";
+/******/ 	var hotCurrentHash = "5fbb92f6a982620eab46";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1480,10 +1480,10 @@ const mapStateToProps = state => {
 
 /***/ }),
 
-/***/ "./src/Components/pop-up.js":
-/*!**********************************!*\
-  !*** ./src/Components/pop-up.js ***!
-  \**********************************/
+/***/ "./src/Components/delete-popup.js":
+/*!****************************************!*\
+  !*** ./src/Components/delete-popup.js ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1500,28 +1500,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-class Popup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+class DeletePopup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
 
-    _defineProperty(this, "handleToggle", () => {
-      this.props.popupToggle();
+    _defineProperty(this, "handleDeletePopup", () => {
+      this.props.showDeletePopup();
     });
 
-    _defineProperty(this, "handleDelete", () => {
-      this.props.popupToggle();
+    _defineProperty(this, "handleDelete", imageToDelete => {
+      console.log("imageId in popup delete", imageToDelete);
+      this.props.showDeletePopup();
+      this.props.deleteImage(imageToDelete);
     });
   }
 
   render() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: popUpContainer
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      style: popup
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Delete this image?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      onClick: this.handleToggle
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Delete this image?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      onClick: this.handleDeletePopup
     }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      onClick: this.handleDelete
+      onClick: () => this.handleDelete(this.props.imageToDelete)
     }, "Yes")));
   }
 
@@ -1538,14 +1538,82 @@ const popup = {
 };
 
 const mapStateToProps = state => {
-  console.log("state", state);
-  return {};
+  console.log("state in popup", state);
+  return {
+    imageToDelete: state.imageToDelete
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, {
-  findAlbum: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["findAlbum"],
-  popupToggle: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["popupToggle"]
-})(Popup));
+  showDeletePopup: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["showDeletePopup"],
+  deleteImage: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["deleteImage"]
+})(DeletePopup));
+
+/***/ }),
+
+/***/ "./src/Components/image-popup.js":
+/*!***************************************!*\
+  !*** ./src/Components/image-popup.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _actions_albums__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/albums */ "./src/actions/albums.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+class ImagePopup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+
+    _defineProperty(this, "handleClosePopup", () => {
+      this.props.showImagePopup();
+    });
+
+    _defineProperty(this, "handleDelete", imageToDelete => {
+      console.log("imageId in popup delete", imageToDelete);
+      this.props.showImagePopup();
+    });
+  }
+
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: popUpContainer
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      onClick: this.handleClosePopup
+    }, "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: this.props.imageToShow
+    })));
+  }
+
+}
+
+const popUpContainer = {
+  borderRadius: "12px",
+  backgroundColor: "white",
+  maxWidth: "500px",
+  maxHeight: "500px"
+};
+
+const mapStateToProps = state => {
+  console.log("state in popup", state);
+  return {
+    imageToShow: state.imageToShow
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, {
+  showImagePopup: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["showImagePopup"]
+})(ImagePopup));
 
 /***/ }),
 
@@ -1553,7 +1621,7 @@ const mapStateToProps = state => {
 /*!*******************************!*\
   !*** ./src/actions/albums.js ***!
   \*******************************/
-/*! exports provided: GET_ALBUMS, GET_ALBUM, CREATE_ALBUM, ADD_IMAGE, POPUP_TOGGLE, getAlbums, findAlbum, createAlbum, addImage, popupToggle */
+/*! exports provided: GET_ALBUMS, GET_ALBUM, CREATE_ALBUM, ADD_IMAGE, SHOW_DELETE_POPUP, SHOW_IMAGE_POPUP, DELETE_ALBUM, DELETE_IMAGE, getAlbums, findAlbum, createAlbum, addImage, showDeletePopup, showImagePopup, deleteAlbum, deleteImage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1562,12 +1630,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_ALBUM", function() { return GET_ALBUM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_ALBUM", function() { return CREATE_ALBUM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_IMAGE", function() { return ADD_IMAGE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "POPUP_TOGGLE", function() { return POPUP_TOGGLE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SHOW_DELETE_POPUP", function() { return SHOW_DELETE_POPUP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SHOW_IMAGE_POPUP", function() { return SHOW_IMAGE_POPUP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_ALBUM", function() { return DELETE_ALBUM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_IMAGE", function() { return DELETE_IMAGE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAlbums", function() { return getAlbums; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findAlbum", function() { return findAlbum; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createAlbum", function() { return createAlbum; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addImage", function() { return addImage; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupToggle", function() { return popupToggle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showDeletePopup", function() { return showDeletePopup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showImagePopup", function() { return showImagePopup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteAlbum", function() { return deleteAlbum; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteImage", function() { return deleteImage; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
@@ -1575,12 +1649,16 @@ const GET_ALBUMS = "GET_ALBUMS";
 const GET_ALBUM = "GET_ALBUM";
 const CREATE_ALBUM = "CREATE_ALBUM";
 const ADD_IMAGE = "ADD_IMAGE";
-const POPUP_TOGGLE = "POPUP_TOGGLE";
+const SHOW_DELETE_POPUP = "SHOW_DELETE_POPUP";
+const SHOW_IMAGE_POPUP = "SHOW_IMAGE_POPUP";
+const DELETE_ALBUM = "DELETE_ALBUM";
+const DELETE_IMAGE = "DELETE_IMAGE";
 const ROOT_URL = "http://localhost:3000/api"; // get all albums
 
 const getAlbums = () => {
   return dispatch => {
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(`${ROOT_URL}/getAlbums`).then(res => {
+      console.log("res.data", res.data);
       dispatch({
         type: GET_ALBUMS,
         payload: res.data
@@ -1622,7 +1700,6 @@ const createAlbum = (albumName, history) => {
 }; // add images
 
 const addImage = (image, albumId) => {
-  console.log("image", image);
   return dispatch => {
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.put(`${ROOT_URL}/add-image/${albumId}`, {
       image
@@ -1638,9 +1715,42 @@ const addImage = (image, albumId) => {
   };
 }; // popup
 
-const popupToggle = () => {
+const showDeletePopup = imageToDelete => {
   return {
-    type: POPUP_TOGGLE
+    type: SHOW_DELETE_POPUP,
+    payload: imageToDelete
+  };
+};
+const showImagePopup = imageToShow => {
+  return {
+    type: SHOW_IMAGE_POPUP,
+    payload: imageToShow
+  };
+};
+const deleteAlbum = albumId => {
+  return dispatch => {
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.delete(`${ROOT_URL}/delete-album/${albumId}`).then(res => {
+      disptach({
+        type: DELETE_ALBUM,
+        payload: res.data
+      });
+    }).catch(error => {
+      console.log("error.response", error.response);
+    });
+  };
+};
+const deleteImage = imageToDelete => {
+  return dispatch => {
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.delete(`${ROOT_URL}/delete-image`, {
+      imageToDelete
+    }).then(res => {
+      disptach({
+        type: DELETE_IMAGE,
+        payload: res.data
+      });
+    }).catch(error => {
+      console.log("error.response", error.response);
+    });
   };
 };
 
@@ -1692,8 +1802,8 @@ function start() {
   app.register(fusion_plugin_react_redux__WEBPACK_IMPORTED_MODULE_4__["EnhancerToken"], Object(redux__WEBPACK_IMPORTED_MODULE_6__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_5___default.a));
   true && app.register(_server_routes__WEBPACK_IMPORTED_MODULE_9__["default"]);
   true && app.register(fusion_plugin_react_redux__WEBPACK_IMPORTED_MODULE_4__["GetInitialStateToken"], async ctx => ({
-    albumsArray: [],
-    togglePopup: false
+    showDeletePopupBool: false,
+    showImagePopupBool: false
   }));
   return app;
 }
@@ -1717,8 +1827,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! fusion-plugin-react-router */ "fusion-plugin-react-router");
 /* harmony import */ var fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Components_add_image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/add-image */ "./src/Components/add-image.js");
-/* harmony import */ var _Components_pop_up__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Components/pop-up */ "./src/Components/pop-up.js");
+/* harmony import */ var _Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Components/delete-popup */ "./src/Components/delete-popup.js");
+/* harmony import */ var _Components_image_popup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Components/image-popup */ "./src/Components/image-popup.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1731,8 +1843,12 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
 
-    _defineProperty(this, "handleClick", () => {
-      this.props.popupToggle();
+    _defineProperty(this, "handleDeleteClick", imageToDelete => {
+      this.props.showDeletePopup(imageToDelete);
+    });
+
+    _defineProperty(this, "handleImagePopup", imageToExpand => {
+      this.props.showImagePopup(imageToExpand);
     });
   }
 
@@ -1742,11 +1858,9 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    if (this.props.togglePopup === true) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_pop_up__WEBPACK_IMPORTED_MODULE_5__["default"], null);
-    } else return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: albumContainer
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeletePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_image_popup__WEBPACK_IMPORTED_MODULE_6__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
       style: homeLink,
       to: "/"
     }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1761,11 +1875,13 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       key: i
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       style: removeImage,
-      onClick: this.handleClick
-    }, "x"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      onClick: () => this.handleDeleteClick(image._id)
+    }, "x"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      onClick: () => this.handleImagePopup(image.imagePreviewUrl)
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       style: imageContainer,
       src: image.imagePreviewUrl
-    }))))));
+    })))))));
   }
 
 }
@@ -1789,8 +1905,7 @@ const imagesContainer = {
 const imageContainer = {
   maxWidth: "300px",
   maxHeight: "300px",
-  backgroundColor: "#F0F0F0",
-  borderRadius: "12px"
+  backgroundColor: "#F0F0F0"
 };
 const homeLink = {
   textDecoration: "none",
@@ -1805,18 +1920,20 @@ const albumName = {
 const removeImage = {};
 
 const mapStateToProps = state => {
-  console.log("state", state);
+  console.log("state in album", state);
   return {
     album: state.album || {
       images: []
     },
-    togglePopup: state.togglePopup
+    showDeletePopupBool: state.showDeletePopupBool,
+    showImagePopupBool: state.showImagePopupBool
   };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, {
   findAlbum: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["findAlbum"],
-  popupToggle: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["popupToggle"]
+  showDeletePopup: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["showDeletePopup"],
+  showImagePopup: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["showImagePopup"]
 })(Album));
 
 /***/ }),
@@ -1905,6 +2022,7 @@ const h4Styles = {
 };
 
 const mapStateToProps = state => {
+  console.log("state in home", state);
   return {
     albumsArray: state.albums || [],
     columns: state.columns || []
@@ -1956,15 +2074,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["default"] = ((state, action) => {
-  // console.log("action", action);
-  console.log("state", state);
-
+  // console.log("action.payload", action.payload);
   switch (action.type) {
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["GET_ALBUMS"]:
-      return _objectSpread({}, state, action.payload);
+      return _objectSpread({}, state, {
+        albums: action.payload.albums
+      });
 
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["GET_ALBUM"]:
-      return _objectSpread({}, action.payload);
+      return {
+        album: action.payload.album
+      };
 
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["CREATE_ALBUM"]:
       return _objectSpread({}, action.payload);
@@ -1972,16 +2092,35 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["ADD_IMAGE"]:
       return _objectSpread({}, state, action.payload);
 
-    case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["POPUP_TOGGLE"]:
-      if (state.togglePopup == true) {
+    case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["SHOW_DELETE_POPUP"]:
+      if (state.showDeletePopupBool === true) {
         return _objectSpread({}, state, {
-          togglePopup: false
+          showDeletePopupBool: false
         });
       } else {
         return _objectSpread({}, state, {
-          togglePopup: true
+          showDeletePopupBool: true,
+          imageToDelete: action.payload
         });
       }
+
+    case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["SHOW_IMAGE_POPUP"]:
+      if (state.showImagePopupBool === true) {
+        return _objectSpread({}, state, {
+          showImagePopupBool: false
+        });
+      }
+
+      return _objectSpread({}, state, {
+        showImagePopupBool: true,
+        imageToShow: action.payload
+      });
+
+    case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["DELETE_ALBUM"]:
+      return _objectSpread({}, action.payload);
+
+    case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["DELETE_IMAGE"]:
+      return _objectSpread({}, action.payload);
 
     default:
       return state;

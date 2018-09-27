@@ -4,7 +4,10 @@ export const GET_ALBUMS = "GET_ALBUMS";
 export const GET_ALBUM = "GET_ALBUM";
 export const CREATE_ALBUM = "CREATE_ALBUM";
 export const ADD_IMAGE = "ADD_IMAGE";
-export const POPUP_TOGGLE = "POPUP_TOGGLE";
+export const SHOW_DELETE_POPUP = "SHOW_DELETE_POPUP";
+export const SHOW_IMAGE_POPUP = "SHOW_IMAGE_POPUP";
+export const DELETE_ALBUM = "DELETE_ALBUM";
+export const DELETE_IMAGE = "DELETE_IMAGE";
 
 const ROOT_URL = "http://localhost:3000/api";
 
@@ -14,6 +17,7 @@ export const getAlbums = () => {
     axios
       .get(`${ROOT_URL}/getAlbums`)
       .then(res => {
+        console.log("res.data", res.data);
         dispatch({
           type: GET_ALBUMS,
           payload: res.data
@@ -63,7 +67,6 @@ export const createAlbum = (albumName, history) => {
 
 // add images
 export const addImage = (image, albumId) => {
-  console.log("image", image);
   return dispatch => {
     axios
       .put(`${ROOT_URL}/add-image/${albumId}`, { image })
@@ -81,8 +84,48 @@ export const addImage = (image, albumId) => {
 };
 
 // popup
-export const popupToggle = () => {
+export const showDeletePopup = imageToDelete => {
   return {
-    type: POPUP_TOGGLE
+    type: SHOW_DELETE_POPUP,
+    payload: imageToDelete
+  };
+};
+
+export const showImagePopup = imageToShow => {
+  return {
+    type: SHOW_IMAGE_POPUP,
+    payload: imageToShow
+  };
+};
+
+export const deleteAlbum = albumId => {
+  return dispatch => {
+    axios
+      .delete(`${ROOT_URL}/delete-album/${albumId}`)
+      .then(res => {
+        disptach({
+          type: DELETE_ALBUM,
+          payload: res.data
+        });
+      })
+      .catch(error => {
+        console.log("error.response", error.response);
+      });
+  };
+};
+
+export const deleteImage = imageToDelete => {
+  return dispatch => {
+    axios
+      .delete(`${ROOT_URL}/delete-image`, { imageToDelete })
+      .then(res => {
+        disptach({
+          type: DELETE_IMAGE,
+          payload: res.data
+        });
+      })
+      .catch(error => {
+        console.log("error.response", error.response);
+      });
   };
 };

@@ -3,21 +3,23 @@ import {
   GET_ALBUM,
   ADD_IMAGE,
   CREATE_ALBUM,
-  POPUP_TOGGLE
+  SHOW_DELETE_POPUP,
+  SHOW_IMAGE_POPUP,
+  DELETE_ALBUM,
+  DELETE_IMAGE
 } from "../actions/albums";
 
 export default (state, action) => {
-  // console.log("action", action);
-  console.log("state", state);
+  // console.log("action.payload", action.payload);
   switch (action.type) {
     case GET_ALBUMS:
       return {
         ...state,
-        ...action.payload
+        albums: action.payload.albums
       };
     case GET_ALBUM:
       return {
-        ...action.payload
+        album: action.payload.album
       };
     case CREATE_ALBUM:
       return {
@@ -28,19 +30,39 @@ export default (state, action) => {
         ...state,
         ...action.payload
       };
-    case POPUP_TOGGLE:
-      if (state.togglePopup == true) {
+    case SHOW_DELETE_POPUP:
+      if (state.showDeletePopupBool === true) {
         return {
           ...state,
-          togglePopup: false
+          showDeletePopupBool: false
         };
       } else {
         return {
           ...state,
-          togglePopup: true
+          showDeletePopupBool: true,
+          imageToDelete: action.payload
         };
       }
-
+    case SHOW_IMAGE_POPUP:
+      if (state.showImagePopupBool === true) {
+        return {
+          ...state,
+          showImagePopupBool: false
+        };
+      }
+      return {
+        ...state,
+        showImagePopupBool: true,
+        imageToShow: action.payload
+      };
+    case DELETE_ALBUM:
+      return {
+        ...action.payload
+      };
+    case DELETE_IMAGE:
+      return {
+        ...action.payload
+      };
     default:
       return state;
   }

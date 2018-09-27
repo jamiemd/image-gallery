@@ -72,6 +72,7 @@ const h4Styles = {
 };
 
 const mapStateToProps = state => {
+  console.log("state in home", state);
   return {
     albumsArray: state.albums || [],
     columns: state.columns || []

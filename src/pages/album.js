@@ -1,11 +1,12 @@
 // @flow
 import React, { Component } from "react";
 import { styled } from "fusion-plugin-styletron-react";
-import { findAlbum, popupToggle } from "../actions/albums";
+import { findAlbum, showDeletePopup, showImagePopup } from "../actions/albums";
 import { connect } from "react-redux";
 import { Router, Route, Link } from "fusion-plugin-react-router";
 import AddImage from "../Components/add-image";
-import Popup from "../Components/pop-up";
+import DeletePopup from "../Components/delete-popup";
+import ImagePopup from "../Components/image-popup";
 
 class Album extends Component {
   constructor(props) {
@@ -17,36 +18,45 @@ class Album extends Component {
     this.props.findAlbum(albumId);
   }
 
-  handleClick = () => {
-    this.props.popupToggle();
+  handleDeleteClick = imageToDelete => {
+    this.props.showDeletePopup(imageToDelete);
+  };
+
+  handleImagePopup = imageToExpand => {
+    this.props.showImagePopup(imageToExpand);
   };
 
   render() {
-    if (this.props.togglePopup === true) {
-      return <Popup />;
-    } else
-      return (
-        <div style={albumContainer}>
-          <Link style={homeLink} to="/">
-            Home
-          </Link>
-          <div style={albumName}>{this.props.album.name}</div>
-          <AddImage albumId={this.props.match.params.id} />
-          <div style={imagesBox}>
-            <div style={imagesContainer}>
-              {this.props.album.images.map((image, i) => (
-                <div key={i}>
-                  <button style={removeImage} onClick={this.handleClick}>
-                    x
-                  </button>
-
+    return (
+      <div style={albumContainer}>
+        <div>{this.props.showDeletePopupBool ? <DeletePopup /> : null}</div>
+        <div>{this.props.showImagePopupBool ? <ImagePopup /> : null}</div>
+        <Link style={homeLink} to="/">
+          Home
+        </Link>
+        <div style={albumName}>{this.props.album.name}</div>
+        <AddImage albumId={this.props.match.params.id} />
+        <div style={imagesBox}>
+          <div style={imagesContainer}>
+            {this.props.album.images.map((image, i) => (
+              <div key={i}>
+                <button
+                  style={removeImage}
+                  onClick={() => this.handleDeleteClick(image._id)}
+                >
+                  x
+                </button>
+                <div
+                  onClick={() => this.handleImagePopup(image.imagePreviewUrl)}
+                >
                   <img style={imageContainer} src={image.imagePreviewUrl} />
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
-      );
+      </div>
+    );
   }
 }
 
@@ -72,8 +82,7 @@ const imagesContainer = {
 const imageContainer = {
   maxWidth: "300px",
   maxHeight: "300px",
-  backgroundColor: "#F0F0F0",
-  borderRadius: "12px"
+  backgroundColor: "#F0F0F0"
 };
 
 const homeLink = {
@@ -91,14 +100,15 @@ const albumName = {
 const removeImage = {};
 
 const mapStateToProps = state => {
-  console.log("state", state);
+  console.log("state in album", state);
   return {
     album: state.album || { images: [] },
-    togglePopup: state.togglePopup
+    showDeletePopupBool: state.showDeletePopupBool,
+    showImagePopupBool: state.showImagePopupBool
   };
 };
 
 export default connect(
   mapStateToProps,
-  { findAlbum, popupToggle }
+  { findAlbum, showDeletePopup, showImagePopup }
 )(Album);
