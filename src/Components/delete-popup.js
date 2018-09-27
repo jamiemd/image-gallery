@@ -19,28 +19,63 @@ class DeletePopup extends Component {
 
   render() {
     return (
-      <div style={popUpContainer}>
-        <div>
-          <div>Delete this image?</div>
-          <button onClick={this.handleDeletePopup}>Cancel</button>
-          <button onClick={() => this.handleDelete(this.props.imageToDelete)}>
-            Yes
-          </button>
+      <div style={popupContainer}>
+        <div style={popupBox}>
+          <div style={text}>Delete image?</div>
+          <div style={buttonContainer}>
+            <button style={buttonStyle} onClick={this.handleDeletePopup}>
+              Cancel
+            </button>
+            <button
+              style={buttonStyle}
+              onClick={() => this.handleDelete(this.props.imageToDelete)}
+            >
+              Yes
+            </button>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-const popUpContainer = {
-  borderRadius: "12px",
-  width: "300px",
-  backgroundColor: "red"
+const popupContainer = {
+  zIndex: "1",
+  overflow: "auto",
+  backgroundColor: "rgba(0,0,0,0.4)",
+  position: "fixed",
+  height: "100%",
+  width: "100%",
+  left: "0",
+  top: "0",
+  display: "flex"
 };
 
-const popup = {
-  width: "200px",
-  height: "100px"
+const popupBox = {
+  width: "400px",
+  height: "200px",
+  backgroundColor: "white",
+  margin: "auto"
+};
+
+const buttonContainer = {
+  display: "flex",
+  justifyContent: "space-around"
+};
+
+const buttonStyle = {
+  border: ".5px solid",
+  fontSize: "16px",
+  padding: "5px",
+  width: "100px",
+  height: "40px"
+};
+
+const text = {
+  textAlign: "center",
+  paddingTop: "40px",
+  paddingBottom: "40px",
+  fontSize: "25px"
 };
 
 const mapStateToProps = state => {

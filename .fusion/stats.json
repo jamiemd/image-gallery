@@ -2,28 +2,28 @@
   "errors": [],
   "warnings": [],
   "version": "4.16.4",
-  "hash": "5fbb92f6a982620eab46",
+  "hash": "44595c5f0a021c09926d",
   "children": [
     {
       "errors": [],
       "warnings": [],
-      "hash": "5fbb92f6a982620eab46",
-      "time": 402,
-      "builtAt": 1538016283901,
+      "hash": "44595c5f0a021c09926d",
+      "time": 458,
+      "builtAt": 1538023939062,
       "publicPath": "",
       "outputPath": "/Users/jamie/GitHub/image-gallery/.fusion/dist/development/server",
       "assetsByChunkName": {
         "main": [
           "server-main.js",
-          "main.b3789f94037065423e3d.hot-update.js",
+          "main.33bf1e8590d0d544cb2e.hot-update.js",
           "server-main.js.map",
-          "main.b3789f94037065423e3d.hot-update.js.map"
+          "main.33bf1e8590d0d544cb2e.hot-update.js.map"
         ]
       },
       "assets": [
         {
           "name": "server-main.js",
-          "size": 95876,
+          "size": 97001,
           "chunks": [
             "main"
           ],
@@ -33,8 +33,8 @@
           "emitted": true
         },
         {
-          "name": "main.b3789f94037065423e3d.hot-update.js",
-          "size": 3198,
+          "name": "main.33bf1e8590d0d544cb2e.hot-update.js",
+          "size": 4166,
           "chunks": [
             "main"
           ],
@@ -44,7 +44,7 @@
           "emitted": true
         },
         {
-          "name": "b3789f94037065423e3d.hot-update.json",
+          "name": "33bf1e8590d0d544cb2e.hot-update.json",
           "size": 46,
           "chunks": [],
           "chunkNames": [],
@@ -52,7 +52,7 @@
         },
         {
           "name": "server-main.js.map",
-          "size": 71082,
+          "size": 72585,
           "chunks": [
             "main"
           ],
@@ -62,8 +62,8 @@
           "emitted": true
         },
         {
-          "name": "main.b3789f94037065423e3d.hot-update.js.map",
-          "size": 1494,
+          "name": "main.33bf1e8590d0d544cb2e.hot-update.js.map",
+          "size": 2659,
           "chunks": [
             "main"
           ],
@@ -81,9 +81,9 @@
           ],
           "assets": [
             "server-main.js",
-            "main.b3789f94037065423e3d.hot-update.js",
+            "main.33bf1e8590d0d544cb2e.hot-update.js",
             "server-main.js.map",
-            "main.b3789f94037065423e3d.hot-update.js.map"
+            "main.33bf1e8590d0d544cb2e.hot-update.js.map"
           ],
           "children": {},
           "childAssets": {}
@@ -96,9 +96,9 @@
           ],
           "assets": [
             "server-main.js",
-            "main.b3789f94037065423e3d.hot-update.js",
+            "main.33bf1e8590d0d544cb2e.hot-update.js",
             "server-main.js.map",
-            "main.b3789f94037065423e3d.hot-update.js.map"
+            "main.33bf1e8590d0d544cb2e.hot-update.js.map"
           ],
           "children": {},
           "childAssets": {}
@@ -110,17 +110,17 @@
           "rendered": true,
           "initial": true,
           "entry": true,
-          "size": 32149,
+          "size": 33196,
           "names": [
             "main"
           ],
           "files": [
             "server-main.js",
-            "main.b3789f94037065423e3d.hot-update.js",
+            "main.33bf1e8590d0d544cb2e.hot-update.js",
             "server-main.js.map",
-            "main.b3789f94037065423e3d.hot-update.js.map"
+            "main.33bf1e8590d0d544cb2e.hot-update.js.map"
           ],
-          "hash": "821bf2106f1d42ca97ea",
+          "hash": "7864ec62dc11181f5503",
           "siblings": [],
           "parents": [],
           "children": [],
@@ -1002,9 +1002,9 @@
               "name": "./src/Components/delete-popup.js",
               "index": 23,
               "index2": 18,
-              "size": 1518,
+              "size": 2141,
               "cacheable": true,
-              "built": false,
+              "built": true,
               "optional": false,
               "prefetched": false,
               "chunks": [
@@ -1069,7 +1069,7 @@
               ],
               "optimizationBailout": [],
               "depth": 5,
-              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { showDeletePopup, deleteImage } from \"../actions/albums\";\n\nclass DeletePopup extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeletePopup\", () => {\n      this.props.showDeletePopup();\n    });\n\n    _defineProperty(this, \"handleDelete\", imageToDelete => {\n      console.log(\"imageId in popup delete\", imageToDelete);\n      this.props.showDeletePopup();\n      this.props.deleteImage(imageToDelete);\n    });\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: popUpContainer\n    }, React.createElement(\"div\", null, React.createElement(\"div\", null, \"Delete this image?\"), React.createElement(\"button\", {\n      onClick: this.handleDeletePopup\n    }, \"Cancel\"), React.createElement(\"button\", {\n      onClick: () => this.handleDelete(this.props.imageToDelete)\n    }, \"Yes\")));\n  }\n\n}\n\nconst popUpContainer = {\n  borderRadius: \"12px\",\n  width: \"300px\",\n  backgroundColor: \"red\"\n};\nconst popup = {\n  width: \"200px\",\n  height: \"100px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in popup\", state);\n  return {\n    imageToDelete: state.imageToDelete\n  };\n};\n\nexport default connect(mapStateToProps, {\n  showDeletePopup,\n  deleteImage\n})(DeletePopup);"
+              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { showDeletePopup, deleteImage } from \"../actions/albums\";\n\nclass DeletePopup extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeletePopup\", () => {\n      this.props.showDeletePopup();\n    });\n\n    _defineProperty(this, \"handleDelete\", imageToDelete => {\n      console.log(\"imageId in popup delete\", imageToDelete);\n      this.props.showDeletePopup();\n      this.props.deleteImage(imageToDelete);\n    });\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: popupContainer\n    }, React.createElement(\"div\", {\n      style: popupBox\n    }, React.createElement(\"div\", {\n      style: text\n    }, \"Delete image?\"), React.createElement(\"div\", {\n      style: buttonContainer\n    }, React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: this.handleDeletePopup\n    }, \"Cancel\"), React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: () => this.handleDelete(this.props.imageToDelete)\n    }, \"Yes\"))));\n  }\n\n}\n\nconst popupContainer = {\n  zIndex: \"1\",\n  overflow: \"auto\",\n  backgroundColor: \"rgba(0,0,0,0.4)\",\n  position: \"fixed\",\n  height: \"100%\",\n  width: \"100%\",\n  left: \"0\",\n  top: \"0\",\n  display: \"flex\"\n};\nconst popupBox = {\n  width: \"400px\",\n  height: \"200px\",\n  backgroundColor: \"white\",\n  margin: \"auto\"\n};\nconst buttonContainer = {\n  display: \"flex\",\n  justifyContent: \"space-around\"\n};\nconst buttonStyle = {\n  border: \".5px solid\",\n  fontSize: \"16px\",\n  padding: \"5px\",\n  width: \"100px\",\n  height: \"40px\"\n};\nconst text = {\n  textAlign: \"center\",\n  paddingTop: \"40px\",\n  paddingBottom: \"40px\",\n  fontSize: \"25px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in popup\", state);\n  return {\n    imageToDelete: state.imageToDelete\n  };\n};\n\nexport default connect(mapStateToProps, {\n  showDeletePopup,\n  deleteImage\n})(DeletePopup);"
             },
             {
               "id": "./src/Components/image-popup.js",
@@ -1077,9 +1077,9 @@
               "name": "./src/Components/image-popup.js",
               "index": 24,
               "index2": 19,
-              "size": 1303,
+              "size": 1724,
               "cacheable": true,
-              "built": true,
+              "built": false,
               "optional": false,
               "prefetched": false,
               "chunks": [
@@ -1144,7 +1144,7 @@
               ],
               "optimizationBailout": [],
               "depth": 5,
-              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { showImagePopup } from \"../actions/albums\";\n\nclass ImagePopup extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleClosePopup\", () => {\n      this.props.showImagePopup();\n    });\n\n    _defineProperty(this, \"handleDelete\", imageToDelete => {\n      console.log(\"imageId in popup delete\", imageToDelete);\n      this.props.showImagePopup();\n    });\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: popUpContainer\n    }, React.createElement(\"button\", {\n      onClick: this.handleClosePopup\n    }, \"X\"), React.createElement(\"div\", null, React.createElement(\"img\", {\n      src: this.props.imageToShow\n    })));\n  }\n\n}\n\nconst popUpContainer = {\n  borderRadius: \"12px\",\n  backgroundColor: \"white\",\n  maxWidth: \"500px\",\n  maxHeight: \"500px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in popup\", state);\n  return {\n    imageToShow: state.imageToShow\n  };\n};\n\nexport default connect(mapStateToProps, {\n  showImagePopup\n})(ImagePopup);"
+              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { showImagePopup } from \"../actions/albums\";\n\nclass ImagePopup extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleClosePopup\", () => {\n      this.props.showImagePopup();\n    });\n\n    _defineProperty(this, \"handleDelete\", imageToDelete => {\n      console.log(\"imageId in popup delete\", imageToDelete);\n      this.props.showImagePopup();\n    });\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: popupContainer\n    }, React.createElement(\"div\", {\n      style: imageContainer\n    }, React.createElement(\"div\", {\n      style: buttonStyle,\n      onClick: this.handleClosePopup\n    }, \"\\xD7\"), React.createElement(\"div\", null, React.createElement(\"img\", {\n      src: this.props.imageToShow\n    }))));\n  }\n\n}\n\nconst popupContainer = {\n  zIndex: \"1\",\n  overflow: \"auto\",\n  backgroundColor: \"rgba(0,0,0,0.4)\",\n  position: \"fixed\",\n  height: \"100%\",\n  width: \"100%\",\n  left: \"0\",\n  top: \"0\",\n  display: \"flex\"\n};\nconst imageContainer = {\n  maxWidth: \"1000px\",\n  maxHeight: \"1000px\",\n  paddingLeft: \"15px\",\n  paddingRight: \"15px\",\n  paddingBottom: \"15px\",\n  backgroundColor: \"white\",\n  margin: \"auto\"\n};\nconst buttonStyle = {\n  float: \"right\",\n  fontSize: \"30px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in popup\", state);\n  return {\n    imageToShow: state.imageToShow\n  };\n};\n\nexport default connect(mapStateToProps, {\n  showImagePopup\n})(ImagePopup);"
             },
             {
               "id": "./src/actions/albums.js",
@@ -1242,7 +1242,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "52:2-17"
+                  "loc": "85:2-17"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -1251,7 +1251,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "53:2-13"
+                  "loc": "86:2-13"
                 },
                 {
                   "moduleId": "./src/Components/image-popup.js",
@@ -1269,7 +1269,7 @@
                   "moduleName": "./src/Components/image-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "48:2-16"
+                  "loc": "69:2-16"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -1513,7 +1513,7 @@
               "name": "./src/pages/album.js",
               "index": 22,
               "index2": 21,
-              "size": 3118,
+              "size": 3121,
               "cacheable": true,
               "built": false,
               "optional": false,
@@ -1575,7 +1575,7 @@
               ],
               "optimizationBailout": [],
               "depth": 4,
-              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { findAlbum, showDeletePopup, showImagePopup } from \"../actions/albums\";\nimport { connect } from \"react-redux\";\nimport { Link } from \"fusion-plugin-react-router\";\nimport AddImage from \"../Components/add-image\";\nimport DeletePopup from \"../Components/delete-popup\";\nimport ImagePopup from \"../Components/image-popup\";\n\nclass Album extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeleteClick\", imageToDelete => {\n      this.props.showDeletePopup(imageToDelete);\n    });\n\n    _defineProperty(this, \"handleImagePopup\", imageToExpand => {\n      this.props.showImagePopup(imageToExpand);\n    });\n  }\n\n  componentDidMount() {\n    const albumId = this.props.match.params.id;\n    this.props.findAlbum(albumId);\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: albumContainer\n    }, React.createElement(\"div\", null, this.props.showDeletePopupBool ? React.createElement(DeletePopup, null) : null), React.createElement(\"div\", null, this.props.showImagePopupBool ? React.createElement(ImagePopup, null) : null), React.createElement(Link, {\n      style: homeLink,\n      to: \"/\"\n    }, \"Home\"), React.createElement(\"div\", {\n      style: albumName\n    }, this.props.album.name), React.createElement(AddImage, {\n      albumId: this.props.match.params.id\n    }), React.createElement(\"div\", {\n      style: imagesBox\n    }, React.createElement(\"div\", {\n      style: imagesContainer\n    }, this.props.album.images.map((image, i) => React.createElement(\"div\", {\n      key: i\n    }, React.createElement(\"button\", {\n      style: removeImage,\n      onClick: () => this.handleDeleteClick(image._id)\n    }, \"x\"), React.createElement(\"div\", {\n      onClick: () => this.handleImagePopup(image.imagePreviewUrl)\n    }, React.createElement(\"img\", {\n      style: imageContainer,\n      src: image.imagePreviewUrl\n    })))))));\n  }\n\n}\n\nconst albumContainer = {\n  fontFamily: \"HelveticaNeue-Light, Arial\",\n  width: \"80%\",\n  margin: \"auto\",\n  paddingTop: \"20px\"\n};\nconst imagesBox = {\n  justifyContent: \"center\",\n  marginTop: \"40px\"\n};\nconst imagesContainer = {\n  margin: \"auto\",\n  display: \"grid\",\n  gridTemplateColumns: \"repeat(4, 300px)\",\n  justifyContent: \"space-around\"\n};\nconst imageContainer = {\n  maxWidth: \"300px\",\n  maxHeight: \"300px\",\n  backgroundColor: \"#F0F0F0\"\n};\nconst homeLink = {\n  textDecoration: \"none\",\n  fontSize: \"20px\",\n  fontWeight: \"600\"\n};\nconst albumName = {\n  fontSize: \"25px\",\n  textAlign: \"center\",\n  fontWeight: \"500\"\n};\nconst removeImage = {};\n\nconst mapStateToProps = state => {\n  console.log(\"state in album\", state);\n  return {\n    album: state.album || {\n      images: []\n    },\n    showDeletePopupBool: state.showDeletePopupBool,\n    showImagePopupBool: state.showImagePopupBool\n  };\n};\n\nexport default connect(mapStateToProps, {\n  findAlbum,\n  showDeletePopup,\n  showImagePopup\n})(Album);"
+              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { findAlbum, showDeletePopup, showImagePopup } from \"../actions/albums\";\nimport { connect } from \"react-redux\";\nimport { Link } from \"fusion-plugin-react-router\";\nimport AddImage from \"../Components/add-image\";\nimport DeletePopup from \"../Components/delete-popup\";\nimport ImagePopup from \"../Components/image-popup\";\n\nclass Album extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeleteClick\", imageToDelete => {\n      this.props.showDeletePopup(imageToDelete);\n    });\n\n    _defineProperty(this, \"handleImagePopup\", imageToExpand => {\n      this.props.showImagePopup(imageToExpand);\n    });\n  }\n\n  componentDidMount() {\n    const albumId = this.props.match.params.id;\n    this.props.findAlbum(albumId);\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: albumContainer\n    }, React.createElement(\"div\", null, this.props.showDeletePopupBool ? React.createElement(DeletePopup, null) : null), React.createElement(\"div\", null, this.props.showImagePopupBool ? React.createElement(ImagePopup, null) : null), React.createElement(Link, {\n      style: homeLink,\n      to: \"/\"\n    }, \"Home\"), React.createElement(\"div\", {\n      style: albumName\n    }, this.props.album.name), React.createElement(AddImage, {\n      albumId: this.props.match.params.id\n    }), React.createElement(\"div\", {\n      style: imagesBox\n    }, React.createElement(\"div\", {\n      style: imagesContainer\n    }, this.props.album.images.map((image, i) => React.createElement(\"div\", {\n      key: i\n    }, React.createElement(\"button\", {\n      style: removeImage,\n      onClick: () => this.handleDeleteClick(image._id)\n    }, \"\\xD7\"), React.createElement(\"div\", {\n      onClick: () => this.handleImagePopup(image.imagePreviewUrl)\n    }, React.createElement(\"img\", {\n      style: imageContainer,\n      src: image.imagePreviewUrl\n    })))))));\n  }\n\n}\n\nconst albumContainer = {\n  fontFamily: \"HelveticaNeue-Light, Arial\",\n  width: \"80%\",\n  margin: \"auto\",\n  paddingTop: \"20px\"\n};\nconst imagesBox = {\n  justifyContent: \"center\",\n  marginTop: \"40px\"\n};\nconst imagesContainer = {\n  margin: \"auto\",\n  display: \"grid\",\n  gridTemplateColumns: \"repeat(4, 300px)\",\n  justifyContent: \"space-around\"\n};\nconst imageContainer = {\n  maxWidth: \"300px\",\n  maxHeight: \"300px\",\n  backgroundColor: \"#F0F0F0\"\n};\nconst homeLink = {\n  textDecoration: \"none\",\n  fontSize: \"20px\",\n  fontWeight: \"600\"\n};\nconst albumName = {\n  fontSize: \"25px\",\n  textAlign: \"center\",\n  fontWeight: \"500\"\n};\nconst removeImage = {};\n\nconst mapStateToProps = state => {\n  console.log(\"state in album\", state);\n  return {\n    album: state.album || {\n      images: []\n    },\n    showDeletePopupBool: state.showDeletePopupBool,\n    showImagePopupBool: state.showImagePopupBool\n  };\n};\n\nexport default connect(mapStateToProps, {\n  findAlbum,\n  showDeletePopup,\n  showImagePopup\n})(Album);"
             },
             {
               "id": "./src/pages/home.js",
@@ -3141,7 +3141,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "25:40-45"
+                  "loc": "27:7-12"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3150,7 +3150,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "25:96-101"
+                  "loc": "29:25-30"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3159,7 +3159,16 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "27:18-23"
+                  "loc": "31:7-12"
+                },
+                {
+                  "moduleId": "./src/Components/delete-popup.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/Components/delete-popup.js",
+                  "module": "./src/Components/delete-popup.js",
+                  "moduleName": "./src/Components/delete-popup.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "react",
+                  "loc": "34:18-23"
                 },
                 {
                   "moduleId": "./src/Components/image-popup.js",
@@ -3204,7 +3213,7 @@
                   "moduleName": "./src/Components/image-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "26:13-18"
+                  "loc": "26:7-12"
                 },
                 {
                   "moduleId": "./src/Components/image-popup.js",
@@ -3213,7 +3222,16 @@
                   "moduleName": "./src/Components/image-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "26:46-51"
+                  "loc": "29:16-21"
+                },
+                {
+                  "moduleId": "./src/Components/image-popup.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/Components/image-popup.js",
+                  "module": "./src/Components/image-popup.js",
+                  "moduleName": "./src/Components/image-popup.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "react",
+                  "loc": "29:49-54"
                 },
                 {
                   "moduleId": "./src/main.js",
@@ -3357,7 +3375,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "48:13-18"
+                  "loc": "48:16-21"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3660,7 +3678,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react-redux",
-                  "loc": "51:15-22"
+                  "loc": "84:15-22"
                 },
                 {
                   "moduleId": "./src/Components/image-popup.js",
@@ -3678,7 +3696,7 @@
                   "moduleName": "./src/Components/image-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react-redux",
-                  "loc": "47:15-22"
+                  "loc": "68:15-22"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -4734,9 +4752,9 @@
           "name": "./src/Components/delete-popup.js",
           "index": 23,
           "index2": 18,
-          "size": 1518,
+          "size": 2141,
           "cacheable": true,
-          "built": false,
+          "built": true,
           "optional": false,
           "prefetched": false,
           "chunks": [
@@ -4801,7 +4819,7 @@
           ],
           "optimizationBailout": [],
           "depth": 5,
-          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { showDeletePopup, deleteImage } from \"../actions/albums\";\n\nclass DeletePopup extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeletePopup\", () => {\n      this.props.showDeletePopup();\n    });\n\n    _defineProperty(this, \"handleDelete\", imageToDelete => {\n      console.log(\"imageId in popup delete\", imageToDelete);\n      this.props.showDeletePopup();\n      this.props.deleteImage(imageToDelete);\n    });\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: popUpContainer\n    }, React.createElement(\"div\", null, React.createElement(\"div\", null, \"Delete this image?\"), React.createElement(\"button\", {\n      onClick: this.handleDeletePopup\n    }, \"Cancel\"), React.createElement(\"button\", {\n      onClick: () => this.handleDelete(this.props.imageToDelete)\n    }, \"Yes\")));\n  }\n\n}\n\nconst popUpContainer = {\n  borderRadius: \"12px\",\n  width: \"300px\",\n  backgroundColor: \"red\"\n};\nconst popup = {\n  width: \"200px\",\n  height: \"100px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in popup\", state);\n  return {\n    imageToDelete: state.imageToDelete\n  };\n};\n\nexport default connect(mapStateToProps, {\n  showDeletePopup,\n  deleteImage\n})(DeletePopup);"
+          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { showDeletePopup, deleteImage } from \"../actions/albums\";\n\nclass DeletePopup extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeletePopup\", () => {\n      this.props.showDeletePopup();\n    });\n\n    _defineProperty(this, \"handleDelete\", imageToDelete => {\n      console.log(\"imageId in popup delete\", imageToDelete);\n      this.props.showDeletePopup();\n      this.props.deleteImage(imageToDelete);\n    });\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: popupContainer\n    }, React.createElement(\"div\", {\n      style: popupBox\n    }, React.createElement(\"div\", {\n      style: text\n    }, \"Delete image?\"), React.createElement(\"div\", {\n      style: buttonContainer\n    }, React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: this.handleDeletePopup\n    }, \"Cancel\"), React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: () => this.handleDelete(this.props.imageToDelete)\n    }, \"Yes\"))));\n  }\n\n}\n\nconst popupContainer = {\n  zIndex: \"1\",\n  overflow: \"auto\",\n  backgroundColor: \"rgba(0,0,0,0.4)\",\n  position: \"fixed\",\n  height: \"100%\",\n  width: \"100%\",\n  left: \"0\",\n  top: \"0\",\n  display: \"flex\"\n};\nconst popupBox = {\n  width: \"400px\",\n  height: \"200px\",\n  backgroundColor: \"white\",\n  margin: \"auto\"\n};\nconst buttonContainer = {\n  display: \"flex\",\n  justifyContent: \"space-around\"\n};\nconst buttonStyle = {\n  border: \".5px solid\",\n  fontSize: \"16px\",\n  padding: \"5px\",\n  width: \"100px\",\n  height: \"40px\"\n};\nconst text = {\n  textAlign: \"center\",\n  paddingTop: \"40px\",\n  paddingBottom: \"40px\",\n  fontSize: \"25px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in popup\", state);\n  return {\n    imageToDelete: state.imageToDelete\n  };\n};\n\nexport default connect(mapStateToProps, {\n  showDeletePopup,\n  deleteImage\n})(DeletePopup);"
         },
         {
           "id": "./src/Components/image-popup.js",
@@ -4809,9 +4827,9 @@
           "name": "./src/Components/image-popup.js",
           "index": 24,
           "index2": 19,
-          "size": 1303,
+          "size": 1724,
           "cacheable": true,
-          "built": true,
+          "built": false,
           "optional": false,
           "prefetched": false,
           "chunks": [
@@ -4876,7 +4894,7 @@
           ],
           "optimizationBailout": [],
           "depth": 5,
-          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { showImagePopup } from \"../actions/albums\";\n\nclass ImagePopup extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleClosePopup\", () => {\n      this.props.showImagePopup();\n    });\n\n    _defineProperty(this, \"handleDelete\", imageToDelete => {\n      console.log(\"imageId in popup delete\", imageToDelete);\n      this.props.showImagePopup();\n    });\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: popUpContainer\n    }, React.createElement(\"button\", {\n      onClick: this.handleClosePopup\n    }, \"X\"), React.createElement(\"div\", null, React.createElement(\"img\", {\n      src: this.props.imageToShow\n    })));\n  }\n\n}\n\nconst popUpContainer = {\n  borderRadius: \"12px\",\n  backgroundColor: \"white\",\n  maxWidth: \"500px\",\n  maxHeight: \"500px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in popup\", state);\n  return {\n    imageToShow: state.imageToShow\n  };\n};\n\nexport default connect(mapStateToProps, {\n  showImagePopup\n})(ImagePopup);"
+          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { showImagePopup } from \"../actions/albums\";\n\nclass ImagePopup extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleClosePopup\", () => {\n      this.props.showImagePopup();\n    });\n\n    _defineProperty(this, \"handleDelete\", imageToDelete => {\n      console.log(\"imageId in popup delete\", imageToDelete);\n      this.props.showImagePopup();\n    });\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: popupContainer\n    }, React.createElement(\"div\", {\n      style: imageContainer\n    }, React.createElement(\"div\", {\n      style: buttonStyle,\n      onClick: this.handleClosePopup\n    }, \"\\xD7\"), React.createElement(\"div\", null, React.createElement(\"img\", {\n      src: this.props.imageToShow\n    }))));\n  }\n\n}\n\nconst popupContainer = {\n  zIndex: \"1\",\n  overflow: \"auto\",\n  backgroundColor: \"rgba(0,0,0,0.4)\",\n  position: \"fixed\",\n  height: \"100%\",\n  width: \"100%\",\n  left: \"0\",\n  top: \"0\",\n  display: \"flex\"\n};\nconst imageContainer = {\n  maxWidth: \"1000px\",\n  maxHeight: \"1000px\",\n  paddingLeft: \"15px\",\n  paddingRight: \"15px\",\n  paddingBottom: \"15px\",\n  backgroundColor: \"white\",\n  margin: \"auto\"\n};\nconst buttonStyle = {\n  float: \"right\",\n  fontSize: \"30px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in popup\", state);\n  return {\n    imageToShow: state.imageToShow\n  };\n};\n\nexport default connect(mapStateToProps, {\n  showImagePopup\n})(ImagePopup);"
         },
         {
           "id": "./src/actions/albums.js",
@@ -4974,7 +4992,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "52:2-17"
+              "loc": "85:2-17"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -4983,7 +5001,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "53:2-13"
+              "loc": "86:2-13"
             },
             {
               "moduleId": "./src/Components/image-popup.js",
@@ -5001,7 +5019,7 @@
               "moduleName": "./src/Components/image-popup.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "48:2-16"
+              "loc": "69:2-16"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -5245,7 +5263,7 @@
           "name": "./src/pages/album.js",
           "index": 22,
           "index2": 21,
-          "size": 3118,
+          "size": 3121,
           "cacheable": true,
           "built": false,
           "optional": false,
@@ -5307,7 +5325,7 @@
           ],
           "optimizationBailout": [],
           "depth": 4,
-          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { findAlbum, showDeletePopup, showImagePopup } from \"../actions/albums\";\nimport { connect } from \"react-redux\";\nimport { Link } from \"fusion-plugin-react-router\";\nimport AddImage from \"../Components/add-image\";\nimport DeletePopup from \"../Components/delete-popup\";\nimport ImagePopup from \"../Components/image-popup\";\n\nclass Album extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeleteClick\", imageToDelete => {\n      this.props.showDeletePopup(imageToDelete);\n    });\n\n    _defineProperty(this, \"handleImagePopup\", imageToExpand => {\n      this.props.showImagePopup(imageToExpand);\n    });\n  }\n\n  componentDidMount() {\n    const albumId = this.props.match.params.id;\n    this.props.findAlbum(albumId);\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: albumContainer\n    }, React.createElement(\"div\", null, this.props.showDeletePopupBool ? React.createElement(DeletePopup, null) : null), React.createElement(\"div\", null, this.props.showImagePopupBool ? React.createElement(ImagePopup, null) : null), React.createElement(Link, {\n      style: homeLink,\n      to: \"/\"\n    }, \"Home\"), React.createElement(\"div\", {\n      style: albumName\n    }, this.props.album.name), React.createElement(AddImage, {\n      albumId: this.props.match.params.id\n    }), React.createElement(\"div\", {\n      style: imagesBox\n    }, React.createElement(\"div\", {\n      style: imagesContainer\n    }, this.props.album.images.map((image, i) => React.createElement(\"div\", {\n      key: i\n    }, React.createElement(\"button\", {\n      style: removeImage,\n      onClick: () => this.handleDeleteClick(image._id)\n    }, \"x\"), React.createElement(\"div\", {\n      onClick: () => this.handleImagePopup(image.imagePreviewUrl)\n    }, React.createElement(\"img\", {\n      style: imageContainer,\n      src: image.imagePreviewUrl\n    })))))));\n  }\n\n}\n\nconst albumContainer = {\n  fontFamily: \"HelveticaNeue-Light, Arial\",\n  width: \"80%\",\n  margin: \"auto\",\n  paddingTop: \"20px\"\n};\nconst imagesBox = {\n  justifyContent: \"center\",\n  marginTop: \"40px\"\n};\nconst imagesContainer = {\n  margin: \"auto\",\n  display: \"grid\",\n  gridTemplateColumns: \"repeat(4, 300px)\",\n  justifyContent: \"space-around\"\n};\nconst imageContainer = {\n  maxWidth: \"300px\",\n  maxHeight: \"300px\",\n  backgroundColor: \"#F0F0F0\"\n};\nconst homeLink = {\n  textDecoration: \"none\",\n  fontSize: \"20px\",\n  fontWeight: \"600\"\n};\nconst albumName = {\n  fontSize: \"25px\",\n  textAlign: \"center\",\n  fontWeight: \"500\"\n};\nconst removeImage = {};\n\nconst mapStateToProps = state => {\n  console.log(\"state in album\", state);\n  return {\n    album: state.album || {\n      images: []\n    },\n    showDeletePopupBool: state.showDeletePopupBool,\n    showImagePopupBool: state.showImagePopupBool\n  };\n};\n\nexport default connect(mapStateToProps, {\n  findAlbum,\n  showDeletePopup,\n  showImagePopup\n})(Album);"
+          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { findAlbum, showDeletePopup, showImagePopup } from \"../actions/albums\";\nimport { connect } from \"react-redux\";\nimport { Link } from \"fusion-plugin-react-router\";\nimport AddImage from \"../Components/add-image\";\nimport DeletePopup from \"../Components/delete-popup\";\nimport ImagePopup from \"../Components/image-popup\";\n\nclass Album extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeleteClick\", imageToDelete => {\n      this.props.showDeletePopup(imageToDelete);\n    });\n\n    _defineProperty(this, \"handleImagePopup\", imageToExpand => {\n      this.props.showImagePopup(imageToExpand);\n    });\n  }\n\n  componentDidMount() {\n    const albumId = this.props.match.params.id;\n    this.props.findAlbum(albumId);\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: albumContainer\n    }, React.createElement(\"div\", null, this.props.showDeletePopupBool ? React.createElement(DeletePopup, null) : null), React.createElement(\"div\", null, this.props.showImagePopupBool ? React.createElement(ImagePopup, null) : null), React.createElement(Link, {\n      style: homeLink,\n      to: \"/\"\n    }, \"Home\"), React.createElement(\"div\", {\n      style: albumName\n    }, this.props.album.name), React.createElement(AddImage, {\n      albumId: this.props.match.params.id\n    }), React.createElement(\"div\", {\n      style: imagesBox\n    }, React.createElement(\"div\", {\n      style: imagesContainer\n    }, this.props.album.images.map((image, i) => React.createElement(\"div\", {\n      key: i\n    }, React.createElement(\"button\", {\n      style: removeImage,\n      onClick: () => this.handleDeleteClick(image._id)\n    }, \"\\xD7\"), React.createElement(\"div\", {\n      onClick: () => this.handleImagePopup(image.imagePreviewUrl)\n    }, React.createElement(\"img\", {\n      style: imageContainer,\n      src: image.imagePreviewUrl\n    })))))));\n  }\n\n}\n\nconst albumContainer = {\n  fontFamily: \"HelveticaNeue-Light, Arial\",\n  width: \"80%\",\n  margin: \"auto\",\n  paddingTop: \"20px\"\n};\nconst imagesBox = {\n  justifyContent: \"center\",\n  marginTop: \"40px\"\n};\nconst imagesContainer = {\n  margin: \"auto\",\n  display: \"grid\",\n  gridTemplateColumns: \"repeat(4, 300px)\",\n  justifyContent: \"space-around\"\n};\nconst imageContainer = {\n  maxWidth: \"300px\",\n  maxHeight: \"300px\",\n  backgroundColor: \"#F0F0F0\"\n};\nconst homeLink = {\n  textDecoration: \"none\",\n  fontSize: \"20px\",\n  fontWeight: \"600\"\n};\nconst albumName = {\n  fontSize: \"25px\",\n  textAlign: \"center\",\n  fontWeight: \"500\"\n};\nconst removeImage = {};\n\nconst mapStateToProps = state => {\n  console.log(\"state in album\", state);\n  return {\n    album: state.album || {\n      images: []\n    },\n    showDeletePopupBool: state.showDeletePopupBool,\n    showImagePopupBool: state.showImagePopupBool\n  };\n};\n\nexport default connect(mapStateToProps, {\n  findAlbum,\n  showDeletePopup,\n  showImagePopup\n})(Album);"
         },
         {
           "id": "./src/pages/home.js",
@@ -6873,7 +6891,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "25:40-45"
+              "loc": "27:7-12"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -6882,7 +6900,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "25:96-101"
+              "loc": "29:25-30"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -6891,7 +6909,16 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "27:18-23"
+              "loc": "31:7-12"
+            },
+            {
+              "moduleId": "./src/Components/delete-popup.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/Components/delete-popup.js",
+              "module": "./src/Components/delete-popup.js",
+              "moduleName": "./src/Components/delete-popup.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "34:18-23"
             },
             {
               "moduleId": "./src/Components/image-popup.js",
@@ -6936,7 +6963,7 @@
               "moduleName": "./src/Components/image-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "26:13-18"
+              "loc": "26:7-12"
             },
             {
               "moduleId": "./src/Components/image-popup.js",
@@ -6945,7 +6972,16 @@
               "moduleName": "./src/Components/image-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "26:46-51"
+              "loc": "29:16-21"
+            },
+            {
+              "moduleId": "./src/Components/image-popup.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/Components/image-popup.js",
+              "module": "./src/Components/image-popup.js",
+              "moduleName": "./src/Components/image-popup.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "29:49-54"
             },
             {
               "moduleId": "./src/main.js",
@@ -7089,7 +7125,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "48:13-18"
+              "loc": "48:16-21"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7392,7 +7428,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react-redux",
-              "loc": "51:15-22"
+              "loc": "84:15-22"
             },
             {
               "moduleId": "./src/Components/image-popup.js",
@@ -7410,7 +7446,7 @@
               "moduleName": "./src/Components/image-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react-redux",
-              "loc": "47:15-22"
+              "loc": "68:15-22"
             },
             {
               "moduleId": "./src/pages/album.js",

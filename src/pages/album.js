@@ -44,7 +44,7 @@ class Album extends Component {
                   style={removeImage}
                   onClick={() => this.handleDeleteClick(image._id)}
                 >
-                  x
+                  &times;
                 </button>
                 <div
                   onClick={() => this.handleImagePopup(image.imagePreviewUrl)}

@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "5fbb92f6a982620eab46";
+/******/ 	var hotCurrentHash = "44595c5f0a021c09926d";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1517,24 +1517,57 @@ class DeletePopup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
   render() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      style: popUpContainer
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Delete this image?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: popupContainer
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: popupBox
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: text
+    }, "Delete image?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: buttonContainer
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: buttonStyle,
       onClick: this.handleDeletePopup
     }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: buttonStyle,
       onClick: () => this.handleDelete(this.props.imageToDelete)
-    }, "Yes")));
+    }, "Yes"))));
   }
 
 }
 
-const popUpContainer = {
-  borderRadius: "12px",
-  width: "300px",
-  backgroundColor: "red"
+const popupContainer = {
+  zIndex: "1",
+  overflow: "auto",
+  backgroundColor: "rgba(0,0,0,0.4)",
+  position: "fixed",
+  height: "100%",
+  width: "100%",
+  left: "0",
+  top: "0",
+  display: "flex"
 };
-const popup = {
-  width: "200px",
-  height: "100px"
+const popupBox = {
+  width: "400px",
+  height: "200px",
+  backgroundColor: "white",
+  margin: "auto"
+};
+const buttonContainer = {
+  display: "flex",
+  justifyContent: "space-around"
+};
+const buttonStyle = {
+  border: ".5px solid",
+  fontSize: "16px",
+  padding: "5px",
+  width: "100px",
+  height: "40px"
+};
+const text = {
+  textAlign: "center",
+  paddingTop: "40px",
+  paddingBottom: "40px",
+  fontSize: "25px"
 };
 
 const mapStateToProps = state => {
@@ -1587,21 +1620,42 @@ class ImagePopup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
   render() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      style: popUpContainer
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: popupContainer
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: imageContainer
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: buttonStyle,
       onClick: this.handleClosePopup
-    }, "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       src: this.props.imageToShow
-    })));
+    }))));
   }
 
 }
 
-const popUpContainer = {
-  borderRadius: "12px",
+const popupContainer = {
+  zIndex: "1",
+  overflow: "auto",
+  backgroundColor: "rgba(0,0,0,0.4)",
+  position: "fixed",
+  height: "100%",
+  width: "100%",
+  left: "0",
+  top: "0",
+  display: "flex"
+};
+const imageContainer = {
+  maxWidth: "1000px",
+  maxHeight: "1000px",
+  paddingLeft: "15px",
+  paddingRight: "15px",
+  paddingBottom: "15px",
   backgroundColor: "white",
-  maxWidth: "500px",
-  maxHeight: "500px"
+  margin: "auto"
+};
+const buttonStyle = {
+  float: "right",
+  fontSize: "30px"
 };
 
 const mapStateToProps = state => {
@@ -1876,7 +1930,7 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       style: removeImage,
       onClick: () => this.handleDeleteClick(image._id)
-    }, "x"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       onClick: () => this.handleImagePopup(image.imagePreviewUrl)
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       style: imageContainer,

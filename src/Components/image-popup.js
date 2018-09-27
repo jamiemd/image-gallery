@@ -18,21 +18,45 @@ class ImagePopup extends Component {
 
   render() {
     return (
-      <div style={popUpContainer}>
-        <button onClick={this.handleClosePopup}>X</button>
-        <div>
-          <img src={this.props.imageToShow} />
+      <div style={popupContainer}>
+        <div style={imageContainer}>
+          <div style={buttonStyle} onClick={this.handleClosePopup}>
+            &times;
+          </div>
+          <div>
+            <img src={this.props.imageToShow} />
+          </div>
         </div>
       </div>
     );
   }
 }
 
-const popUpContainer = {
-  borderRadius: "12px",
+const popupContainer = {
+  zIndex: "1",
+  overflow: "auto",
+  backgroundColor: "rgba(0,0,0,0.4)",
+  position: "fixed",
+  height: "100%",
+  width: "100%",
+  left: "0",
+  top: "0",
+  display: "flex"
+};
+
+const imageContainer = {
+  maxWidth: "1000px",
+  maxHeight: "1000px",
+  paddingLeft: "15px",
+  paddingRight: "15px",
+  paddingBottom: "15px",
   backgroundColor: "white",
-  maxWidth: "500px",
-  maxHeight: "500px"
+  margin: "auto"
+};
+
+const buttonStyle = {
+  float: "right",
+  fontSize: "30px"
 };
 
 const mapStateToProps = state => {
