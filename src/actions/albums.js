@@ -4,7 +4,8 @@ export const GET_ALBUMS = "GET_ALBUMS";
 export const GET_ALBUM = "GET_ALBUM";
 export const CREATE_ALBUM = "CREATE_ALBUM";
 export const ADD_IMAGE = "ADD_IMAGE";
-export const SHOW_DELETE_POPUP = "SHOW_DELETE_POPUP";
+export const SHOW_DELETE_ALBUM_POPUP = "SHOW_DELETE_ALBUM_POPUP";
+export const SHOW_DELETE_IMAGE_POPUP = "SHOW_DELETE_IMAGE_POPUP";
 export const SHOW_IMAGE_POPUP = "SHOW_IMAGE_POPUP";
 export const DELETE_ALBUM = "DELETE_ALBUM";
 export const DELETE_IMAGE = "DELETE_IMAGE";
@@ -82,17 +83,23 @@ export const addImage = (image, albumId) => {
   };
 };
 
-// popup
-export const showDeletePopup = (imageToDelete, albumId) => {
-  const deleteData = {
-    imageToDelete
-  };
+// delete album popup
+export const showDeleteAlbumPopup = albumToDeleteId => {
   return {
-    type: SHOW_DELETE_POPUP,
-    payload: imageToDelete
+    type: SHOW_DELETE_ALBUM_POPUP,
+    payload: albumToDeleteId
   };
 };
 
+// delete image popup
+export const showDeleteImagePopup = imageToDeleteId => {
+  return {
+    type: SHOW_DELETE_IMAGE_POPUP,
+    payload: imageToDeleteId
+  };
+};
+
+// show image popup
 export const showImagePopup = imageToShow => {
   return {
     type: SHOW_IMAGE_POPUP,
@@ -103,7 +110,7 @@ export const showImagePopup = imageToShow => {
 export const deleteAlbum = albumId => {
   return dispatch => {
     axios
-      .delete(`${ROOT_URL}/delete-album/${albumId}`)
+      .post(`${ROOT_URL}/delete-album`, { albumId })
       .then(res => {
         disptach({
           type: DELETE_ALBUM,
@@ -121,7 +128,6 @@ export const deleteImage = (imageToDelete, albumId) => {
     axios
       .post(`${ROOT_URL}/delete-image`, { imageToDelete, albumId })
       .then(res => {
-        console.log("res in delete image", res.data);
         disptach({
           type: DELETE_IMAGE,
           payload: res.data

@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "cd5ab8ba8c9867426055";
+/******/ 	var hotCurrentHash = "fc2cc26b55eadc9cee2a";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1502,13 +1502,22 @@ class DeletePopup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
 
-    _defineProperty(this, "handleDeletePopup", () => {
-      this.props.showDeletePopup();
+    _defineProperty(this, "handleDeleteAlbumCancel", () => {
+      this.props.showDeleteAlbumPopup();
     });
 
-    _defineProperty(this, "handleDelete", (imageToDelete, albumId) => {
-      this.props.showDeletePopup();
-      this.props.deleteImage(imageToDelete, albumId);
+    _defineProperty(this, "handleDeleteImageCancel", () => {
+      this.props.showDeleteImagePopup();
+    });
+
+    _defineProperty(this, "handleDeleteAlbumClick", albumId => {
+      this.props.showDeleteAlbumPopup();
+      this.props.deleteAlbum(albumId);
+    });
+
+    _defineProperty(this, "handleDeleteImageClick", (imageToDeleteId, albumId) => {
+      this.props.showDeleteImagePopup();
+      this.props.deleteImage(imageToDeleteId, albumId);
     });
   }
 
@@ -1517,17 +1526,27 @@ class DeletePopup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: popupContainer
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: popupBox
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, this.props.showDeleteAlbumPopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: text
-    }, "Delete image?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, "Delete Album?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: buttonContainer
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       style: buttonStyle,
-      onClick: this.handleDeletePopup
+      onClick: this.handleDeleteAlbumCancel
     }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       style: buttonStyle,
-      onClick: () => this.handleDelete(this.props.imageToDelete, this.props.albumId)
-    }, "Yes"))));
+      onClick: () => this.handleDeleteAlbumClick(this.props.albumId)
+    }, "Yes"))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: text
+    }, "Delete Image?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: buttonContainer
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: buttonStyle,
+      onClick: this.handleDeleteImageCancel
+    }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: buttonStyle,
+      onClick: () => this.handleDeleteImageClick(this.props.imageToDeleteId, this.props.albumId)
+    }, "Yes")))));
   }
 
 }
@@ -1568,15 +1587,20 @@ const text = {
 };
 
 const mapStateToProps = state => {
+  console.log("state in delete", state);
   return {
     albumId: state.album._id,
-    imageToDelete: state.imageToDelete
+    imageToDeleteId: state.imageToDeleteId,
+    albumToDeleteId: state.albumToDeleteId,
+    showDeleteAlbumPopupBool: state.showDeleteAlbumPopupBool
   };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, {
-  showDeletePopup: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["showDeletePopup"],
-  deleteImage: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["deleteImage"]
+  showDeleteAlbumPopup: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["showDeleteAlbumPopup"],
+  showDeleteImagePopup: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["showDeleteImagePopup"],
+  deleteImage: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["deleteImage"],
+  deleteAlbum: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["deleteAlbum"]
 })(DeletePopup));
 
 /***/ }),
@@ -1671,7 +1695,7 @@ const mapStateToProps = state => {
 /*!*******************************!*\
   !*** ./src/actions/albums.js ***!
   \*******************************/
-/*! exports provided: GET_ALBUMS, GET_ALBUM, CREATE_ALBUM, ADD_IMAGE, SHOW_DELETE_POPUP, SHOW_IMAGE_POPUP, DELETE_ALBUM, DELETE_IMAGE, getAlbums, findAlbum, createAlbum, addImage, showDeletePopup, showImagePopup, deleteAlbum, deleteImage */
+/*! exports provided: GET_ALBUMS, GET_ALBUM, CREATE_ALBUM, ADD_IMAGE, SHOW_DELETE_ALBUM_POPUP, SHOW_DELETE_IMAGE_POPUP, SHOW_IMAGE_POPUP, DELETE_ALBUM, DELETE_IMAGE, getAlbums, findAlbum, createAlbum, addImage, showDeleteAlbumPopup, showDeleteImagePopup, showImagePopup, deleteAlbum, deleteImage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1680,7 +1704,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_ALBUM", function() { return GET_ALBUM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_ALBUM", function() { return CREATE_ALBUM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_IMAGE", function() { return ADD_IMAGE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SHOW_DELETE_POPUP", function() { return SHOW_DELETE_POPUP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SHOW_DELETE_ALBUM_POPUP", function() { return SHOW_DELETE_ALBUM_POPUP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SHOW_DELETE_IMAGE_POPUP", function() { return SHOW_DELETE_IMAGE_POPUP; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SHOW_IMAGE_POPUP", function() { return SHOW_IMAGE_POPUP; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_ALBUM", function() { return DELETE_ALBUM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_IMAGE", function() { return DELETE_IMAGE; });
@@ -1688,7 +1713,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findAlbum", function() { return findAlbum; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createAlbum", function() { return createAlbum; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addImage", function() { return addImage; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showDeletePopup", function() { return showDeletePopup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showDeleteAlbumPopup", function() { return showDeleteAlbumPopup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showDeleteImagePopup", function() { return showDeleteImagePopup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showImagePopup", function() { return showImagePopup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteAlbum", function() { return deleteAlbum; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteImage", function() { return deleteImage; });
@@ -1699,7 +1725,8 @@ const GET_ALBUMS = "GET_ALBUMS";
 const GET_ALBUM = "GET_ALBUM";
 const CREATE_ALBUM = "CREATE_ALBUM";
 const ADD_IMAGE = "ADD_IMAGE";
-const SHOW_DELETE_POPUP = "SHOW_DELETE_POPUP";
+const SHOW_DELETE_ALBUM_POPUP = "SHOW_DELETE_ALBUM_POPUP";
+const SHOW_DELETE_IMAGE_POPUP = "SHOW_DELETE_IMAGE_POPUP";
 const SHOW_IMAGE_POPUP = "SHOW_IMAGE_POPUP";
 const DELETE_ALBUM = "DELETE_ALBUM";
 const DELETE_IMAGE = "DELETE_IMAGE";
@@ -1762,17 +1789,22 @@ const addImage = (image, albumId) => {
       console.log("error.response", error.response);
     });
   };
-}; // popup
+}; // delete album popup
 
-const showDeletePopup = (imageToDelete, albumId) => {
-  const deleteData = {
-    imageToDelete
-  };
+const showDeleteAlbumPopup = albumToDeleteId => {
   return {
-    type: SHOW_DELETE_POPUP,
-    payload: imageToDelete
+    type: SHOW_DELETE_ALBUM_POPUP,
+    payload: albumToDeleteId
   };
-};
+}; // delete image popup
+
+const showDeleteImagePopup = imageToDeleteId => {
+  return {
+    type: SHOW_DELETE_IMAGE_POPUP,
+    payload: imageToDeleteId
+  };
+}; // show image popup
+
 const showImagePopup = imageToShow => {
   return {
     type: SHOW_IMAGE_POPUP,
@@ -1781,7 +1813,9 @@ const showImagePopup = imageToShow => {
 };
 const deleteAlbum = albumId => {
   return dispatch => {
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.delete(`${ROOT_URL}/delete-album/${albumId}`).then(res => {
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(`${ROOT_URL}/delete-album`, {
+      albumId
+    }).then(res => {
       disptach({
         type: DELETE_ALBUM,
         payload: res.data
@@ -1797,7 +1831,6 @@ const deleteImage = (imageToDelete, albumId) => {
       imageToDelete,
       albumId
     }).then(res => {
-      console.log("res in delete image", res.data);
       disptach({
         type: DELETE_IMAGE,
         payload: res.data
@@ -1856,8 +1889,9 @@ function start() {
   app.register(fusion_plugin_react_redux__WEBPACK_IMPORTED_MODULE_4__["EnhancerToken"], Object(redux__WEBPACK_IMPORTED_MODULE_6__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_5___default.a));
   true && app.register(_server_routes__WEBPACK_IMPORTED_MODULE_9__["default"]);
   true && app.register(fusion_plugin_react_redux__WEBPACK_IMPORTED_MODULE_4__["GetInitialStateToken"], async ctx => ({
-    showDeletePopupBool: false,
-    showImagePopupBool: false
+    showDeleteImagePopupBool: false,
+    showImagePopupBool: false,
+    showDeleteAlbumPopupBool: false
   }));
   return app;
 }
@@ -1897,11 +1931,15 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
 
-    _defineProperty(this, "handleDeleteClick", imageToDelete => {
-      this.props.showDeletePopup(imageToDelete);
+    _defineProperty(this, "handleDeleteAlbumClick", albumToDelete => {
+      this.props.showDeleteAlbumPopup(albumToDelete);
     });
 
-    _defineProperty(this, "handleImagePopup", imageToExpand => {
+    _defineProperty(this, "handleDeleteImageClick", imageToDelete => {
+      this.props.showDeleteImagePopup(imageToDelete);
+    });
+
+    _defineProperty(this, "handleImagePopupClick", imageToExpand => {
       this.props.showImagePopup(imageToExpand);
     });
   }
@@ -1914,12 +1952,17 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: albumContainer
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeletePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_image_popup__WEBPACK_IMPORTED_MODULE_6__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeleteAlbumPopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeleteImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_image_popup__WEBPACK_IMPORTED_MODULE_6__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
       style: homeLink,
       to: "/"
     }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: titleContainer
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: albumName
-    }, this.props.album.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_add_image__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }, this.props.album.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: deleteAlbumButton,
+      onClick: () => this.handleDeleteAlbumClick(this.props.album._id)
+    }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_add_image__WEBPACK_IMPORTED_MODULE_4__["default"], {
       albumId: this.props.match.params.id
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: imagesBox
@@ -1928,10 +1971,9 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     }, this.props.album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: i
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      style: removeImage,
-      onClick: () => this.handleDeleteClick(image._id)
+      onClick: () => this.handleDeleteImageClick(image._id)
     }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      onClick: () => this.handleImagePopup(image.imagePreviewUrl)
+      onClick: () => this.handleImagePopupClick(image.imagePreviewUrl)
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       style: imageContainer,
       src: image.imagePreviewUrl
@@ -1945,6 +1987,10 @@ const albumContainer = {
   width: "80%",
   margin: "auto",
   paddingTop: "20px"
+};
+const titleContainer = {
+  display: "flex",
+  justifyContent: "center"
 };
 const imagesBox = {
   justifyContent: "center",
@@ -1971,21 +2017,26 @@ const albumName = {
   textAlign: "center",
   fontWeight: "500"
 };
-const removeImage = {};
+const deleteAlbumButton = {
+  paddingLeft: "20px"
+};
 
 const mapStateToProps = state => {
+  console.log("state", state);
   return {
     album: state.album || {
       images: []
     },
-    showDeletePopupBool: state.showDeletePopupBool,
+    showDeleteAlbumPopupBool: state.showDeleteAlbumPopupBool,
+    showDeleteImagePopupBool: state.showDeleteImagePopupBool,
     showImagePopupBool: state.showImagePopupBool
   };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, {
   findAlbum: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["findAlbum"],
-  showDeletePopup: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["showDeletePopup"],
+  showDeleteAlbumPopup: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["showDeleteAlbumPopup"],
+  showDeleteImagePopup: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["showDeleteImagePopup"],
   showImagePopup: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["showImagePopup"]
 })(Album));
 
@@ -2037,10 +2088,10 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       to: `/findAlbum/${album._id}`
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: imageBox
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    }, album.images.length && album.images[0].imagePreviewUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       style: imageContainer,
       src: album.images[0].imagePreviewUrl
-    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "add image")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: albumTitle
     }, album.name)))));
   }
@@ -2139,7 +2190,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["default"] = ((state, action) => {
-  // console.log("action.payload", action.payload);
+  console.log("action.payload", action.payload);
+
   switch (action.type) {
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["GET_ALBUMS"]:
       return _objectSpread({}, state, {
@@ -2157,15 +2209,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["ADD_IMAGE"]:
       return _objectSpread({}, state, action.payload);
 
-    case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["SHOW_DELETE_POPUP"]:
-      if (state.showDeletePopupBool === true) {
+    case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["SHOW_DELETE_ALBUM_POPUP"]:
+      if (state.showDeleteAlbumPopupBool === true) {
         return _objectSpread({}, state, {
-          showDeletePopupBool: false
+          showDeleteAlbumPopupBool: false
         });
       } else {
         return _objectSpread({}, state, {
-          showDeletePopupBool: true,
-          imageToDelete: action.payload
+          showDeleteAlbumPopupBool: true,
+          albumToDeleteId: action.payload
+        });
+      }
+
+    case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["SHOW_DELETE_IMAGE_POPUP"]:
+      if (state.showDeleteImagePopupBool === true) {
+        return _objectSpread({}, state, {
+          showDeleteImagePopupBool: false
+        });
+      } else {
+        return _objectSpread({}, state, {
+          showDeleteImagePopupBool: true,
+          imageToDeleteId: action.payload
         });
       }
 
@@ -2337,7 +2401,19 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
         ctx.body = {
           message: "status ok",
           result
-        };
+        }; // delete album
+      } else if (ctx.method === "POST" && ctx.path === "/api/delete-album") {
+        await parseBody(ctx, () => Promise.resolve());
+        let {
+          albumId
+        } = ctx.request.body;
+        const result = await AlbumModel.findOneAndRemove({
+          _id: albumId
+        });
+        ctx.body = {
+          message: "status ok",
+          result
+        }; // delete image
       } else if (ctx.method === "POST" && ctx.path === "/api/delete-image") {
         await parseBody(ctx, () => Promise.resolve());
         let {
@@ -2347,7 +2423,6 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
         const album = await AlbumModel.findOne({
           _id: albumId
         });
-        console.log("album.length", album.length);
         const imagesArray = album.images;
 
         for (let i = 0; i < imagesArray.length; i++) {
@@ -2358,7 +2433,6 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
           }
         }
 
-        console.log("imagesArray.length", imagesArray.length);
         const result = await AlbumModel.findOneAndUpdate({
           _id: albumId
         }, {

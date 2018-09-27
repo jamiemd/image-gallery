@@ -1,39 +1,83 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { showDeletePopup, deleteImage } from "../actions/albums";
+import {
+  showDeleteAlbumPopup,
+  showDeleteImagePopup,
+  deleteImage,
+  deleteAlbum
+} from "../actions/albums";
 
 class DeletePopup extends Component {
   constructor(props) {
     super(props);
   }
 
-  handleDeletePopup = () => {
-    this.props.showDeletePopup();
+  handleDeleteAlbumCancel = () => {
+    this.props.showDeleteAlbumPopup();
   };
 
-  handleDelete = (imageToDelete, albumId) => {
-    this.props.showDeletePopup();
-    this.props.deleteImage(imageToDelete, albumId);
+  handleDeleteImageCancel = () => {
+    this.props.showDeleteImagePopup();
+  };
+
+  handleDeleteAlbumClick = albumId => {
+    this.props.showDeleteAlbumPopup();
+    this.props.deleteAlbum(albumId);
+  };
+
+  handleDeleteImageClick = (imageToDeleteId, albumId) => {
+    this.props.showDeleteImagePopup();
+    this.props.deleteImage(imageToDeleteId, albumId);
   };
 
   render() {
     return (
       <div style={popupContainer}>
         <div style={popupBox}>
-          <div style={text}>Delete image?</div>
-          <div style={buttonContainer}>
-            <button style={buttonStyle} onClick={this.handleDeletePopup}>
-              Cancel
-            </button>
-            <button
-              style={buttonStyle}
-              onClick={() =>
-                this.handleDelete(this.props.imageToDelete, this.props.albumId)
-              }
-            >
-              Yes
-            </button>
-          </div>
+          {this.props.showDeleteAlbumPopupBool ? (
+            <div>
+              <div style={text}>Delete Album?</div>
+              <div style={buttonContainer}>
+                <button
+                  style={buttonStyle}
+                  onClick={this.handleDeleteAlbumCancel}
+                >
+                  Cancel
+                </button>
+                <button
+                  style={buttonStyle}
+                  onClick={() =>
+                    this.handleDeleteAlbumClick(this.props.albumId)
+                  }
+                >
+                  Yes
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <div style={text}>Delete Image?</div>
+              <div style={buttonContainer}>
+                <button
+                  style={buttonStyle}
+                  onClick={this.handleDeleteImageCancel}
+                >
+                  Cancel
+                </button>
+                <button
+                  style={buttonStyle}
+                  onClick={() =>
+                    this.handleDeleteImageClick(
+                      this.props.imageToDeleteId,
+                      this.props.albumId
+                    )
+                  }
+                >
+                  Yes
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     );
@@ -80,13 +124,16 @@ const text = {
 };
 
 const mapStateToProps = state => {
+  console.log("state in delete", state);
   return {
     albumId: state.album._id,
-    imageToDelete: state.imageToDelete
+    imageToDeleteId: state.imageToDeleteId,
+    albumToDeleteId: state.albumToDeleteId,
+    showDeleteAlbumPopupBool: state.showDeleteAlbumPopupBool
   };
 };
 
 export default connect(
   mapStateToProps,
-  { showDeletePopup, deleteImage }
+  { showDeleteAlbumPopup, showDeleteImagePopup, deleteImage, deleteAlbum }
 )(DeletePopup);

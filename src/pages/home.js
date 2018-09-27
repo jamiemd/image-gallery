@@ -26,10 +26,14 @@ class Home extends Component {
           {this.props.albumsArray.map((album, i) => (
             <Link style={albumContainer} key={i} to={`/findAlbum/${album._id}`}>
               <div style={imageBox}>
-                <img
-                  style={imageContainer}
-                  src={album.images[0].imagePreviewUrl}
-                />
+                {album.images.length && album.images[0].imagePreviewUrl ? (
+                  <img
+                    style={imageContainer}
+                    src={album.images[0].imagePreviewUrl}
+                  />
+                ) : (
+                  <div>add image</div>
+                )}
               </div>
               <div style={albumTitle}>{album.name}</div>
             </Link>
