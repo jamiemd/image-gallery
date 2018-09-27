@@ -60,7 +60,6 @@ const buttonStyle = {
 };
 
 const mapStateToProps = state => {
-  console.log("state in popup", state);
   return {
     imageToShow: state.imageToShow
   };

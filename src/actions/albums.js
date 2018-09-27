@@ -52,7 +52,6 @@ export const createAlbum = (albumName, history) => {
     axios
       .post(`${ROOT_URL}/create-album`, { albumName })
       .then(res => {
-        console.log("res in create album", res);
         dispatch({
           type: CREATE_ALBUM,
           payload: res.data
@@ -84,7 +83,10 @@ export const addImage = (image, albumId) => {
 };
 
 // popup
-export const showDeletePopup = imageToDelete => {
+export const showDeletePopup = (imageToDelete, albumId) => {
+  const deleteData = {
+    imageToDelete
+  };
   return {
     type: SHOW_DELETE_POPUP,
     payload: imageToDelete
@@ -114,11 +116,12 @@ export const deleteAlbum = albumId => {
   };
 };
 
-export const deleteImage = imageToDelete => {
+export const deleteImage = (imageToDelete, albumId) => {
   return dispatch => {
     axios
-      .delete(`${ROOT_URL}/delete-image`, { imageToDelete })
+      .post(`${ROOT_URL}/delete-image`, { imageToDelete, albumId })
       .then(res => {
+        console.log("res in delete image", res.data);
         disptach({
           type: DELETE_IMAGE,
           payload: res.data

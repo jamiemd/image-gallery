@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "44595c5f0a021c09926d";
+/******/ 	var hotCurrentHash = "cd5ab8ba8c9867426055";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1359,7 +1359,6 @@ class AddImage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     super(props);
 
     _defineProperty(this, "handleUpload", event => {
-      console.log("event.target.files", event.target.files);
       let reader = new FileReader();
       let file = event.target.files[0];
 
@@ -1470,7 +1469,6 @@ class CreateAlbum extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 const mapStateToProps = state => {
-  // console.log("state", state);
   return {};
 };
 
@@ -1508,10 +1506,9 @@ class DeletePopup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       this.props.showDeletePopup();
     });
 
-    _defineProperty(this, "handleDelete", imageToDelete => {
-      console.log("imageId in popup delete", imageToDelete);
+    _defineProperty(this, "handleDelete", (imageToDelete, albumId) => {
       this.props.showDeletePopup();
-      this.props.deleteImage(imageToDelete);
+      this.props.deleteImage(imageToDelete, albumId);
     });
   }
 
@@ -1529,7 +1526,7 @@ class DeletePopup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: this.handleDeletePopup
     }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       style: buttonStyle,
-      onClick: () => this.handleDelete(this.props.imageToDelete)
+      onClick: () => this.handleDelete(this.props.imageToDelete, this.props.albumId)
     }, "Yes"))));
   }
 
@@ -1571,8 +1568,8 @@ const text = {
 };
 
 const mapStateToProps = state => {
-  console.log("state in popup", state);
   return {
+    albumId: state.album._id,
     imageToDelete: state.imageToDelete
   };
 };
@@ -1659,7 +1656,6 @@ const buttonStyle = {
 };
 
 const mapStateToProps = state => {
-  console.log("state in popup", state);
   return {
     imageToShow: state.imageToShow
   };
@@ -1741,7 +1737,6 @@ const createAlbum = (albumName, history) => {
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(`${ROOT_URL}/create-album`, {
       albumName
     }).then(res => {
-      console.log("res in create album", res);
       dispatch({
         type: CREATE_ALBUM,
         payload: res.data
@@ -1769,7 +1764,10 @@ const addImage = (image, albumId) => {
   };
 }; // popup
 
-const showDeletePopup = imageToDelete => {
+const showDeletePopup = (imageToDelete, albumId) => {
+  const deleteData = {
+    imageToDelete
+  };
   return {
     type: SHOW_DELETE_POPUP,
     payload: imageToDelete
@@ -1793,11 +1791,13 @@ const deleteAlbum = albumId => {
     });
   };
 };
-const deleteImage = imageToDelete => {
+const deleteImage = (imageToDelete, albumId) => {
   return dispatch => {
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.delete(`${ROOT_URL}/delete-image`, {
-      imageToDelete
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(`${ROOT_URL}/delete-image`, {
+      imageToDelete,
+      albumId
     }).then(res => {
+      console.log("res in delete image", res.data);
       disptach({
         type: DELETE_IMAGE,
         payload: res.data
@@ -1974,7 +1974,6 @@ const albumName = {
 const removeImage = {};
 
 const mapStateToProps = state => {
-  console.log("state in album", state);
   return {
     album: state.album || {
       images: []
@@ -2036,12 +2035,14 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: albumContainer,
       key: i,
       to: `/findAlbum/${album._id}`
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
-      style: h4Styles
-    }, album.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: imageBox
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       style: imageContainer,
       src: album.images[0].imagePreviewUrl
-    })))));
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: albumTitle
+    }, album.name)))));
   }
 
 }
@@ -2058,25 +2059,35 @@ const albumsContainer = {
   justifyContent: "center"
 };
 const albumContainer = {
-  backgroundColor: "#F0F0F0",
+  border: "1px solid",
   margin: "20px",
   width: "300px",
-  height: "300px",
-  borderRadius: "12px",
-  padding: "5px",
-  textDecoration: "none"
+  height: "350px",
+  textDecoration: "none",
+  display: "flex",
+  flexDirection: "column",
+  alignContent: "space-between"
 };
 const imageContainer = {
   maxWidth: "300px",
-  maxHeight: "300px"
+  maxHeight: "300px",
+  alignSelf: "center"
 };
-const h4Styles = {
+const imageBox = {
+  width: "300px",
+  height: "300px",
+  backgroundColor: "#F5F5F5",
+  display: "flex",
+  justifyContent: "center"
+};
+const albumTitle = {
   textAlign: "center",
-  color: "black"
+  color: "black",
+  fontSize: "20px",
+  paddingTop: "15px"
 };
 
 const mapStateToProps = state => {
-  console.log("state in home", state);
   return {
     albumsArray: state.albums || [],
     columns: state.columns || []
@@ -2323,7 +2334,40 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
         }, {
           new: true
         });
-        console.log("result", result);
+        ctx.body = {
+          message: "status ok",
+          result
+        };
+      } else if (ctx.method === "POST" && ctx.path === "/api/delete-image") {
+        await parseBody(ctx, () => Promise.resolve());
+        let {
+          imageToDelete,
+          albumId
+        } = ctx.request.body;
+        const album = await AlbumModel.findOne({
+          _id: albumId
+        });
+        console.log("album.length", album.length);
+        const imagesArray = album.images;
+
+        for (let i = 0; i < imagesArray.length; i++) {
+          let idString = String(imagesArray[i]._id);
+
+          if (idString === imageToDelete) {
+            imagesArray.splice(i, 1);
+          }
+        }
+
+        console.log("imagesArray.length", imagesArray.length);
+        const result = await AlbumModel.findOneAndUpdate({
+          _id: albumId
+        }, {
+          $set: {
+            images: imagesArray
+          }
+        }, {
+          new: true
+        });
         ctx.body = {
           message: "status ok",
           result

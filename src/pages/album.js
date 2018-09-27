@@ -100,7 +100,6 @@ const albumName = {
 const removeImage = {};
 
 const mapStateToProps = state => {
-  console.log("state in album", state);
   return {
     album: state.album || { images: [] },
     showDeletePopupBool: state.showDeletePopupBool,

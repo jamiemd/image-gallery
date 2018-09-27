@@ -12,8 +12,6 @@ class AddImage extends Component {
   }
 
   handleUpload = event => {
-    console.log("event.target.files", event.target.files);
-
     let reader = new FileReader();
     let file = event.target.files[0];
 

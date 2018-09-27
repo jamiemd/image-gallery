@@ -25,11 +25,13 @@ class Home extends Component {
         <div style={albumsContainer}>
           {this.props.albumsArray.map((album, i) => (
             <Link style={albumContainer} key={i} to={`/findAlbum/${album._id}`}>
-              <h4 style={h4Styles}>{album.name}</h4>
-              <img
-                style={imageContainer}
-                src={album.images[0].imagePreviewUrl}
-              />
+              <div style={imageBox}>
+                <img
+                  style={imageContainer}
+                  src={album.images[0].imagePreviewUrl}
+                />
+              </div>
+              <div style={albumTitle}>{album.name}</div>
             </Link>
           ))}
         </div>
@@ -52,27 +54,38 @@ const albumsContainer = {
 };
 
 const albumContainer = {
-  backgroundColor: "#F0F0F0",
+  border: "1px solid",
   margin: "20px",
   width: "300px",
-  height: "300px",
-  borderRadius: "12px",
-  padding: "5px",
-  textDecoration: "none"
+  height: "350px",
+  textDecoration: "none",
+  display: "flex",
+  flexDirection: "column",
+  alignContent: "space-between"
 };
 
 const imageContainer = {
   maxWidth: "300px",
-  maxHeight: "300px"
+  maxHeight: "300px",
+  alignSelf: "center"
 };
 
-const h4Styles = {
+const imageBox = {
+  width: "300px",
+  height: "300px",
+  backgroundColor: "#F5F5F5",
+  display: "flex",
+  justifyContent: "center"
+};
+
+const albumTitle = {
   textAlign: "center",
-  color: "black"
+  color: "black",
+  fontSize: "20px",
+  paddingTop: "15px"
 };
 
 const mapStateToProps = state => {
-  console.log("state in home", state);
   return {
     albumsArray: state.albums || [],
     columns: state.columns || []

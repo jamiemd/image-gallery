@@ -11,10 +11,9 @@ class DeletePopup extends Component {
     this.props.showDeletePopup();
   };
 
-  handleDelete = imageToDelete => {
-    console.log("imageId in popup delete", imageToDelete);
+  handleDelete = (imageToDelete, albumId) => {
     this.props.showDeletePopup();
-    this.props.deleteImage(imageToDelete);
+    this.props.deleteImage(imageToDelete, albumId);
   };
 
   render() {
@@ -28,7 +27,9 @@ class DeletePopup extends Component {
             </button>
             <button
               style={buttonStyle}
-              onClick={() => this.handleDelete(this.props.imageToDelete)}
+              onClick={() =>
+                this.handleDelete(this.props.imageToDelete, this.props.albumId)
+              }
             >
               Yes
             </button>
@@ -79,8 +80,8 @@ const text = {
 };
 
 const mapStateToProps = state => {
-  console.log("state in popup", state);
   return {
+    albumId: state.album._id,
     imageToDelete: state.imageToDelete
   };
 };

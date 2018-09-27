@@ -34,12 +34,9 @@ export default __NODE__ &&
           const albumId = ctx.path.match(/add-image\/(.*)/)[1];
           await parseBody(ctx, () => Promise.resolve());
           let { image } = ctx.request.body;
-
           const album = await AlbumModel.findOne({ _id: albumId });
           let currentAlbum = album.images;
-
           currentAlbum.push(image);
-
           const result = await AlbumModel.findOneAndUpdate(
             { _id: albumId },
             {
@@ -47,7 +44,28 @@ export default __NODE__ &&
             },
             { new: true }
           );
-          console.log("result", result);
+          ctx.body = { message: "status ok", result };
+        } else if (ctx.method === "POST" && ctx.path === "/api/delete-image") {
+          await parseBody(ctx, () => Promise.resolve());
+          let { imageToDelete, albumId } = ctx.request.body;
+          const album = await AlbumModel.findOne({ _id: albumId });
+          console.log("album.length", album.length);
+          const imagesArray = album.images;
+
+          for (let i = 0; i < imagesArray.length; i++) {
+            let idString = String(imagesArray[i]._id);
+            if (idString === imageToDelete) {
+              imagesArray.splice(i, 1);
+            }
+          }
+          console.log("imagesArray.length", imagesArray.length);
+          const result = await AlbumModel.findOneAndUpdate(
+            { _id: albumId },
+            {
+              $set: { images: imagesArray }
+            },
+            { new: true }
+          );
           ctx.body = { message: "status ok", result };
         }
         return next();
