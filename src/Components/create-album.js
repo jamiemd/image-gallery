@@ -20,16 +20,55 @@ class CreateAlbum extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>Create New Album</label>
-        <input type="text" onChange={this.handleChange} />
-        <button type="submit" value="Submit">
-          Create
-        </button>
-      </form>
+      <div style={createAlbumContainer}>
+        <form style={formStyle} onSubmit={this.handleSubmit}>
+          <div style={formLabelContainer}>
+            <label>Create New Album</label>
+          </div>
+          <input style={inputStyle} type="text" onChange={this.handleChange} />
+          <button style={buttonSubmit} type="submit" value="Submit">
+            Submit
+          </button>
+        </form>
+      </div>
     );
   }
 }
+
+const createAlbumContainer = {
+  display: "flex",
+  justifyContent: "center"
+};
+
+const formStyle = {
+  marginBottom: "50px",
+  fontSize: "16px"
+};
+
+const formLabelContainer = {
+  display: "flex",
+  justifyContent: "center",
+  marginBottom: "10px"
+};
+
+const inputStyle = {
+  width: "300px",
+  height: "31px",
+  border: "none",
+  borderBottom: "1px solid gray",
+  fontSize: "18px",
+  paddingTop: "5px",
+  paddingBottom: "5px",
+  backgroundColor: "#EDF1F3"
+};
+
+const buttonSubmit = {
+  paddingTop: "1px",
+  border: "none",
+  border: ".5px solid gray",
+  padding: "10px 12px",
+  fontSize: "15px"
+};
 
 const mapStateToProps = state => {
   return {};

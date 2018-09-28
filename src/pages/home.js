@@ -17,16 +17,16 @@ class Home extends Component {
 
   render() {
     return (
-      <div style={homeContainer}>
-        <h1>Image Gallery</h1>
+      <div style={homePageContainer}>
+        <h1 style={titleContainer}>Image Gallery</h1>
         <CreateAlbum history={this.props.history} />
         <div style={albumsContainer}>
           {this.props.albumsArray.map((album, i) => (
             <Link style={albumContainer} key={i} to={`/findAlbum/${album._id}`}>
-              <div style={imageBox}>
+              <div style={imageContainer}>
                 {album.images.length && album.images[0].imagePreviewUrl ? (
                   <img
-                    style={imageContainer}
+                    style={imagePreview}
                     src={album.images[0].imagePreviewUrl}
                   />
                 ) : (
@@ -42,10 +42,15 @@ class Home extends Component {
   }
 }
 
-const homeContainer = {
+const homePageContainer = {
   fontFamily: "HelveticaNeue-Light, Arial",
   margin: "auto",
   width: "95%"
+};
+
+const titleContainer = {
+  textAlign: "center",
+  margin: "50px"
 };
 
 const albumsContainer = {
@@ -61,23 +66,22 @@ const albumContainer = {
   width: "300px",
   height: "350px",
   textDecoration: "none",
-  display: "flex",
-  flexDirection: "column",
-  alignContent: "space-between"
-};
-
-const imageContainer = {
-  maxWidth: "300px",
-  maxHeight: "300px",
+  alignContent: "space-between",
   alignSelf: "center"
 };
 
-const imageBox = {
+const imageContainer = {
   width: "300px",
   height: "300px",
-  backgroundColor: "#F5F5F5",
   display: "flex",
-  justifyContent: "center"
+  justifyContent: "center",
+  backgroundColor: "#EDF1F3"
+};
+
+const imagePreview = {
+  maxWidth: "300px",
+  maxHeight: "300px",
+  alignSelf: "center"
 };
 
 const albumTitle = {

@@ -36,23 +36,54 @@ class AddImage extends Component {
 
   render() {
     return (
-      <div>
-        <label>Add Image</label>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="file"
-            accept=".jpg, .jpeg, .png"
-            onChange={e => this.handleUpload(e)}
-          />
-          <button>Save</button>
-        </form>
-        <div className="example__images-container">
-          <div className="example__images">{}</div>
+      <div style={addImagePageContainer}>
+        <div style={formStyle}>
+          <div style={formLabelContainer}>
+            <label>Add Image</label>
+          </div>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              style={inputStyle}
+              type="file"
+              accept=".jpg, .jpeg, .png"
+              onChange={e => this.handleUpload(e)}
+            />
+            <button style={buttonSave}>Save</button>
+          </form>
         </div>
       </div>
     );
   }
 }
+
+const addImagePageContainer = {
+  alignContent: "center",
+  margin: "50px"
+};
+
+const formStyle = {
+  width: "300px",
+  margin: "auto",
+  padding: "20px"
+};
+
+const formLabelContainer = {
+  display: "flex",
+  justifyContent: "center",
+  marginBottom: "10px"
+};
+
+const inputStyle = {
+  border: "none"
+};
+
+const buttonSave = {
+  paddingTop: "1px",
+  border: "none",
+  border: ".5px solid gray",
+  padding: "8px 8px",
+  fontSize: "15px"
+};
 
 const mapStateToProps = state => {
   return {};

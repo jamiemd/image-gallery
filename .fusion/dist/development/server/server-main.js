@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "fea51c5e24c2a5718ea9";
+/******/ 	var hotCurrentHash = "dc4be8d3aa8014e0ae82";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1388,20 +1388,50 @@ class AddImage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Add Image"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: addImagePageContainer
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: formStyle
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: formLabelContainer
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Add Image")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
       onSubmit: this.handleSubmit
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      style: inputStyle,
       type: "file",
       accept: ".jpg, .jpeg, .png",
       onChange: e => this.handleUpload(e)
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Save")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "example__images-container"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "example__images"
-    })));
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: buttonSave
+    }, "Save"))));
   }
 
 }
+
+const addImagePageContainer = {
+  alignContent: "center",
+  margin: "50px"
+};
+const formStyle = {
+  width: "300px",
+  margin: "auto",
+  padding: "20px"
+};
+const formLabelContainer = {
+  display: "flex",
+  justifyContent: "center",
+  marginBottom: "10px"
+};
+const inputStyle = {
+  border: "none"
+};
+const buttonSave = {
+  paddingTop: "1px",
+  border: "none",
+  border: ".5px solid gray",
+  padding: "8px 8px",
+  fontSize: "15px"
+};
 
 const mapStateToProps = state => {
   return {};
@@ -1455,18 +1485,56 @@ class CreateAlbum extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: createAlbumContainer
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      style: formStyle,
       onSubmit: this.handleSubmit
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Create New Album"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: formLabelContainer
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Create New Album")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      style: inputStyle,
       type: "text",
       onChange: this.handleChange
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      style: buttonSubmit,
       type: "submit",
       value: "Submit"
-    }, "Create"));
+    }, "Submit")));
   }
 
 }
+
+const createAlbumContainer = {
+  display: "flex",
+  justifyContent: "center"
+};
+const formStyle = {
+  marginBottom: "50px",
+  fontSize: "16px"
+};
+const formLabelContainer = {
+  display: "flex",
+  justifyContent: "center",
+  marginBottom: "10px"
+};
+const inputStyle = {
+  width: "300px",
+  height: "31px",
+  border: "none",
+  borderBottom: "1px solid gray",
+  fontSize: "18px",
+  paddingTop: "5px",
+  paddingBottom: "5px",
+  backgroundColor: "#EDF1F3"
+};
+const buttonSubmit = {
+  paddingTop: "1px",
+  border: "none",
+  border: ".5px solid gray",
+  padding: "10px 12px",
+  fontSize: "15px"
+};
 
 const mapStateToProps = state => {
   return {};
@@ -1954,7 +2022,7 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.redirectToHome ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
         to: "/"
       }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: albumContainer
+        style: albumPageContainer
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeleteAlbumPopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeleteImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_image_popup__WEBPACK_IMPORTED_MODULE_6__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         style: homeLink,
         to: "/"
@@ -1962,67 +2030,103 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         style: titleContainer
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: albumName
-      }, this.props.album.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: deleteAlbumButton,
+      }, this.props.album.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        style: buttonStyle,
         onClick: () => this.handleDeleteAlbumClick(this.props.album._id)
-      }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_add_image__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        style: iconStyle,
+        src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGsSURBVGhD7dq/K0VxGMfxm19FoSQpm4lB2FHKRBJlMtiUxWJAFpuN7Fb/gQmLVVlMFoVsiuRHIT/eT91vPenp3HM7v255PvVa7nPP934/0b3nnnNLKWUGJ3jBTwyfOMcKGlAT2YK12biO0IhCM4pvWBusxhoKzT70hr5wh6sI13iHPu4SheYCekNjiJMOPEAf245M0oZJzEe4h97MAqznWeSvo49dhvU8MYseVJ1W/H2hor1iGLHSjSXswFqsaIeQ/Q0hMiOwFqg164iMF8lZxSKdsN41ak0f/memcVwDNpAo8iFl/Y/m7QCJ4kVS5kVCKhV5gpzFisfyY8EHwky8Qc+foefyFUDPtcyLDCBETsP1TM6LdORDTM+noHMDPde8SIgXgRcxeJEQLwIvYvAiIV4EXsTgRUK8CLyIwYuEeBF4EYMXCalUZBXhCvli+bFAfhCgr6DLZvR8G3r+936klnmRvHiRkDlYC+dtF4kid7Dk0qe1eJ7kfn/i7MFaPC9nqEPiNOMU1otk7Ra9SC1N2ETUW2Sa5Mq9/GCnC5mkHv0Yx0RGBtGCKlIq/QI+C+St9GvhtAAAAABJRU5ErkJggg=="
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_add_image__WEBPACK_IMPORTED_MODULE_4__["default"], {
         albumId: this.props.match.params.id
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: imagesBox
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: imagesContainer
       }, this.props.album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: mainImageContainer,
         key: i
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: () => this.handleDeleteImageClick(image._id)
-      }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: imageContainer,
         onClick: () => this.handleImagePopupClick(image.imagePreviewUrl)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        style: imageContainer,
+        style: imagePreview,
         src: image.imagePreviewUrl
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: buttonContainer
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        style: buttonStyle,
+        onClick: () => this.handleDeleteImageClick(image._id)
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        style: iconStyle,
+        src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGsSURBVGhD7dq/K0VxGMfxm19FoSQpm4lB2FHKRBJlMtiUxWJAFpuN7Fb/gQmLVVlMFoVsiuRHIT/eT91vPenp3HM7v255PvVa7nPP934/0b3nnnNLKWUGJ3jBTwyfOMcKGlAT2YK12biO0IhCM4pvWBusxhoKzT70hr5wh6sI13iHPu4SheYCekNjiJMOPEAf245M0oZJzEe4h97MAqznWeSvo49dhvU8MYseVJ1W/H2hor1iGLHSjSXswFqsaIeQ/Q0hMiOwFqg164iMF8lZxSKdsN41ak0f/memcVwDNpAo8iFl/Y/m7QCJ4kVS5kVCKhV5gpzFisfyY8EHwky8Qc+foefyFUDPtcyLDCBETsP1TM6LdORDTM+noHMDPde8SIgXgRcxeJEQLwIvYvAiIV4EXsTgRUK8CLyIwYuEeBF4EYMXCalUZBXhCvli+bFAfhCgr6DLZvR8G3r+936klnmRvHiRkDlYC+dtF4kid7Dk0qe1eJ7kfn/i7MFaPC9nqEPiNOMU1otk7Ra9SC1N2ETUW2Sa5Mq9/GCnC5mkHv0Yx0RGBtGCKlIq/QI+C+St9GvhtAAAAABJRU5ErkJggg=="
       }))))))));
     }
   }
 
 }
 
-const albumContainer = {
+const albumPageContainer = {
   fontFamily: "HelveticaNeue-Light, Arial",
-  width: "80%",
   margin: "auto",
   paddingTop: "20px"
-};
-const titleContainer = {
-  display: "flex",
-  justifyContent: "center"
-};
-const imagesBox = {
-  justifyContent: "center",
-  marginTop: "40px"
-};
-const imagesContainer = {
-  margin: "auto",
-  display: "grid",
-  gridTemplateColumns: "repeat(4, 300px)",
-  justifyContent: "space-around"
-};
-const imageContainer = {
-  maxWidth: "300px",
-  maxHeight: "300px",
-  backgroundColor: "#F0F0F0"
 };
 const homeLink = {
   textDecoration: "none",
   fontSize: "20px",
-  fontWeight: "600"
+  fontWeight: "600",
+  paddingLeft: "100px"
+};
+const titleContainer = {
+  display: "flex",
+  justifyContent: "center",
+  margin: "40px"
 };
 const albumName = {
   fontSize: "25px",
   textAlign: "center",
   fontWeight: "500"
 };
-const deleteAlbumButton = {
+const imagesContainer = {
+  margin: "5px",
+  display: "grid",
+  gridTemplateColumns: "repeat(5, 280px)",
+  justifyContent: "center"
+};
+const mainImageContainer = {
+  border: "1px solid",
+  margin: "10px",
+  width: "250px",
+  height: "250px",
+  textDecoration: "none",
+  display: "flex",
+  flexDirection: "column",
+  alignContent: "space-between"
+};
+const imageContainer = {
+  width: "250px",
+  height: "210px",
+  display: "flex",
+  justifyContent: "center",
+  backgroundColor: "#EDF1F3"
+};
+const imagePreview = {
+  maxWidth: "250px",
+  maxHeight: "210px",
+  alignSelf: "center"
+};
+const buttonContainer = {
+  display: "flex",
+  justifyContent: "flex-end",
+  paddingTop: "5px"
+};
+const buttonStyle = {
+  border: "none",
+  paddingTop: "5px",
   paddingLeft: "20px"
+};
+const iconStyle = {
+  width: "15px",
+  height: "15px",
+  border: "none",
+  alignSelf: "right"
 };
 
 const mapStateToProps = state => {
@@ -2081,8 +2185,10 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
   render() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      style: homeContainer
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Image Gallery"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_create_album_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      style: homePageContainer
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      style: titleContainer
+    }, "Image Gallery"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_create_album_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
       history: this.props.history
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: albumsContainer
@@ -2091,9 +2197,9 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       key: i,
       to: `/findAlbum/${album._id}`
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      style: imageBox
+      style: imageContainer
     }, album.images.length && album.images[0].imagePreviewUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      style: imageContainer,
+      style: imagePreview,
       src: album.images[0].imagePreviewUrl
     }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "add image")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: albumTitle
@@ -2102,10 +2208,14 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 }
 
-const homeContainer = {
+const homePageContainer = {
   fontFamily: "HelveticaNeue-Light, Arial",
   margin: "auto",
   width: "95%"
+};
+const titleContainer = {
+  textAlign: "center",
+  margin: "50px"
 };
 const albumsContainer = {
   margin: "5px",
@@ -2119,21 +2229,20 @@ const albumContainer = {
   width: "300px",
   height: "350px",
   textDecoration: "none",
-  display: "flex",
-  flexDirection: "column",
-  alignContent: "space-between"
+  alignContent: "space-between",
+  alignSelf: "center"
 };
 const imageContainer = {
+  width: "300px",
+  height: "300px",
+  display: "flex",
+  justifyContent: "center",
+  backgroundColor: "#EDF1F3"
+};
+const imagePreview = {
   maxWidth: "300px",
   maxHeight: "300px",
   alignSelf: "center"
-};
-const imageBox = {
-  width: "300px",
-  height: "300px",
-  backgroundColor: "#F5F5F5",
-  display: "flex",
-  justifyContent: "center"
 };
 const albumTitle = {
   textAlign: "center",
