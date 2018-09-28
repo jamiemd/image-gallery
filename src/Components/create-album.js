@@ -15,6 +15,7 @@ class CreateAlbum extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const albumName = this.state.value;
+    console.log("history in crease", this.props.history);
     this.props.createAlbum(albumName, this.props.history);
   };
 

@@ -11,7 +11,6 @@ import {
 } from "../actions/albums";
 
 export default (state, action) => {
-  console.log("action.payload", action.payload);
   switch (action.type) {
     case GET_ALBUMS:
       return {
@@ -63,18 +62,21 @@ export default (state, action) => {
           ...state,
           showImagePopupBool: false
         };
+      } else {
+        return {
+          ...state,
+          showImagePopupBool: true,
+          imageToShow: action.payload
+        };
       }
-      return {
-        ...state,
-        showImagePopupBool: true,
-        imageToShow: action.payload
-      };
     case DELETE_ALBUM:
       return {
-        ...action.payload
+        ...state,
+        redirectToHome: true
       };
     case DELETE_IMAGE:
       return {
+        ...state,
         ...action.payload
       };
     default:

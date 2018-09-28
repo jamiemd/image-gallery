@@ -10,7 +10,7 @@ export default __NODE__ &&
         // get all albums
         if (ctx.method === "GET" && ctx.path === "/api/getAlbums") {
           const albums = await AlbumModel.find({});
-          ctx.body = { message: "status ok", albums };
+          ctx.body = { message: "all albums found", albums };
           // find album by id
         } else if (
           ctx.method === "GET" &&
@@ -18,14 +18,14 @@ export default __NODE__ &&
         ) {
           const albumId = ctx.path.match(/findAlbum\/(.*)/)[1];
           const album = await AlbumModel.findOne({ _id: albumId });
-          ctx.body = { message: "status ok", album };
+          ctx.body = { message: "album found", album };
           // create album
         } else if (ctx.method === "POST" && ctx.path === "/api/create-album") {
           await parseBody(ctx, () => Promise.resolve());
           let { albumName } = ctx.request.body;
           const newAlbum = new AlbumModel({ name: albumName });
           const result = await newAlbum.save();
-          ctx.body = { message: "status ok", albumId: result._id };
+          ctx.body = { message: "album created", albumId: result._id };
           // add images
         } else if (
           ctx.method === "PUT" &&
@@ -44,13 +44,13 @@ export default __NODE__ &&
             },
             { new: true }
           );
-          ctx.body = { message: "status ok", result };
+          ctx.body = { message: "image added", result };
           // delete album
         } else if (ctx.method === "POST" && ctx.path === "/api/delete-album") {
           await parseBody(ctx, () => Promise.resolve());
           let { albumId } = ctx.request.body;
-          const result = await AlbumModel.findOneAndRemove({ _id: albumId });
-          ctx.body = { message: "status ok", result };
+          const result = await AlbumModel.findOneAndDelete({ _id: albumId });
+          ctx.body = { message: "album deleted", result };
           // delete image
         } else if (ctx.method === "POST" && ctx.path === "/api/delete-image") {
           await parseBody(ctx, () => Promise.resolve());
@@ -70,7 +70,7 @@ export default __NODE__ &&
             },
             { new: true }
           );
-          ctx.body = { message: "status ok", result };
+          ctx.body = { message: "image deleted", result };
         }
         return next();
       };

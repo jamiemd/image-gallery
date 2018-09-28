@@ -1,7 +1,6 @@
 // @flow
 import React, { Component } from "react";
-import { styled } from "fusion-plugin-styletron-react";
-import { Router, Route, Link } from "fusion-plugin-react-router";
+import { Router, Route, Redirect, Link } from "fusion-plugin-react-router";
 import { connect } from "react-redux";
 import Album from "./album.js";
 import CreateAlbum from "../Components/create-album.js";

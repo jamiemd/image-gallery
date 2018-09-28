@@ -112,7 +112,7 @@ export const deleteAlbum = albumId => {
     axios
       .post(`${ROOT_URL}/delete-album`, { albumId })
       .then(res => {
-        disptach({
+        dispatch({
           type: DELETE_ALBUM,
           payload: res.data
         });
@@ -128,7 +128,7 @@ export const deleteImage = (imageToDelete, albumId) => {
     axios
       .post(`${ROOT_URL}/delete-image`, { imageToDelete, albumId })
       .then(res => {
-        disptach({
+        dispatch({
           type: DELETE_IMAGE,
           payload: res.data
         });

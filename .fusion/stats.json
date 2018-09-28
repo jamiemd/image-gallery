@@ -2,28 +2,28 @@
   "errors": [],
   "warnings": [],
   "version": "4.16.4",
-  "hash": "fc2cc26b55eadc9cee2a",
+  "hash": "47a5a72073972f0f04d3",
   "children": [
     {
       "errors": [],
       "warnings": [],
-      "hash": "fc2cc26b55eadc9cee2a",
-      "time": 465,
-      "builtAt": 1538088537994,
+      "hash": "47a5a72073972f0f04d3",
+      "time": 503,
+      "builtAt": 1538110259223,
       "publicPath": "",
       "outputPath": "/Users/jamie/GitHub/image-gallery/.fusion/dist/development/server",
       "assetsByChunkName": {
         "main": [
           "server-main.js",
-          "main.caf1949b00178e4e883a.hot-update.js",
+          "main.8f198941b3826f10e390.hot-update.js",
           "server-main.js.map",
-          "main.caf1949b00178e4e883a.hot-update.js.map"
+          "main.8f198941b3826f10e390.hot-update.js.map"
         ]
       },
       "assets": [
         {
           "name": "server-main.js",
-          "size": 101907,
+          "size": 102437,
           "chunks": [
             "main"
           ],
@@ -33,8 +33,8 @@
           "emitted": true
         },
         {
-          "name": "main.caf1949b00178e4e883a.hot-update.js",
-          "size": 3907,
+          "name": "main.8f198941b3826f10e390.hot-update.js",
+          "size": 7586,
           "chunks": [
             "main"
           ],
@@ -44,7 +44,7 @@
           "emitted": true
         },
         {
-          "name": "caf1949b00178e4e883a.hot-update.json",
+          "name": "8f198941b3826f10e390.hot-update.json",
           "size": 46,
           "chunks": [],
           "chunkNames": [],
@@ -52,7 +52,7 @@
         },
         {
           "name": "server-main.js.map",
-          "size": 77501,
+          "size": 78147,
           "chunks": [
             "main"
           ],
@@ -62,8 +62,8 @@
           "emitted": true
         },
         {
-          "name": "main.caf1949b00178e4e883a.hot-update.js.map",
-          "size": 2411,
+          "name": "main.8f198941b3826f10e390.hot-update.js.map",
+          "size": 5029,
           "chunks": [
             "main"
           ],
@@ -81,9 +81,9 @@
           ],
           "assets": [
             "server-main.js",
-            "main.caf1949b00178e4e883a.hot-update.js",
+            "main.8f198941b3826f10e390.hot-update.js",
             "server-main.js.map",
-            "main.caf1949b00178e4e883a.hot-update.js.map"
+            "main.8f198941b3826f10e390.hot-update.js.map"
           ],
           "children": {},
           "childAssets": {}
@@ -96,9 +96,9 @@
           ],
           "assets": [
             "server-main.js",
-            "main.caf1949b00178e4e883a.hot-update.js",
+            "main.8f198941b3826f10e390.hot-update.js",
             "server-main.js.map",
-            "main.caf1949b00178e4e883a.hot-update.js.map"
+            "main.8f198941b3826f10e390.hot-update.js.map"
           ],
           "children": {},
           "childAssets": {}
@@ -110,17 +110,17 @@
           "rendered": true,
           "initial": true,
           "entry": true,
-          "size": 37060,
+          "size": 37507,
           "names": [
             "main"
           ],
           "files": [
             "server-main.js",
-            "main.caf1949b00178e4e883a.hot-update.js",
+            "main.8f198941b3826f10e390.hot-update.js",
             "server-main.js.map",
-            "main.caf1949b00178e4e883a.hot-update.js.map"
+            "main.8f198941b3826f10e390.hot-update.js.map"
           ],
-          "hash": "1dad690a0fc6a9a38b4d",
+          "hash": "ad48f321fa56e8bd5c7d",
           "siblings": [],
           "parents": [],
           "children": [],
@@ -902,7 +902,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony side effect evaluation",
                   "userRequest": "../Components/add-image",
-                  "loc": "7:0-47"
+                  "loc": "8:0-47"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -911,7 +911,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "../Components/add-image",
-                  "loc": "46:37-45"
+                  "loc": "49:37-45"
                 }
               ],
               "providedExports": [
@@ -927,7 +927,7 @@
               "name": "./src/Components/create-album.js",
               "index": 19,
               "index2": 16,
-              "size": 1263,
+              "size": 1323,
               "cacheable": true,
               "built": false,
               "optional": false,
@@ -994,7 +994,7 @@
               ],
               "optimizationBailout": [],
               "depth": 5,
-              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { createAlbum } from \"../actions/albums\";\n\nclass CreateAlbum extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleChange\", event => {\n      this.setState({\n        value: event.target.value\n      });\n    });\n\n    _defineProperty(this, \"handleSubmit\", event => {\n      event.preventDefault();\n      const albumName = this.state.value;\n      this.props.createAlbum(albumName, this.props.history);\n    });\n\n    this.state = {\n      value: \"\"\n    };\n  }\n\n  render() {\n    return React.createElement(\"form\", {\n      onSubmit: this.handleSubmit\n    }, React.createElement(\"label\", null, \"Create New Album\"), React.createElement(\"input\", {\n      type: \"text\",\n      onChange: this.handleChange\n    }), React.createElement(\"button\", {\n      type: \"submit\",\n      value: \"Submit\"\n    }, \"Create\"));\n  }\n\n}\n\nconst mapStateToProps = state => {\n  return {};\n};\n\nexport default connect(mapStateToProps, {\n  createAlbum\n})(CreateAlbum);"
+              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { createAlbum } from \"../actions/albums\";\n\nclass CreateAlbum extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleChange\", event => {\n      this.setState({\n        value: event.target.value\n      });\n    });\n\n    _defineProperty(this, \"handleSubmit\", event => {\n      event.preventDefault();\n      const albumName = this.state.value;\n      console.log(\"history in crease\", this.props.history);\n      this.props.createAlbum(albumName, this.props.history);\n    });\n\n    this.state = {\n      value: \"\"\n    };\n  }\n\n  render() {\n    return React.createElement(\"form\", {\n      onSubmit: this.handleSubmit\n    }, React.createElement(\"label\", null, \"Create New Album\"), React.createElement(\"input\", {\n      type: \"text\",\n      onChange: this.handleChange\n    }), React.createElement(\"button\", {\n      type: \"submit\",\n      value: \"Submit\"\n    }, \"Create\"));\n  }\n\n}\n\nconst mapStateToProps = state => {\n  return {};\n};\n\nexport default connect(mapStateToProps, {\n  createAlbum\n})(CreateAlbum);"
             },
             {
               "id": "./src/Components/delete-popup.js",
@@ -1002,7 +1002,7 @@
               "name": "./src/Components/delete-popup.js",
               "index": 23,
               "index2": 18,
-              "size": 3165,
+              "size": 3269,
               "cacheable": true,
               "built": false,
               "optional": false,
@@ -1052,7 +1052,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony side effect evaluation",
                   "userRequest": "../Components/delete-popup",
-                  "loc": "8:0-53"
+                  "loc": "9:0-53"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -1061,7 +1061,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "../Components/delete-popup",
-                  "loc": "36:98-109"
+                  "loc": "39:98-109"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -1070,7 +1070,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "../Components/delete-popup",
-                  "loc": "36:217-228"
+                  "loc": "39:217-228"
                 }
               ],
               "providedExports": [
@@ -1078,7 +1078,7 @@
               ],
               "optimizationBailout": [],
               "depth": 5,
-              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { showDeleteAlbumPopup, showDeleteImagePopup, deleteImage, deleteAlbum } from \"../actions/albums\";\n\nclass DeletePopup extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeleteAlbumCancel\", () => {\n      this.props.showDeleteAlbumPopup();\n    });\n\n    _defineProperty(this, \"handleDeleteImageCancel\", () => {\n      this.props.showDeleteImagePopup();\n    });\n\n    _defineProperty(this, \"handleDeleteAlbumClick\", albumId => {\n      this.props.showDeleteAlbumPopup();\n      this.props.deleteAlbum(albumId);\n    });\n\n    _defineProperty(this, \"handleDeleteImageClick\", (imageToDeleteId, albumId) => {\n      this.props.showDeleteImagePopup();\n      this.props.deleteImage(imageToDeleteId, albumId);\n    });\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: popupContainer\n    }, React.createElement(\"div\", {\n      style: popupBox\n    }, this.props.showDeleteAlbumPopupBool ? React.createElement(\"div\", null, React.createElement(\"div\", {\n      style: text\n    }, \"Delete Album?\"), React.createElement(\"div\", {\n      style: buttonContainer\n    }, React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: this.handleDeleteAlbumCancel\n    }, \"Cancel\"), React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: () => this.handleDeleteAlbumClick(this.props.albumId)\n    }, \"Yes\"))) : React.createElement(\"div\", null, React.createElement(\"div\", {\n      style: text\n    }, \"Delete Image?\"), React.createElement(\"div\", {\n      style: buttonContainer\n    }, React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: this.handleDeleteImageCancel\n    }, \"Cancel\"), React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: () => this.handleDeleteImageClick(this.props.imageToDeleteId, this.props.albumId)\n    }, \"Yes\")))));\n  }\n\n}\n\nconst popupContainer = {\n  zIndex: \"1\",\n  overflow: \"auto\",\n  backgroundColor: \"rgba(0,0,0,0.4)\",\n  position: \"fixed\",\n  height: \"100%\",\n  width: \"100%\",\n  left: \"0\",\n  top: \"0\",\n  display: \"flex\"\n};\nconst popupBox = {\n  width: \"400px\",\n  height: \"200px\",\n  backgroundColor: \"white\",\n  margin: \"auto\"\n};\nconst buttonContainer = {\n  display: \"flex\",\n  justifyContent: \"space-around\"\n};\nconst buttonStyle = {\n  border: \".5px solid\",\n  fontSize: \"16px\",\n  padding: \"5px\",\n  width: \"100px\",\n  height: \"40px\"\n};\nconst text = {\n  textAlign: \"center\",\n  paddingTop: \"40px\",\n  paddingBottom: \"40px\",\n  fontSize: \"25px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in delete\", state);\n  return {\n    albumId: state.album._id,\n    imageToDeleteId: state.imageToDeleteId,\n    albumToDeleteId: state.albumToDeleteId,\n    showDeleteAlbumPopupBool: state.showDeleteAlbumPopupBool\n  };\n};\n\nexport default connect(mapStateToProps, {\n  showDeleteAlbumPopup,\n  showDeleteImagePopup,\n  deleteImage,\n  deleteAlbum\n})(DeletePopup);"
+              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { showDeleteAlbumPopup, showDeleteImagePopup, deleteImage, deleteAlbum } from \"../actions/albums\";\n\nclass DeletePopup extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeleteAlbumCancel\", () => {\n      this.props.showDeleteAlbumPopup();\n    });\n\n    _defineProperty(this, \"handleDeleteImageCancel\", () => {\n      this.props.showDeleteImagePopup();\n    });\n\n    _defineProperty(this, \"handleDeleteAlbumClick\", albumId => {\n      console.log(\"handleDeleteAlbumClick called\");\n      this.props.showDeleteAlbumPopup();\n      console.log(\"handleDeleteAlbumClick called\");\n      this.props.deleteAlbum(albumId);\n    });\n\n    _defineProperty(this, \"handleDeleteImageClick\", (imageToDeleteId, albumId) => {\n      this.props.showDeleteImagePopup();\n      this.props.deleteImage(imageToDeleteId, albumId);\n    });\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: popupContainer\n    }, React.createElement(\"div\", {\n      style: popupBox\n    }, this.props.showDeleteAlbumPopupBool ? React.createElement(\"div\", null, React.createElement(\"div\", {\n      style: text\n    }, \"Delete Album?\"), React.createElement(\"div\", {\n      style: buttonContainer\n    }, React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: this.handleDeleteAlbumCancel\n    }, \"Cancel\"), React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: () => this.handleDeleteAlbumClick(this.props.albumId)\n    }, \"Yes\"))) : React.createElement(\"div\", null, React.createElement(\"div\", {\n      style: text\n    }, \"Delete Image?\"), React.createElement(\"div\", {\n      style: buttonContainer\n    }, React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: this.handleDeleteImageCancel\n    }, \"Cancel\"), React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: () => this.handleDeleteImageClick(this.props.imageToDeleteId, this.props.albumId)\n    }, \"Yes\")))));\n  }\n\n}\n\nconst popupContainer = {\n  zIndex: \"1\",\n  overflow: \"auto\",\n  backgroundColor: \"rgba(0,0,0,0.4)\",\n  position: \"fixed\",\n  height: \"100%\",\n  width: \"100%\",\n  left: \"0\",\n  top: \"0\",\n  display: \"flex\"\n};\nconst popupBox = {\n  width: \"400px\",\n  height: \"200px\",\n  backgroundColor: \"white\",\n  margin: \"auto\"\n};\nconst buttonContainer = {\n  display: \"flex\",\n  justifyContent: \"space-around\"\n};\nconst buttonStyle = {\n  border: \".5px solid\",\n  fontSize: \"16px\",\n  padding: \"5px\",\n  width: \"100px\",\n  height: \"40px\"\n};\nconst text = {\n  textAlign: \"center\",\n  paddingTop: \"40px\",\n  paddingBottom: \"40px\",\n  fontSize: \"25px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in delete\", state);\n  return {\n    albumId: state.album._id,\n    imageToDeleteId: state.imageToDeleteId,\n    albumToDeleteId: state.albumToDeleteId,\n    showDeleteAlbumPopupBool: state.showDeleteAlbumPopupBool\n  };\n};\n\nexport default connect(mapStateToProps, {\n  showDeleteAlbumPopup,\n  showDeleteImagePopup,\n  deleteImage,\n  deleteAlbum\n})(DeletePopup);"
             },
             {
               "id": "./src/Components/image-popup.js",
@@ -1136,7 +1136,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony side effect evaluation",
                   "userRequest": "../Components/image-popup",
-                  "loc": "9:0-51"
+                  "loc": "10:0-51"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -1145,7 +1145,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "../Components/image-popup",
-                  "loc": "36:330-340"
+                  "loc": "39:330-340"
                 }
               ],
               "providedExports": [
@@ -1169,9 +1169,9 @@
               "chunks": [
                 "main"
               ],
-              "issuer": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
-              "issuerId": "./src/pages/home.js",
-              "issuerName": "./src/pages/home.js",
+              "issuer": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/reducers/albums.js",
+              "issuerId": "./src/reducers/albums.js",
+              "issuerName": "./src/reducers/albums.js",
               "issuerPath": [
                 {
                   "id": 0,
@@ -1189,14 +1189,9 @@
                   "name": "./src/main.js"
                 },
                 {
-                  "id": "./src/root.js",
-                  "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/root.js",
-                  "name": "./src/root.js"
-                },
-                {
-                  "id": "./src/pages/home.js",
-                  "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
-                  "name": "./src/pages/home.js"
+                  "id": "./src/reducers/albums.js",
+                  "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/reducers/albums.js",
+                  "name": "./src/reducers/albums.js"
                 }
               ],
               "failed": false,
@@ -1238,7 +1233,7 @@
                   "moduleName": "./src/Components/create-album.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "47:2-13"
+                  "loc": "48:2-13"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -1256,7 +1251,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "106:2-22"
+                  "loc": "108:2-22"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -1265,7 +1260,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "107:2-22"
+                  "loc": "109:2-22"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -1274,7 +1269,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "108:2-13"
+                  "loc": "110:2-13"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -1283,7 +1278,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "109:2-13"
+                  "loc": "111:2-13"
                 },
                 {
                   "moduleId": "./src/Components/image-popup.js",
@@ -1310,7 +1305,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony side effect evaluation",
                   "userRequest": "../actions/albums",
-                  "loc": "4:0-106"
+                  "loc": "5:0-106"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -1319,7 +1314,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "118:2-11"
+                  "loc": "122:2-11"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -1328,7 +1323,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "119:2-22"
+                  "loc": "123:2-22"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -1337,7 +1332,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "120:2-22"
+                  "loc": "124:2-22"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -1346,7 +1341,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "121:2-16"
+                  "loc": "125:2-16"
                 },
                 {
                   "moduleId": "./src/pages/home.js",
@@ -1391,7 +1386,7 @@
                   "moduleName": "./src/reducers/albums.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "10:9-19"
+                  "loc": "8:9-19"
                 },
                 {
                   "moduleId": "./src/reducers/albums.js",
@@ -1400,7 +1395,7 @@
                   "moduleName": "./src/reducers/albums.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "15:9-18"
+                  "loc": "13:9-18"
                 },
                 {
                   "moduleId": "./src/reducers/albums.js",
@@ -1409,7 +1404,7 @@
                   "moduleName": "./src/reducers/albums.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "20:9-21"
+                  "loc": "18:9-21"
                 },
                 {
                   "moduleId": "./src/reducers/albums.js",
@@ -1418,7 +1413,7 @@
                   "moduleName": "./src/reducers/albums.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "23:9-18"
+                  "loc": "21:9-18"
                 },
                 {
                   "moduleId": "./src/reducers/albums.js",
@@ -1427,7 +1422,7 @@
                   "moduleName": "./src/reducers/albums.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "26:9-32"
+                  "loc": "24:9-32"
                 },
                 {
                   "moduleId": "./src/reducers/albums.js",
@@ -1436,7 +1431,7 @@
                   "moduleName": "./src/reducers/albums.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "38:9-32"
+                  "loc": "36:9-32"
                 },
                 {
                   "moduleId": "./src/reducers/albums.js",
@@ -1445,7 +1440,7 @@
                   "moduleName": "./src/reducers/albums.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "50:9-25"
+                  "loc": "48:9-25"
                 },
                 {
                   "moduleId": "./src/reducers/albums.js",
@@ -1454,7 +1449,7 @@
                   "moduleName": "./src/reducers/albums.js",
                   "type": "harmony import specifier",
                   "userRequest": "../actions/albums",
-                  "loc": "62:9-21"
+                  "loc": "60:9-21"
                 },
                 {
                   "moduleId": "./src/reducers/albums.js",
@@ -1488,7 +1483,7 @@
               ],
               "optimizationBailout": [],
               "depth": 4,
-              "source": "import axios from \"axios\";\nexport const GET_ALBUMS = \"GET_ALBUMS\";\nexport const GET_ALBUM = \"GET_ALBUM\";\nexport const CREATE_ALBUM = \"CREATE_ALBUM\";\nexport const ADD_IMAGE = \"ADD_IMAGE\";\nexport const SHOW_DELETE_ALBUM_POPUP = \"SHOW_DELETE_ALBUM_POPUP\";\nexport const SHOW_DELETE_IMAGE_POPUP = \"SHOW_DELETE_IMAGE_POPUP\";\nexport const SHOW_IMAGE_POPUP = \"SHOW_IMAGE_POPUP\";\nexport const DELETE_ALBUM = \"DELETE_ALBUM\";\nexport const DELETE_IMAGE = \"DELETE_IMAGE\";\nconst ROOT_URL = \"http://localhost:3000/api\"; // get all albums\n\nexport const getAlbums = () => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/getAlbums`).then(res => {\n      console.log(\"res.data\", res.data);\n      dispatch({\n        type: GET_ALBUMS,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // find album\n\nexport const findAlbum = albumId => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/findAlbum/${albumId}`).then(res => {\n      dispatch({\n        type: GET_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // create album\n\nexport const createAlbum = (albumName, history) => {\n  return dispatch => {\n    axios.post(`${ROOT_URL}/create-album`, {\n      albumName\n    }).then(res => {\n      dispatch({\n        type: CREATE_ALBUM,\n        payload: res.data\n      });\n      history.push(\"/findAlbum/\" + res.data.albumId);\n    }).catch(error => {\n      console.log(\"error.response in create album\", error.response);\n    });\n  };\n}; // add images\n\nexport const addImage = (image, albumId) => {\n  return dispatch => {\n    axios.put(`${ROOT_URL}/add-image/${albumId}`, {\n      image\n    }).then(res => {\n      console.log(\"res.data in add image\", res.data);\n      dispatch({\n        type: ADD_IMAGE,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n}; // delete album popup\n\nexport const showDeleteAlbumPopup = albumToDeleteId => {\n  return {\n    type: SHOW_DELETE_ALBUM_POPUP,\n    payload: albumToDeleteId\n  };\n}; // delete image popup\n\nexport const showDeleteImagePopup = imageToDeleteId => {\n  return {\n    type: SHOW_DELETE_IMAGE_POPUP,\n    payload: imageToDeleteId\n  };\n}; // show image popup\n\nexport const showImagePopup = imageToShow => {\n  return {\n    type: SHOW_IMAGE_POPUP,\n    payload: imageToShow\n  };\n};\nexport const deleteAlbum = albumId => {\n  return dispatch => {\n    axios.post(`${ROOT_URL}/delete-album`, {\n      albumId\n    }).then(res => {\n      disptach({\n        type: DELETE_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n};\nexport const deleteImage = (imageToDelete, albumId) => {\n  return dispatch => {\n    axios.post(`${ROOT_URL}/delete-image`, {\n      imageToDelete,\n      albumId\n    }).then(res => {\n      disptach({\n        type: DELETE_IMAGE,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n};"
+              "source": "import axios from \"axios\";\nexport const GET_ALBUMS = \"GET_ALBUMS\";\nexport const GET_ALBUM = \"GET_ALBUM\";\nexport const CREATE_ALBUM = \"CREATE_ALBUM\";\nexport const ADD_IMAGE = \"ADD_IMAGE\";\nexport const SHOW_DELETE_ALBUM_POPUP = \"SHOW_DELETE_ALBUM_POPUP\";\nexport const SHOW_DELETE_IMAGE_POPUP = \"SHOW_DELETE_IMAGE_POPUP\";\nexport const SHOW_IMAGE_POPUP = \"SHOW_IMAGE_POPUP\";\nexport const DELETE_ALBUM = \"DELETE_ALBUM\";\nexport const DELETE_IMAGE = \"DELETE_IMAGE\";\nconst ROOT_URL = \"http://localhost:3000/api\"; // get all albums\n\nexport const getAlbums = () => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/getAlbums`).then(res => {\n      console.log(\"res.data\", res.data);\n      dispatch({\n        type: GET_ALBUMS,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // find album\n\nexport const findAlbum = albumId => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/findAlbum/${albumId}`).then(res => {\n      dispatch({\n        type: GET_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // create album\n\nexport const createAlbum = (albumName, history) => {\n  return dispatch => {\n    axios.post(`${ROOT_URL}/create-album`, {\n      albumName\n    }).then(res => {\n      dispatch({\n        type: CREATE_ALBUM,\n        payload: res.data\n      });\n      history.push(\"/findAlbum/\" + res.data.albumId);\n    }).catch(error => {\n      console.log(\"error.response in create album\", error.response);\n    });\n  };\n}; // add images\n\nexport const addImage = (image, albumId) => {\n  return dispatch => {\n    axios.put(`${ROOT_URL}/add-image/${albumId}`, {\n      image\n    }).then(res => {\n      console.log(\"res.data in add image\", res.data);\n      dispatch({\n        type: ADD_IMAGE,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n}; // delete album popup\n\nexport const showDeleteAlbumPopup = albumToDeleteId => {\n  return {\n    type: SHOW_DELETE_ALBUM_POPUP,\n    payload: albumToDeleteId\n  };\n}; // delete image popup\n\nexport const showDeleteImagePopup = imageToDeleteId => {\n  return {\n    type: SHOW_DELETE_IMAGE_POPUP,\n    payload: imageToDeleteId\n  };\n}; // show image popup\n\nexport const showImagePopup = imageToShow => {\n  return {\n    type: SHOW_IMAGE_POPUP,\n    payload: imageToShow\n  };\n};\nexport const deleteAlbum = albumId => {\n  return dispatch => {\n    axios.post(`${ROOT_URL}/delete-album`, {\n      albumId\n    }).then(res => {\n      dispatch({\n        type: DELETE_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n};\nexport const deleteImage = (imageToDelete, albumId) => {\n  return dispatch => {\n    axios.post(`${ROOT_URL}/delete-image`, {\n      imageToDelete,\n      albumId\n    }).then(res => {\n      dispatch({\n        type: DELETE_IMAGE,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n};"
             },
             {
               "id": "./src/main.js",
@@ -1496,7 +1491,7 @@
               "name": "./src/main.js",
               "index": 8,
               "index2": 29,
-              "size": 932,
+              "size": 959,
               "cacheable": true,
               "built": false,
               "optional": false,
@@ -1557,7 +1552,7 @@
               ],
               "optimizationBailout": [],
               "depth": 2,
-              "source": "import Router from \"fusion-plugin-react-router\";\nimport Styletron from \"fusion-plugin-styletron-react\";\nimport root from \"./root.js\";\nimport React from \"react\";\nimport Redux, { ReduxToken, ReducerToken, EnhancerToken, GetInitialStateToken } from \"fusion-plugin-react-redux\";\nimport ReduxThunk from \"redux-thunk\";\nimport { applyMiddleware } from \"redux\";\nimport App from \"fusion-react\";\nimport reducer from \"./reducers/albums\";\nimport routes from \"./server/routes\";\nexport default function start() {\n  const app = new App(root);\n  app.register(ReduxToken, Redux);\n  app.register(ReducerToken, reducer);\n  app.register(Styletron);\n  app.register(Router);\n  app.register(EnhancerToken, applyMiddleware(ReduxThunk));\n  true && app.register(routes);\n  true && app.register(GetInitialStateToken, async ctx => ({\n    showDeleteImagePopupBool: false,\n    showImagePopupBool: false,\n    showDeleteAlbumPopupBool: false\n  }));\n  return app;\n}"
+              "source": "import Router from \"fusion-plugin-react-router\";\nimport Styletron from \"fusion-plugin-styletron-react\";\nimport root from \"./root.js\";\nimport React from \"react\";\nimport Redux, { ReduxToken, ReducerToken, EnhancerToken, GetInitialStateToken } from \"fusion-plugin-react-redux\";\nimport ReduxThunk from \"redux-thunk\";\nimport { applyMiddleware } from \"redux\";\nimport App from \"fusion-react\";\nimport reducer from \"./reducers/albums\";\nimport routes from \"./server/routes\";\nexport default function start() {\n  const app = new App(root);\n  app.register(ReduxToken, Redux);\n  app.register(ReducerToken, reducer);\n  app.register(Styletron);\n  app.register(Router);\n  app.register(EnhancerToken, applyMiddleware(ReduxThunk));\n  true && app.register(routes);\n  true && app.register(GetInitialStateToken, async ctx => ({\n    showDeleteImagePopupBool: false,\n    showImagePopupBool: false,\n    showDeleteAlbumPopupBool: false,\n    redirectToHome: false\n  }));\n  return app;\n}"
             },
             {
               "id": "./src/pages/album.js",
@@ -1565,9 +1560,9 @@
               "name": "./src/pages/album.js",
               "index": 22,
               "index2": 21,
-              "size": 3813,
+              "size": 4036,
               "cacheable": true,
-              "built": false,
+              "built": true,
               "optional": false,
               "prefetched": false,
               "chunks": [
@@ -1627,7 +1622,7 @@
               ],
               "optimizationBailout": [],
               "depth": 4,
-              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { findAlbum, showDeleteAlbumPopup, showDeleteImagePopup, showImagePopup } from \"../actions/albums\";\nimport { connect } from \"react-redux\";\nimport { Link } from \"fusion-plugin-react-router\";\nimport AddImage from \"../Components/add-image\";\nimport DeletePopup from \"../Components/delete-popup\";\nimport ImagePopup from \"../Components/image-popup\";\n\nclass Album extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeleteAlbumClick\", albumToDelete => {\n      this.props.showDeleteAlbumPopup(albumToDelete);\n    });\n\n    _defineProperty(this, \"handleDeleteImageClick\", imageToDelete => {\n      this.props.showDeleteImagePopup(imageToDelete);\n    });\n\n    _defineProperty(this, \"handleImagePopupClick\", imageToExpand => {\n      this.props.showImagePopup(imageToExpand);\n    });\n  }\n\n  componentDidMount() {\n    const albumId = this.props.match.params.id;\n    this.props.findAlbum(albumId);\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: albumContainer\n    }, React.createElement(\"div\", null, this.props.showDeleteAlbumPopupBool ? React.createElement(DeletePopup, null) : null), React.createElement(\"div\", null, this.props.showDeleteImagePopupBool ? React.createElement(DeletePopup, null) : null), React.createElement(\"div\", null, this.props.showImagePopupBool ? React.createElement(ImagePopup, null) : null), React.createElement(Link, {\n      style: homeLink,\n      to: \"/\"\n    }, \"Home\"), React.createElement(\"div\", {\n      style: titleContainer\n    }, React.createElement(\"div\", {\n      style: albumName\n    }, this.props.album.name), React.createElement(\"div\", {\n      style: deleteAlbumButton,\n      onClick: () => this.handleDeleteAlbumClick(this.props.album._id)\n    }, \"\\xD7\")), React.createElement(AddImage, {\n      albumId: this.props.match.params.id\n    }), React.createElement(\"div\", {\n      style: imagesBox\n    }, React.createElement(\"div\", {\n      style: imagesContainer\n    }, this.props.album.images.map((image, i) => React.createElement(\"div\", {\n      key: i\n    }, React.createElement(\"button\", {\n      onClick: () => this.handleDeleteImageClick(image._id)\n    }, \"\\xD7\"), React.createElement(\"div\", {\n      onClick: () => this.handleImagePopupClick(image.imagePreviewUrl)\n    }, React.createElement(\"img\", {\n      style: imageContainer,\n      src: image.imagePreviewUrl\n    })))))));\n  }\n\n}\n\nconst albumContainer = {\n  fontFamily: \"HelveticaNeue-Light, Arial\",\n  width: \"80%\",\n  margin: \"auto\",\n  paddingTop: \"20px\"\n};\nconst titleContainer = {\n  display: \"flex\",\n  justifyContent: \"center\"\n};\nconst imagesBox = {\n  justifyContent: \"center\",\n  marginTop: \"40px\"\n};\nconst imagesContainer = {\n  margin: \"auto\",\n  display: \"grid\",\n  gridTemplateColumns: \"repeat(4, 300px)\",\n  justifyContent: \"space-around\"\n};\nconst imageContainer = {\n  maxWidth: \"300px\",\n  maxHeight: \"300px\",\n  backgroundColor: \"#F0F0F0\"\n};\nconst homeLink = {\n  textDecoration: \"none\",\n  fontSize: \"20px\",\n  fontWeight: \"600\"\n};\nconst albumName = {\n  fontSize: \"25px\",\n  textAlign: \"center\",\n  fontWeight: \"500\"\n};\nconst deleteAlbumButton = {\n  paddingLeft: \"20px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state\", state);\n  return {\n    album: state.album || {\n      images: []\n    },\n    showDeleteAlbumPopupBool: state.showDeleteAlbumPopupBool,\n    showDeleteImagePopupBool: state.showDeleteImagePopupBool,\n    showImagePopupBool: state.showImagePopupBool\n  };\n};\n\nexport default connect(mapStateToProps, {\n  findAlbum,\n  showDeleteAlbumPopup,\n  showDeleteImagePopup,\n  showImagePopup\n})(Album);"
+              "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { Redirect } from \"fusion-plugin-react-router\";\nimport { findAlbum, showDeleteAlbumPopup, showDeleteImagePopup, showImagePopup } from \"../actions/albums\";\nimport { connect } from \"react-redux\";\nimport { Link } from \"fusion-plugin-react-router\";\nimport AddImage from \"../Components/add-image\";\nimport DeletePopup from \"../Components/delete-popup\";\nimport ImagePopup from \"../Components/image-popup\";\n\nclass Album extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeleteAlbumClick\", albumToDelete => {\n      this.props.showDeleteAlbumPopup(albumToDelete);\n    });\n\n    _defineProperty(this, \"handleDeleteImageClick\", imageToDelete => {\n      this.props.showDeleteImagePopup(imageToDelete);\n    });\n\n    _defineProperty(this, \"handleImagePopupClick\", imageToExpand => {\n      this.props.showImagePopup(imageToExpand);\n    });\n  }\n\n  componentDidMount() {\n    const albumId = this.props.match.params.id;\n    this.props.findAlbum(albumId);\n  }\n\n  render() {\n    return React.createElement(\"div\", null, this.props.redirectToHome ? React.createElement(Redirect, {\n      to: \"/\"\n    }) : React.createElement(\"div\", {\n      style: albumContainer\n    }, React.createElement(\"div\", null, this.props.showDeleteAlbumPopupBool ? React.createElement(DeletePopup, null) : null), React.createElement(\"div\", null, this.props.showDeleteImagePopupBool ? React.createElement(DeletePopup, null) : null), React.createElement(\"div\", null, this.props.showImagePopupBool ? React.createElement(ImagePopup, null) : null), React.createElement(Link, {\n      style: homeLink,\n      to: \"/\"\n    }, \"Home\"), React.createElement(\"div\", {\n      style: titleContainer\n    }, React.createElement(\"div\", {\n      style: albumName\n    }, this.props.album.name), React.createElement(\"div\", {\n      style: deleteAlbumButton,\n      onClick: () => this.handleDeleteAlbumClick(this.props.album._id)\n    }, \"\\xD7\")), React.createElement(AddImage, {\n      albumId: this.props.match.params.id\n    }), React.createElement(\"div\", {\n      style: imagesBox\n    }, React.createElement(\"div\", {\n      style: imagesContainer\n    }, this.props.album.images.map((image, i) => React.createElement(\"div\", {\n      key: i\n    }, React.createElement(\"button\", {\n      onClick: () => this.handleDeleteImageClick(image._id)\n    }, \"\\xD7\"), React.createElement(\"div\", {\n      onClick: () => this.handleImagePopupClick(image.imagePreviewUrl)\n    }, React.createElement(\"img\", {\n      style: imageContainer,\n      src: image.imagePreviewUrl\n    }))))))));\n  }\n\n}\n\nconst albumContainer = {\n  fontFamily: \"HelveticaNeue-Light, Arial\",\n  width: \"80%\",\n  margin: \"auto\",\n  paddingTop: \"20px\"\n};\nconst titleContainer = {\n  display: \"flex\",\n  justifyContent: \"center\"\n};\nconst imagesBox = {\n  justifyContent: \"center\",\n  marginTop: \"40px\"\n};\nconst imagesContainer = {\n  margin: \"auto\",\n  display: \"grid\",\n  gridTemplateColumns: \"repeat(4, 300px)\",\n  justifyContent: \"space-around\"\n};\nconst imageContainer = {\n  maxWidth: \"300px\",\n  maxHeight: \"300px\",\n  backgroundColor: \"#F0F0F0\"\n};\nconst homeLink = {\n  textDecoration: \"none\",\n  fontSize: \"20px\",\n  fontWeight: \"600\"\n};\nconst albumName = {\n  fontSize: \"25px\",\n  textAlign: \"center\",\n  fontWeight: \"500\"\n};\nconst deleteAlbumButton = {\n  paddingLeft: \"20px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in album\", state);\n  return {\n    album: state.album || {\n      images: []\n    },\n    showDeleteAlbumPopupBool: state.showDeleteAlbumPopupBool,\n    showDeleteImagePopupBool: state.showDeleteImagePopupBool,\n    showImagePopupBool: state.showImagePopupBool,\n    redirectToHome: state.redirectToHome\n  };\n};\n\nexport default connect(mapStateToProps, {\n  findAlbum,\n  showDeleteAlbumPopup,\n  showDeleteImagePopup,\n  showImagePopup\n})(Album);"
             },
             {
               "id": "./src/pages/home.js",
@@ -1775,9 +1770,9 @@
               "name": "./src/reducers/albums.js",
               "index": 27,
               "index2": 24,
-              "size": 2493,
+              "size": 2503,
               "cacheable": true,
-              "built": true,
+              "built": false,
               "optional": false,
               "prefetched": false,
               "chunks": [
@@ -1832,7 +1827,7 @@
               ],
               "optimizationBailout": [],
               "depth": 3,
-              "source": "function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport { GET_ALBUMS, GET_ALBUM, ADD_IMAGE, CREATE_ALBUM, SHOW_DELETE_ALBUM_POPUP, SHOW_DELETE_IMAGE_POPUP, SHOW_IMAGE_POPUP, DELETE_ALBUM, DELETE_IMAGE } from \"../actions/albums\";\nexport default ((state, action) => {\n  console.log(\"action.payload\", action.payload);\n\n  switch (action.type) {\n    case GET_ALBUMS:\n      return _objectSpread({}, state, {\n        albums: action.payload.albums\n      });\n\n    case GET_ALBUM:\n      return {\n        album: action.payload.album\n      };\n\n    case CREATE_ALBUM:\n      return _objectSpread({}, action.payload);\n\n    case ADD_IMAGE:\n      return _objectSpread({}, state, action.payload);\n\n    case SHOW_DELETE_ALBUM_POPUP:\n      if (state.showDeleteAlbumPopupBool === true) {\n        return _objectSpread({}, state, {\n          showDeleteAlbumPopupBool: false\n        });\n      } else {\n        return _objectSpread({}, state, {\n          showDeleteAlbumPopupBool: true,\n          albumToDeleteId: action.payload\n        });\n      }\n\n    case SHOW_DELETE_IMAGE_POPUP:\n      if (state.showDeleteImagePopupBool === true) {\n        return _objectSpread({}, state, {\n          showDeleteImagePopupBool: false\n        });\n      } else {\n        return _objectSpread({}, state, {\n          showDeleteImagePopupBool: true,\n          imageToDeleteId: action.payload\n        });\n      }\n\n    case SHOW_IMAGE_POPUP:\n      if (state.showImagePopupBool === true) {\n        return _objectSpread({}, state, {\n          showImagePopupBool: false\n        });\n      }\n\n      return _objectSpread({}, state, {\n        showImagePopupBool: true,\n        imageToShow: action.payload\n      });\n\n    case DELETE_ALBUM:\n      return _objectSpread({}, action.payload);\n\n    case DELETE_IMAGE:\n      return _objectSpread({}, action.payload);\n\n    default:\n      return state;\n  }\n});"
+              "source": "function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport { GET_ALBUMS, GET_ALBUM, ADD_IMAGE, CREATE_ALBUM, SHOW_DELETE_ALBUM_POPUP, SHOW_DELETE_IMAGE_POPUP, SHOW_IMAGE_POPUP, DELETE_ALBUM, DELETE_IMAGE } from \"../actions/albums\";\nexport default ((state, action) => {\n  switch (action.type) {\n    case GET_ALBUMS:\n      return _objectSpread({}, state, {\n        albums: action.payload.albums\n      });\n\n    case GET_ALBUM:\n      return {\n        album: action.payload.album\n      };\n\n    case CREATE_ALBUM:\n      return _objectSpread({}, action.payload);\n\n    case ADD_IMAGE:\n      return _objectSpread({}, state, action.payload);\n\n    case SHOW_DELETE_ALBUM_POPUP:\n      if (state.showDeleteAlbumPopupBool === true) {\n        return _objectSpread({}, state, {\n          showDeleteAlbumPopupBool: false\n        });\n      } else {\n        return _objectSpread({}, state, {\n          showDeleteAlbumPopupBool: true,\n          albumToDeleteId: action.payload\n        });\n      }\n\n    case SHOW_DELETE_IMAGE_POPUP:\n      if (state.showDeleteImagePopupBool === true) {\n        return _objectSpread({}, state, {\n          showDeleteImagePopupBool: false\n        });\n      } else {\n        return _objectSpread({}, state, {\n          showDeleteImagePopupBool: true,\n          imageToDeleteId: action.payload\n        });\n      }\n\n    case SHOW_IMAGE_POPUP:\n      if (state.showImagePopupBool === true) {\n        return _objectSpread({}, state, {\n          showImagePopupBool: false\n        });\n      } else {\n        return _objectSpread({}, state, {\n          showImagePopupBool: true,\n          imageToShow: action.payload\n        });\n      }\n\n    case DELETE_ALBUM:\n      return _objectSpread({}, state, {\n        redirectToHome: true\n      });\n\n    case DELETE_IMAGE:\n      return _objectSpread({}, state, action.payload);\n\n    default:\n      return state;\n  }\n});"
             },
             {
               "id": "./src/root.js",
@@ -1964,7 +1959,7 @@
               "name": "./src/server/routes.js",
               "index": 28,
               "index2": 28,
-              "size": 3260,
+              "size": 3283,
               "cacheable": true,
               "built": false,
               "optional": false,
@@ -2021,7 +2016,7 @@
               ],
               "optimizationBailout": [],
               "depth": 3,
-              "source": "const AlbumModel = require(\"./AlbumModel\");\n\nimport { createPlugin } from \"fusion-core\";\nimport bodyParser from \"koa-bodyparser\";\nexport default true &&\n/*#__PURE__*/\ncreatePlugin({\n  middleware() {\n    const parseBody = bodyParser();\n    return async (ctx, next) => {\n      // get all albums\n      if (ctx.method === \"GET\" && ctx.path === \"/api/getAlbums\") {\n        const albums = await AlbumModel.find({});\n        ctx.body = {\n          message: \"status ok\",\n          albums\n        }; // find album by id\n      } else if (ctx.method === \"GET\" && ctx.path.startsWith(\"/api/findAlbum/\")) {\n        const albumId = ctx.path.match(/findAlbum\\/(.*)/)[1];\n        const album = await AlbumModel.findOne({\n          _id: albumId\n        });\n        ctx.body = {\n          message: \"status ok\",\n          album\n        }; // create album\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/create-album\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          albumName\n        } = ctx.request.body;\n        const newAlbum = new AlbumModel({\n          name: albumName\n        });\n        const result = await newAlbum.save();\n        ctx.body = {\n          message: \"status ok\",\n          albumId: result._id\n        }; // add images\n      } else if (ctx.method === \"PUT\" && ctx.path.startsWith(\"/api/add-image\")) {\n        const albumId = ctx.path.match(/add-image\\/(.*)/)[1];\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          image\n        } = ctx.request.body;\n        const album = await AlbumModel.findOne({\n          _id: albumId\n        });\n        let currentAlbum = album.images;\n        currentAlbum.push(image);\n        const result = await AlbumModel.findOneAndUpdate({\n          _id: albumId\n        }, {\n          $set: {\n            images: currentAlbum\n          }\n        }, {\n          new: true\n        });\n        ctx.body = {\n          message: \"status ok\",\n          result\n        }; // delete album\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/delete-album\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          albumId\n        } = ctx.request.body;\n        const result = await AlbumModel.findOneAndRemove({\n          _id: albumId\n        });\n        ctx.body = {\n          message: \"status ok\",\n          result\n        }; // delete image\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/delete-image\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          imageToDelete,\n          albumId\n        } = ctx.request.body;\n        const album = await AlbumModel.findOne({\n          _id: albumId\n        });\n        const imagesArray = album.images;\n\n        for (let i = 0; i < imagesArray.length; i++) {\n          let idString = String(imagesArray[i]._id);\n\n          if (idString === imageToDelete) {\n            imagesArray.splice(i, 1);\n          }\n        }\n\n        const result = await AlbumModel.findOneAndUpdate({\n          _id: albumId\n        }, {\n          $set: {\n            images: imagesArray\n          }\n        }, {\n          new: true\n        });\n        ctx.body = {\n          message: \"status ok\",\n          result\n        };\n      }\n\n      return next();\n    };\n  }\n\n});"
+              "source": "const AlbumModel = require(\"./AlbumModel\");\n\nimport { createPlugin } from \"fusion-core\";\nimport bodyParser from \"koa-bodyparser\";\nexport default true &&\n/*#__PURE__*/\ncreatePlugin({\n  middleware() {\n    const parseBody = bodyParser();\n    return async (ctx, next) => {\n      // get all albums\n      if (ctx.method === \"GET\" && ctx.path === \"/api/getAlbums\") {\n        const albums = await AlbumModel.find({});\n        ctx.body = {\n          message: \"all albums found\",\n          albums\n        }; // find album by id\n      } else if (ctx.method === \"GET\" && ctx.path.startsWith(\"/api/findAlbum/\")) {\n        const albumId = ctx.path.match(/findAlbum\\/(.*)/)[1];\n        const album = await AlbumModel.findOne({\n          _id: albumId\n        });\n        ctx.body = {\n          message: \"album found\",\n          album\n        }; // create album\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/create-album\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          albumName\n        } = ctx.request.body;\n        const newAlbum = new AlbumModel({\n          name: albumName\n        });\n        const result = await newAlbum.save();\n        ctx.body = {\n          message: \"album created\",\n          albumId: result._id\n        }; // add images\n      } else if (ctx.method === \"PUT\" && ctx.path.startsWith(\"/api/add-image\")) {\n        const albumId = ctx.path.match(/add-image\\/(.*)/)[1];\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          image\n        } = ctx.request.body;\n        const album = await AlbumModel.findOne({\n          _id: albumId\n        });\n        let currentAlbum = album.images;\n        currentAlbum.push(image);\n        const result = await AlbumModel.findOneAndUpdate({\n          _id: albumId\n        }, {\n          $set: {\n            images: currentAlbum\n          }\n        }, {\n          new: true\n        });\n        ctx.body = {\n          message: \"image added\",\n          result\n        }; // delete album\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/delete-album\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          albumId\n        } = ctx.request.body;\n        const result = await AlbumModel.findOneAndDelete({\n          _id: albumId\n        });\n        ctx.body = {\n          message: \"album deleted\",\n          result\n        }; // delete image\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/delete-image\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          imageToDelete,\n          albumId\n        } = ctx.request.body;\n        const album = await AlbumModel.findOne({\n          _id: albumId\n        });\n        const imagesArray = album.images;\n\n        for (let i = 0; i < imagesArray.length; i++) {\n          let idString = String(imagesArray[i]._id);\n\n          if (idString === imageToDelete) {\n            imagesArray.splice(i, 1);\n          }\n        }\n\n        const result = await AlbumModel.findOneAndUpdate({\n          _id: albumId\n        }, {\n          $set: {\n            images: imagesArray\n          }\n        }, {\n          new: true\n        });\n        ctx.body = {\n          message: \"image deleted\",\n          result\n        };\n      }\n\n      return next();\n    };\n  }\n\n});"
             },
             {
               "id": "axios",
@@ -2056,14 +2051,9 @@
                   "name": "./src/main.js"
                 },
                 {
-                  "id": "./src/root.js",
-                  "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/root.js",
-                  "name": "./src/root.js"
-                },
-                {
-                  "id": "./src/pages/home.js",
-                  "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
-                  "name": "./src/pages/home.js"
+                  "id": "./src/reducers/albums.js",
+                  "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/reducers/albums.js",
+                  "name": "./src/reducers/albums.js"
                 },
                 {
                   "id": "./src/actions/albums.js",
@@ -2423,7 +2413,16 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony side effect evaluation",
                   "userRequest": "fusion-plugin-react-router",
-                  "loc": "6:0-50"
+                  "loc": "4:0-54"
+                },
+                {
+                  "moduleId": "./src/pages/album.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+                  "module": "./src/pages/album.js",
+                  "moduleName": "./src/pages/album.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "fusion-plugin-react-router",
+                  "loc": "7:0-50"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -2432,7 +2431,16 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "fusion-plugin-react-router",
-                  "loc": "36:377-381"
+                  "loc": "35:92-100"
+                },
+                {
+                  "moduleId": "./src/pages/album.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+                  "module": "./src/pages/album.js",
+                  "moduleName": "./src/pages/album.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "fusion-plugin-react-router",
+                  "loc": "39:377-381"
                 },
                 {
                   "moduleId": "./src/pages/home.js",
@@ -3126,7 +3134,7 @@
                   "moduleName": "./src/Components/create-album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "29:11-16"
+                  "loc": "30:11-16"
                 },
                 {
                   "moduleId": "./src/Components/create-album.js",
@@ -3135,7 +3143,7 @@
                   "moduleName": "./src/Components/create-album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "31:7-12"
+                  "loc": "32:7-12"
                 },
                 {
                   "moduleId": "./src/Components/create-album.js",
@@ -3144,7 +3152,7 @@
                   "moduleName": "./src/Components/create-album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "31:63-68"
+                  "loc": "32:63-68"
                 },
                 {
                   "moduleId": "./src/Components/create-album.js",
@@ -3153,7 +3161,7 @@
                   "moduleName": "./src/Components/create-album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "34:8-13"
+                  "loc": "35:8-13"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3180,7 +3188,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "31:11-16"
+                  "loc": "33:11-16"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3189,7 +3197,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "33:7-12"
+                  "loc": "35:7-12"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3198,7 +3206,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "35:45-50"
+                  "loc": "37:45-50"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3207,7 +3215,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "35:78-83"
+                  "loc": "37:78-83"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3216,7 +3224,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "37:25-30"
+                  "loc": "39:25-30"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3225,7 +3233,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "39:7-12"
+                  "loc": "41:7-12"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3234,7 +3242,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "42:18-23"
+                  "loc": "44:18-23"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3243,7 +3251,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "45:18-23"
+                  "loc": "47:18-23"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3252,7 +3260,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "45:51-56"
+                  "loc": "47:51-56"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3261,7 +3269,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "47:25-30"
+                  "loc": "49:25-30"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3270,7 +3278,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "49:7-12"
+                  "loc": "51:7-12"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3279,7 +3287,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "52:18-23"
+                  "loc": "54:18-23"
                 },
                 {
                   "moduleId": "./src/Components/image-popup.js",
@@ -3369,7 +3377,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "11:20-29"
+                  "loc": "12:20-29"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3378,7 +3386,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "34:11-16"
+                  "loc": "35:11-16"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3387,7 +3395,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "36:7-12"
+                  "loc": "35:72-77"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3396,7 +3404,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "36:78-83"
+                  "loc": "37:9-14"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3405,7 +3413,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "36:126-131"
+                  "loc": "39:7-12"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3414,7 +3422,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "36:197-202"
+                  "loc": "39:78-83"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3423,7 +3431,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "36:245-250"
+                  "loc": "39:126-131"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3432,7 +3440,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "36:310-315"
+                  "loc": "39:197-202"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3441,7 +3449,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "36:357-362"
+                  "loc": "39:245-250"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3450,7 +3458,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "39:16-21"
+                  "loc": "39:310-315"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3459,7 +3467,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "41:7-12"
+                  "loc": "39:357-362"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3468,7 +3476,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "43:31-36"
+                  "loc": "42:16-21"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3477,7 +3485,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "46:17-22"
+                  "loc": "44:7-12"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3486,7 +3494,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "48:8-13"
+                  "loc": "46:31-36"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3495,7 +3503,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "50:7-12"
+                  "loc": "49:17-22"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3504,7 +3512,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "52:49-54"
+                  "loc": "51:8-13"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3513,7 +3521,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "54:7-12"
+                  "loc": "53:7-12"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3522,7 +3530,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "56:16-21"
+                  "loc": "55:49-54"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3531,7 +3539,25 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react",
-                  "loc": "58:7-12"
+                  "loc": "57:7-12"
+                },
+                {
+                  "moduleId": "./src/pages/album.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+                  "module": "./src/pages/album.js",
+                  "moduleName": "./src/pages/album.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "react",
+                  "loc": "59:16-21"
+                },
+                {
+                  "moduleId": "./src/pages/album.js",
+                  "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+                  "module": "./src/pages/album.js",
+                  "moduleName": "./src/pages/album.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "react",
+                  "loc": "61:7-12"
                 },
                 {
                   "moduleId": "./src/pages/home.js",
@@ -3825,7 +3851,7 @@
                   "moduleName": "./src/Components/create-album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react-redux",
-                  "loc": "46:15-22"
+                  "loc": "47:15-22"
                 },
                 {
                   "moduleId": "./src/Components/delete-popup.js",
@@ -3843,7 +3869,7 @@
                   "moduleName": "./src/Components/delete-popup.js",
                   "type": "harmony import specifier",
                   "userRequest": "react-redux",
-                  "loc": "105:15-22"
+                  "loc": "107:15-22"
                 },
                 {
                   "moduleId": "./src/Components/image-popup.js",
@@ -3870,7 +3896,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony side effect evaluation",
                   "userRequest": "react-redux",
-                  "loc": "5:0-38"
+                  "loc": "6:0-38"
                 },
                 {
                   "moduleId": "./src/pages/album.js",
@@ -3879,7 +3905,7 @@
                   "moduleName": "./src/pages/album.js",
                   "type": "harmony import specifier",
                   "userRequest": "react-redux",
-                  "loc": "117:15-22"
+                  "loc": "121:15-22"
                 },
                 {
                   "moduleId": "./src/pages/home.js",
@@ -4817,7 +4843,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony side effect evaluation",
               "userRequest": "../Components/add-image",
-              "loc": "7:0-47"
+              "loc": "8:0-47"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -4826,7 +4852,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "../Components/add-image",
-              "loc": "46:37-45"
+              "loc": "49:37-45"
             }
           ],
           "providedExports": [
@@ -4842,7 +4868,7 @@
           "name": "./src/Components/create-album.js",
           "index": 19,
           "index2": 16,
-          "size": 1263,
+          "size": 1323,
           "cacheable": true,
           "built": false,
           "optional": false,
@@ -4909,7 +4935,7 @@
           ],
           "optimizationBailout": [],
           "depth": 5,
-          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { createAlbum } from \"../actions/albums\";\n\nclass CreateAlbum extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleChange\", event => {\n      this.setState({\n        value: event.target.value\n      });\n    });\n\n    _defineProperty(this, \"handleSubmit\", event => {\n      event.preventDefault();\n      const albumName = this.state.value;\n      this.props.createAlbum(albumName, this.props.history);\n    });\n\n    this.state = {\n      value: \"\"\n    };\n  }\n\n  render() {\n    return React.createElement(\"form\", {\n      onSubmit: this.handleSubmit\n    }, React.createElement(\"label\", null, \"Create New Album\"), React.createElement(\"input\", {\n      type: \"text\",\n      onChange: this.handleChange\n    }), React.createElement(\"button\", {\n      type: \"submit\",\n      value: \"Submit\"\n    }, \"Create\"));\n  }\n\n}\n\nconst mapStateToProps = state => {\n  return {};\n};\n\nexport default connect(mapStateToProps, {\n  createAlbum\n})(CreateAlbum);"
+          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { createAlbum } from \"../actions/albums\";\n\nclass CreateAlbum extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleChange\", event => {\n      this.setState({\n        value: event.target.value\n      });\n    });\n\n    _defineProperty(this, \"handleSubmit\", event => {\n      event.preventDefault();\n      const albumName = this.state.value;\n      console.log(\"history in crease\", this.props.history);\n      this.props.createAlbum(albumName, this.props.history);\n    });\n\n    this.state = {\n      value: \"\"\n    };\n  }\n\n  render() {\n    return React.createElement(\"form\", {\n      onSubmit: this.handleSubmit\n    }, React.createElement(\"label\", null, \"Create New Album\"), React.createElement(\"input\", {\n      type: \"text\",\n      onChange: this.handleChange\n    }), React.createElement(\"button\", {\n      type: \"submit\",\n      value: \"Submit\"\n    }, \"Create\"));\n  }\n\n}\n\nconst mapStateToProps = state => {\n  return {};\n};\n\nexport default connect(mapStateToProps, {\n  createAlbum\n})(CreateAlbum);"
         },
         {
           "id": "./src/Components/delete-popup.js",
@@ -4917,7 +4943,7 @@
           "name": "./src/Components/delete-popup.js",
           "index": 23,
           "index2": 18,
-          "size": 3165,
+          "size": 3269,
           "cacheable": true,
           "built": false,
           "optional": false,
@@ -4967,7 +4993,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony side effect evaluation",
               "userRequest": "../Components/delete-popup",
-              "loc": "8:0-53"
+              "loc": "9:0-53"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -4976,7 +5002,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "../Components/delete-popup",
-              "loc": "36:98-109"
+              "loc": "39:98-109"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -4985,7 +5011,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "../Components/delete-popup",
-              "loc": "36:217-228"
+              "loc": "39:217-228"
             }
           ],
           "providedExports": [
@@ -4993,7 +5019,7 @@
           ],
           "optimizationBailout": [],
           "depth": 5,
-          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { showDeleteAlbumPopup, showDeleteImagePopup, deleteImage, deleteAlbum } from \"../actions/albums\";\n\nclass DeletePopup extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeleteAlbumCancel\", () => {\n      this.props.showDeleteAlbumPopup();\n    });\n\n    _defineProperty(this, \"handleDeleteImageCancel\", () => {\n      this.props.showDeleteImagePopup();\n    });\n\n    _defineProperty(this, \"handleDeleteAlbumClick\", albumId => {\n      this.props.showDeleteAlbumPopup();\n      this.props.deleteAlbum(albumId);\n    });\n\n    _defineProperty(this, \"handleDeleteImageClick\", (imageToDeleteId, albumId) => {\n      this.props.showDeleteImagePopup();\n      this.props.deleteImage(imageToDeleteId, albumId);\n    });\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: popupContainer\n    }, React.createElement(\"div\", {\n      style: popupBox\n    }, this.props.showDeleteAlbumPopupBool ? React.createElement(\"div\", null, React.createElement(\"div\", {\n      style: text\n    }, \"Delete Album?\"), React.createElement(\"div\", {\n      style: buttonContainer\n    }, React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: this.handleDeleteAlbumCancel\n    }, \"Cancel\"), React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: () => this.handleDeleteAlbumClick(this.props.albumId)\n    }, \"Yes\"))) : React.createElement(\"div\", null, React.createElement(\"div\", {\n      style: text\n    }, \"Delete Image?\"), React.createElement(\"div\", {\n      style: buttonContainer\n    }, React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: this.handleDeleteImageCancel\n    }, \"Cancel\"), React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: () => this.handleDeleteImageClick(this.props.imageToDeleteId, this.props.albumId)\n    }, \"Yes\")))));\n  }\n\n}\n\nconst popupContainer = {\n  zIndex: \"1\",\n  overflow: \"auto\",\n  backgroundColor: \"rgba(0,0,0,0.4)\",\n  position: \"fixed\",\n  height: \"100%\",\n  width: \"100%\",\n  left: \"0\",\n  top: \"0\",\n  display: \"flex\"\n};\nconst popupBox = {\n  width: \"400px\",\n  height: \"200px\",\n  backgroundColor: \"white\",\n  margin: \"auto\"\n};\nconst buttonContainer = {\n  display: \"flex\",\n  justifyContent: \"space-around\"\n};\nconst buttonStyle = {\n  border: \".5px solid\",\n  fontSize: \"16px\",\n  padding: \"5px\",\n  width: \"100px\",\n  height: \"40px\"\n};\nconst text = {\n  textAlign: \"center\",\n  paddingTop: \"40px\",\n  paddingBottom: \"40px\",\n  fontSize: \"25px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in delete\", state);\n  return {\n    albumId: state.album._id,\n    imageToDeleteId: state.imageToDeleteId,\n    albumToDeleteId: state.albumToDeleteId,\n    showDeleteAlbumPopupBool: state.showDeleteAlbumPopupBool\n  };\n};\n\nexport default connect(mapStateToProps, {\n  showDeleteAlbumPopup,\n  showDeleteImagePopup,\n  deleteImage,\n  deleteAlbum\n})(DeletePopup);"
+          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { connect } from \"react-redux\";\nimport { showDeleteAlbumPopup, showDeleteImagePopup, deleteImage, deleteAlbum } from \"../actions/albums\";\n\nclass DeletePopup extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeleteAlbumCancel\", () => {\n      this.props.showDeleteAlbumPopup();\n    });\n\n    _defineProperty(this, \"handleDeleteImageCancel\", () => {\n      this.props.showDeleteImagePopup();\n    });\n\n    _defineProperty(this, \"handleDeleteAlbumClick\", albumId => {\n      console.log(\"handleDeleteAlbumClick called\");\n      this.props.showDeleteAlbumPopup();\n      console.log(\"handleDeleteAlbumClick called\");\n      this.props.deleteAlbum(albumId);\n    });\n\n    _defineProperty(this, \"handleDeleteImageClick\", (imageToDeleteId, albumId) => {\n      this.props.showDeleteImagePopup();\n      this.props.deleteImage(imageToDeleteId, albumId);\n    });\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: popupContainer\n    }, React.createElement(\"div\", {\n      style: popupBox\n    }, this.props.showDeleteAlbumPopupBool ? React.createElement(\"div\", null, React.createElement(\"div\", {\n      style: text\n    }, \"Delete Album?\"), React.createElement(\"div\", {\n      style: buttonContainer\n    }, React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: this.handleDeleteAlbumCancel\n    }, \"Cancel\"), React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: () => this.handleDeleteAlbumClick(this.props.albumId)\n    }, \"Yes\"))) : React.createElement(\"div\", null, React.createElement(\"div\", {\n      style: text\n    }, \"Delete Image?\"), React.createElement(\"div\", {\n      style: buttonContainer\n    }, React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: this.handleDeleteImageCancel\n    }, \"Cancel\"), React.createElement(\"button\", {\n      style: buttonStyle,\n      onClick: () => this.handleDeleteImageClick(this.props.imageToDeleteId, this.props.albumId)\n    }, \"Yes\")))));\n  }\n\n}\n\nconst popupContainer = {\n  zIndex: \"1\",\n  overflow: \"auto\",\n  backgroundColor: \"rgba(0,0,0,0.4)\",\n  position: \"fixed\",\n  height: \"100%\",\n  width: \"100%\",\n  left: \"0\",\n  top: \"0\",\n  display: \"flex\"\n};\nconst popupBox = {\n  width: \"400px\",\n  height: \"200px\",\n  backgroundColor: \"white\",\n  margin: \"auto\"\n};\nconst buttonContainer = {\n  display: \"flex\",\n  justifyContent: \"space-around\"\n};\nconst buttonStyle = {\n  border: \".5px solid\",\n  fontSize: \"16px\",\n  padding: \"5px\",\n  width: \"100px\",\n  height: \"40px\"\n};\nconst text = {\n  textAlign: \"center\",\n  paddingTop: \"40px\",\n  paddingBottom: \"40px\",\n  fontSize: \"25px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in delete\", state);\n  return {\n    albumId: state.album._id,\n    imageToDeleteId: state.imageToDeleteId,\n    albumToDeleteId: state.albumToDeleteId,\n    showDeleteAlbumPopupBool: state.showDeleteAlbumPopupBool\n  };\n};\n\nexport default connect(mapStateToProps, {\n  showDeleteAlbumPopup,\n  showDeleteImagePopup,\n  deleteImage,\n  deleteAlbum\n})(DeletePopup);"
         },
         {
           "id": "./src/Components/image-popup.js",
@@ -5051,7 +5077,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony side effect evaluation",
               "userRequest": "../Components/image-popup",
-              "loc": "9:0-51"
+              "loc": "10:0-51"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -5060,7 +5086,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "../Components/image-popup",
-              "loc": "36:330-340"
+              "loc": "39:330-340"
             }
           ],
           "providedExports": [
@@ -5084,9 +5110,9 @@
           "chunks": [
             "main"
           ],
-          "issuer": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
-          "issuerId": "./src/pages/home.js",
-          "issuerName": "./src/pages/home.js",
+          "issuer": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/reducers/albums.js",
+          "issuerId": "./src/reducers/albums.js",
+          "issuerName": "./src/reducers/albums.js",
           "issuerPath": [
             {
               "id": 0,
@@ -5104,14 +5130,9 @@
               "name": "./src/main.js"
             },
             {
-              "id": "./src/root.js",
-              "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/root.js",
-              "name": "./src/root.js"
-            },
-            {
-              "id": "./src/pages/home.js",
-              "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
-              "name": "./src/pages/home.js"
+              "id": "./src/reducers/albums.js",
+              "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/reducers/albums.js",
+              "name": "./src/reducers/albums.js"
             }
           ],
           "failed": false,
@@ -5153,7 +5174,7 @@
               "moduleName": "./src/Components/create-album.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "47:2-13"
+              "loc": "48:2-13"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -5171,7 +5192,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "106:2-22"
+              "loc": "108:2-22"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -5180,7 +5201,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "107:2-22"
+              "loc": "109:2-22"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -5189,7 +5210,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "108:2-13"
+              "loc": "110:2-13"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -5198,7 +5219,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "109:2-13"
+              "loc": "111:2-13"
             },
             {
               "moduleId": "./src/Components/image-popup.js",
@@ -5225,7 +5246,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony side effect evaluation",
               "userRequest": "../actions/albums",
-              "loc": "4:0-106"
+              "loc": "5:0-106"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -5234,7 +5255,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "118:2-11"
+              "loc": "122:2-11"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -5243,7 +5264,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "119:2-22"
+              "loc": "123:2-22"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -5252,7 +5273,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "120:2-22"
+              "loc": "124:2-22"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -5261,7 +5282,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "121:2-16"
+              "loc": "125:2-16"
             },
             {
               "moduleId": "./src/pages/home.js",
@@ -5306,7 +5327,7 @@
               "moduleName": "./src/reducers/albums.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "10:9-19"
+              "loc": "8:9-19"
             },
             {
               "moduleId": "./src/reducers/albums.js",
@@ -5315,7 +5336,7 @@
               "moduleName": "./src/reducers/albums.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "15:9-18"
+              "loc": "13:9-18"
             },
             {
               "moduleId": "./src/reducers/albums.js",
@@ -5324,7 +5345,7 @@
               "moduleName": "./src/reducers/albums.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "20:9-21"
+              "loc": "18:9-21"
             },
             {
               "moduleId": "./src/reducers/albums.js",
@@ -5333,7 +5354,7 @@
               "moduleName": "./src/reducers/albums.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "23:9-18"
+              "loc": "21:9-18"
             },
             {
               "moduleId": "./src/reducers/albums.js",
@@ -5342,7 +5363,7 @@
               "moduleName": "./src/reducers/albums.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "26:9-32"
+              "loc": "24:9-32"
             },
             {
               "moduleId": "./src/reducers/albums.js",
@@ -5351,7 +5372,7 @@
               "moduleName": "./src/reducers/albums.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "38:9-32"
+              "loc": "36:9-32"
             },
             {
               "moduleId": "./src/reducers/albums.js",
@@ -5360,7 +5381,7 @@
               "moduleName": "./src/reducers/albums.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "50:9-25"
+              "loc": "48:9-25"
             },
             {
               "moduleId": "./src/reducers/albums.js",
@@ -5369,7 +5390,7 @@
               "moduleName": "./src/reducers/albums.js",
               "type": "harmony import specifier",
               "userRequest": "../actions/albums",
-              "loc": "62:9-21"
+              "loc": "60:9-21"
             },
             {
               "moduleId": "./src/reducers/albums.js",
@@ -5403,7 +5424,7 @@
           ],
           "optimizationBailout": [],
           "depth": 4,
-          "source": "import axios from \"axios\";\nexport const GET_ALBUMS = \"GET_ALBUMS\";\nexport const GET_ALBUM = \"GET_ALBUM\";\nexport const CREATE_ALBUM = \"CREATE_ALBUM\";\nexport const ADD_IMAGE = \"ADD_IMAGE\";\nexport const SHOW_DELETE_ALBUM_POPUP = \"SHOW_DELETE_ALBUM_POPUP\";\nexport const SHOW_DELETE_IMAGE_POPUP = \"SHOW_DELETE_IMAGE_POPUP\";\nexport const SHOW_IMAGE_POPUP = \"SHOW_IMAGE_POPUP\";\nexport const DELETE_ALBUM = \"DELETE_ALBUM\";\nexport const DELETE_IMAGE = \"DELETE_IMAGE\";\nconst ROOT_URL = \"http://localhost:3000/api\"; // get all albums\n\nexport const getAlbums = () => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/getAlbums`).then(res => {\n      console.log(\"res.data\", res.data);\n      dispatch({\n        type: GET_ALBUMS,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // find album\n\nexport const findAlbum = albumId => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/findAlbum/${albumId}`).then(res => {\n      dispatch({\n        type: GET_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // create album\n\nexport const createAlbum = (albumName, history) => {\n  return dispatch => {\n    axios.post(`${ROOT_URL}/create-album`, {\n      albumName\n    }).then(res => {\n      dispatch({\n        type: CREATE_ALBUM,\n        payload: res.data\n      });\n      history.push(\"/findAlbum/\" + res.data.albumId);\n    }).catch(error => {\n      console.log(\"error.response in create album\", error.response);\n    });\n  };\n}; // add images\n\nexport const addImage = (image, albumId) => {\n  return dispatch => {\n    axios.put(`${ROOT_URL}/add-image/${albumId}`, {\n      image\n    }).then(res => {\n      console.log(\"res.data in add image\", res.data);\n      dispatch({\n        type: ADD_IMAGE,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n}; // delete album popup\n\nexport const showDeleteAlbumPopup = albumToDeleteId => {\n  return {\n    type: SHOW_DELETE_ALBUM_POPUP,\n    payload: albumToDeleteId\n  };\n}; // delete image popup\n\nexport const showDeleteImagePopup = imageToDeleteId => {\n  return {\n    type: SHOW_DELETE_IMAGE_POPUP,\n    payload: imageToDeleteId\n  };\n}; // show image popup\n\nexport const showImagePopup = imageToShow => {\n  return {\n    type: SHOW_IMAGE_POPUP,\n    payload: imageToShow\n  };\n};\nexport const deleteAlbum = albumId => {\n  return dispatch => {\n    axios.post(`${ROOT_URL}/delete-album`, {\n      albumId\n    }).then(res => {\n      disptach({\n        type: DELETE_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n};\nexport const deleteImage = (imageToDelete, albumId) => {\n  return dispatch => {\n    axios.post(`${ROOT_URL}/delete-image`, {\n      imageToDelete,\n      albumId\n    }).then(res => {\n      disptach({\n        type: DELETE_IMAGE,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n};"
+          "source": "import axios from \"axios\";\nexport const GET_ALBUMS = \"GET_ALBUMS\";\nexport const GET_ALBUM = \"GET_ALBUM\";\nexport const CREATE_ALBUM = \"CREATE_ALBUM\";\nexport const ADD_IMAGE = \"ADD_IMAGE\";\nexport const SHOW_DELETE_ALBUM_POPUP = \"SHOW_DELETE_ALBUM_POPUP\";\nexport const SHOW_DELETE_IMAGE_POPUP = \"SHOW_DELETE_IMAGE_POPUP\";\nexport const SHOW_IMAGE_POPUP = \"SHOW_IMAGE_POPUP\";\nexport const DELETE_ALBUM = \"DELETE_ALBUM\";\nexport const DELETE_IMAGE = \"DELETE_IMAGE\";\nconst ROOT_URL = \"http://localhost:3000/api\"; // get all albums\n\nexport const getAlbums = () => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/getAlbums`).then(res => {\n      console.log(\"res.data\", res.data);\n      dispatch({\n        type: GET_ALBUMS,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // find album\n\nexport const findAlbum = albumId => {\n  return dispatch => {\n    axios.get(`${ROOT_URL}/findAlbum/${albumId}`).then(res => {\n      dispatch({\n        type: GET_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error\", error.response);\n    });\n  };\n}; // create album\n\nexport const createAlbum = (albumName, history) => {\n  return dispatch => {\n    axios.post(`${ROOT_URL}/create-album`, {\n      albumName\n    }).then(res => {\n      dispatch({\n        type: CREATE_ALBUM,\n        payload: res.data\n      });\n      history.push(\"/findAlbum/\" + res.data.albumId);\n    }).catch(error => {\n      console.log(\"error.response in create album\", error.response);\n    });\n  };\n}; // add images\n\nexport const addImage = (image, albumId) => {\n  return dispatch => {\n    axios.put(`${ROOT_URL}/add-image/${albumId}`, {\n      image\n    }).then(res => {\n      console.log(\"res.data in add image\", res.data);\n      dispatch({\n        type: ADD_IMAGE,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n}; // delete album popup\n\nexport const showDeleteAlbumPopup = albumToDeleteId => {\n  return {\n    type: SHOW_DELETE_ALBUM_POPUP,\n    payload: albumToDeleteId\n  };\n}; // delete image popup\n\nexport const showDeleteImagePopup = imageToDeleteId => {\n  return {\n    type: SHOW_DELETE_IMAGE_POPUP,\n    payload: imageToDeleteId\n  };\n}; // show image popup\n\nexport const showImagePopup = imageToShow => {\n  return {\n    type: SHOW_IMAGE_POPUP,\n    payload: imageToShow\n  };\n};\nexport const deleteAlbum = albumId => {\n  return dispatch => {\n    axios.post(`${ROOT_URL}/delete-album`, {\n      albumId\n    }).then(res => {\n      dispatch({\n        type: DELETE_ALBUM,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n};\nexport const deleteImage = (imageToDelete, albumId) => {\n  return dispatch => {\n    axios.post(`${ROOT_URL}/delete-image`, {\n      imageToDelete,\n      albumId\n    }).then(res => {\n      dispatch({\n        type: DELETE_IMAGE,\n        payload: res.data\n      });\n    }).catch(error => {\n      console.log(\"error.response\", error.response);\n    });\n  };\n};"
         },
         {
           "id": "./src/main.js",
@@ -5411,7 +5432,7 @@
           "name": "./src/main.js",
           "index": 8,
           "index2": 29,
-          "size": 932,
+          "size": 959,
           "cacheable": true,
           "built": false,
           "optional": false,
@@ -5472,7 +5493,7 @@
           ],
           "optimizationBailout": [],
           "depth": 2,
-          "source": "import Router from \"fusion-plugin-react-router\";\nimport Styletron from \"fusion-plugin-styletron-react\";\nimport root from \"./root.js\";\nimport React from \"react\";\nimport Redux, { ReduxToken, ReducerToken, EnhancerToken, GetInitialStateToken } from \"fusion-plugin-react-redux\";\nimport ReduxThunk from \"redux-thunk\";\nimport { applyMiddleware } from \"redux\";\nimport App from \"fusion-react\";\nimport reducer from \"./reducers/albums\";\nimport routes from \"./server/routes\";\nexport default function start() {\n  const app = new App(root);\n  app.register(ReduxToken, Redux);\n  app.register(ReducerToken, reducer);\n  app.register(Styletron);\n  app.register(Router);\n  app.register(EnhancerToken, applyMiddleware(ReduxThunk));\n  true && app.register(routes);\n  true && app.register(GetInitialStateToken, async ctx => ({\n    showDeleteImagePopupBool: false,\n    showImagePopupBool: false,\n    showDeleteAlbumPopupBool: false\n  }));\n  return app;\n}"
+          "source": "import Router from \"fusion-plugin-react-router\";\nimport Styletron from \"fusion-plugin-styletron-react\";\nimport root from \"./root.js\";\nimport React from \"react\";\nimport Redux, { ReduxToken, ReducerToken, EnhancerToken, GetInitialStateToken } from \"fusion-plugin-react-redux\";\nimport ReduxThunk from \"redux-thunk\";\nimport { applyMiddleware } from \"redux\";\nimport App from \"fusion-react\";\nimport reducer from \"./reducers/albums\";\nimport routes from \"./server/routes\";\nexport default function start() {\n  const app = new App(root);\n  app.register(ReduxToken, Redux);\n  app.register(ReducerToken, reducer);\n  app.register(Styletron);\n  app.register(Router);\n  app.register(EnhancerToken, applyMiddleware(ReduxThunk));\n  true && app.register(routes);\n  true && app.register(GetInitialStateToken, async ctx => ({\n    showDeleteImagePopupBool: false,\n    showImagePopupBool: false,\n    showDeleteAlbumPopupBool: false,\n    redirectToHome: false\n  }));\n  return app;\n}"
         },
         {
           "id": "./src/pages/album.js",
@@ -5480,9 +5501,9 @@
           "name": "./src/pages/album.js",
           "index": 22,
           "index2": 21,
-          "size": 3813,
+          "size": 4036,
           "cacheable": true,
-          "built": false,
+          "built": true,
           "optional": false,
           "prefetched": false,
           "chunks": [
@@ -5542,7 +5563,7 @@
           ],
           "optimizationBailout": [],
           "depth": 4,
-          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { findAlbum, showDeleteAlbumPopup, showDeleteImagePopup, showImagePopup } from \"../actions/albums\";\nimport { connect } from \"react-redux\";\nimport { Link } from \"fusion-plugin-react-router\";\nimport AddImage from \"../Components/add-image\";\nimport DeletePopup from \"../Components/delete-popup\";\nimport ImagePopup from \"../Components/image-popup\";\n\nclass Album extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeleteAlbumClick\", albumToDelete => {\n      this.props.showDeleteAlbumPopup(albumToDelete);\n    });\n\n    _defineProperty(this, \"handleDeleteImageClick\", imageToDelete => {\n      this.props.showDeleteImagePopup(imageToDelete);\n    });\n\n    _defineProperty(this, \"handleImagePopupClick\", imageToExpand => {\n      this.props.showImagePopup(imageToExpand);\n    });\n  }\n\n  componentDidMount() {\n    const albumId = this.props.match.params.id;\n    this.props.findAlbum(albumId);\n  }\n\n  render() {\n    return React.createElement(\"div\", {\n      style: albumContainer\n    }, React.createElement(\"div\", null, this.props.showDeleteAlbumPopupBool ? React.createElement(DeletePopup, null) : null), React.createElement(\"div\", null, this.props.showDeleteImagePopupBool ? React.createElement(DeletePopup, null) : null), React.createElement(\"div\", null, this.props.showImagePopupBool ? React.createElement(ImagePopup, null) : null), React.createElement(Link, {\n      style: homeLink,\n      to: \"/\"\n    }, \"Home\"), React.createElement(\"div\", {\n      style: titleContainer\n    }, React.createElement(\"div\", {\n      style: albumName\n    }, this.props.album.name), React.createElement(\"div\", {\n      style: deleteAlbumButton,\n      onClick: () => this.handleDeleteAlbumClick(this.props.album._id)\n    }, \"\\xD7\")), React.createElement(AddImage, {\n      albumId: this.props.match.params.id\n    }), React.createElement(\"div\", {\n      style: imagesBox\n    }, React.createElement(\"div\", {\n      style: imagesContainer\n    }, this.props.album.images.map((image, i) => React.createElement(\"div\", {\n      key: i\n    }, React.createElement(\"button\", {\n      onClick: () => this.handleDeleteImageClick(image._id)\n    }, \"\\xD7\"), React.createElement(\"div\", {\n      onClick: () => this.handleImagePopupClick(image.imagePreviewUrl)\n    }, React.createElement(\"img\", {\n      style: imageContainer,\n      src: image.imagePreviewUrl\n    })))))));\n  }\n\n}\n\nconst albumContainer = {\n  fontFamily: \"HelveticaNeue-Light, Arial\",\n  width: \"80%\",\n  margin: \"auto\",\n  paddingTop: \"20px\"\n};\nconst titleContainer = {\n  display: \"flex\",\n  justifyContent: \"center\"\n};\nconst imagesBox = {\n  justifyContent: \"center\",\n  marginTop: \"40px\"\n};\nconst imagesContainer = {\n  margin: \"auto\",\n  display: \"grid\",\n  gridTemplateColumns: \"repeat(4, 300px)\",\n  justifyContent: \"space-around\"\n};\nconst imageContainer = {\n  maxWidth: \"300px\",\n  maxHeight: \"300px\",\n  backgroundColor: \"#F0F0F0\"\n};\nconst homeLink = {\n  textDecoration: \"none\",\n  fontSize: \"20px\",\n  fontWeight: \"600\"\n};\nconst albumName = {\n  fontSize: \"25px\",\n  textAlign: \"center\",\n  fontWeight: \"500\"\n};\nconst deleteAlbumButton = {\n  paddingLeft: \"20px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state\", state);\n  return {\n    album: state.album || {\n      images: []\n    },\n    showDeleteAlbumPopupBool: state.showDeleteAlbumPopupBool,\n    showDeleteImagePopupBool: state.showDeleteImagePopupBool,\n    showImagePopupBool: state.showImagePopupBool\n  };\n};\n\nexport default connect(mapStateToProps, {\n  findAlbum,\n  showDeleteAlbumPopup,\n  showDeleteImagePopup,\n  showImagePopup\n})(Album);"
+          "source": "function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport React, { Component } from \"react\";\nimport { Redirect } from \"fusion-plugin-react-router\";\nimport { findAlbum, showDeleteAlbumPopup, showDeleteImagePopup, showImagePopup } from \"../actions/albums\";\nimport { connect } from \"react-redux\";\nimport { Link } from \"fusion-plugin-react-router\";\nimport AddImage from \"../Components/add-image\";\nimport DeletePopup from \"../Components/delete-popup\";\nimport ImagePopup from \"../Components/image-popup\";\n\nclass Album extends Component {\n  constructor(props) {\n    super(props);\n\n    _defineProperty(this, \"handleDeleteAlbumClick\", albumToDelete => {\n      this.props.showDeleteAlbumPopup(albumToDelete);\n    });\n\n    _defineProperty(this, \"handleDeleteImageClick\", imageToDelete => {\n      this.props.showDeleteImagePopup(imageToDelete);\n    });\n\n    _defineProperty(this, \"handleImagePopupClick\", imageToExpand => {\n      this.props.showImagePopup(imageToExpand);\n    });\n  }\n\n  componentDidMount() {\n    const albumId = this.props.match.params.id;\n    this.props.findAlbum(albumId);\n  }\n\n  render() {\n    return React.createElement(\"div\", null, this.props.redirectToHome ? React.createElement(Redirect, {\n      to: \"/\"\n    }) : React.createElement(\"div\", {\n      style: albumContainer\n    }, React.createElement(\"div\", null, this.props.showDeleteAlbumPopupBool ? React.createElement(DeletePopup, null) : null), React.createElement(\"div\", null, this.props.showDeleteImagePopupBool ? React.createElement(DeletePopup, null) : null), React.createElement(\"div\", null, this.props.showImagePopupBool ? React.createElement(ImagePopup, null) : null), React.createElement(Link, {\n      style: homeLink,\n      to: \"/\"\n    }, \"Home\"), React.createElement(\"div\", {\n      style: titleContainer\n    }, React.createElement(\"div\", {\n      style: albumName\n    }, this.props.album.name), React.createElement(\"div\", {\n      style: deleteAlbumButton,\n      onClick: () => this.handleDeleteAlbumClick(this.props.album._id)\n    }, \"\\xD7\")), React.createElement(AddImage, {\n      albumId: this.props.match.params.id\n    }), React.createElement(\"div\", {\n      style: imagesBox\n    }, React.createElement(\"div\", {\n      style: imagesContainer\n    }, this.props.album.images.map((image, i) => React.createElement(\"div\", {\n      key: i\n    }, React.createElement(\"button\", {\n      onClick: () => this.handleDeleteImageClick(image._id)\n    }, \"\\xD7\"), React.createElement(\"div\", {\n      onClick: () => this.handleImagePopupClick(image.imagePreviewUrl)\n    }, React.createElement(\"img\", {\n      style: imageContainer,\n      src: image.imagePreviewUrl\n    }))))))));\n  }\n\n}\n\nconst albumContainer = {\n  fontFamily: \"HelveticaNeue-Light, Arial\",\n  width: \"80%\",\n  margin: \"auto\",\n  paddingTop: \"20px\"\n};\nconst titleContainer = {\n  display: \"flex\",\n  justifyContent: \"center\"\n};\nconst imagesBox = {\n  justifyContent: \"center\",\n  marginTop: \"40px\"\n};\nconst imagesContainer = {\n  margin: \"auto\",\n  display: \"grid\",\n  gridTemplateColumns: \"repeat(4, 300px)\",\n  justifyContent: \"space-around\"\n};\nconst imageContainer = {\n  maxWidth: \"300px\",\n  maxHeight: \"300px\",\n  backgroundColor: \"#F0F0F0\"\n};\nconst homeLink = {\n  textDecoration: \"none\",\n  fontSize: \"20px\",\n  fontWeight: \"600\"\n};\nconst albumName = {\n  fontSize: \"25px\",\n  textAlign: \"center\",\n  fontWeight: \"500\"\n};\nconst deleteAlbumButton = {\n  paddingLeft: \"20px\"\n};\n\nconst mapStateToProps = state => {\n  console.log(\"state in album\", state);\n  return {\n    album: state.album || {\n      images: []\n    },\n    showDeleteAlbumPopupBool: state.showDeleteAlbumPopupBool,\n    showDeleteImagePopupBool: state.showDeleteImagePopupBool,\n    showImagePopupBool: state.showImagePopupBool,\n    redirectToHome: state.redirectToHome\n  };\n};\n\nexport default connect(mapStateToProps, {\n  findAlbum,\n  showDeleteAlbumPopup,\n  showDeleteImagePopup,\n  showImagePopup\n})(Album);"
         },
         {
           "id": "./src/pages/home.js",
@@ -5690,9 +5711,9 @@
           "name": "./src/reducers/albums.js",
           "index": 27,
           "index2": 24,
-          "size": 2493,
+          "size": 2503,
           "cacheable": true,
-          "built": true,
+          "built": false,
           "optional": false,
           "prefetched": false,
           "chunks": [
@@ -5747,7 +5768,7 @@
           ],
           "optimizationBailout": [],
           "depth": 3,
-          "source": "function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport { GET_ALBUMS, GET_ALBUM, ADD_IMAGE, CREATE_ALBUM, SHOW_DELETE_ALBUM_POPUP, SHOW_DELETE_IMAGE_POPUP, SHOW_IMAGE_POPUP, DELETE_ALBUM, DELETE_IMAGE } from \"../actions/albums\";\nexport default ((state, action) => {\n  console.log(\"action.payload\", action.payload);\n\n  switch (action.type) {\n    case GET_ALBUMS:\n      return _objectSpread({}, state, {\n        albums: action.payload.albums\n      });\n\n    case GET_ALBUM:\n      return {\n        album: action.payload.album\n      };\n\n    case CREATE_ALBUM:\n      return _objectSpread({}, action.payload);\n\n    case ADD_IMAGE:\n      return _objectSpread({}, state, action.payload);\n\n    case SHOW_DELETE_ALBUM_POPUP:\n      if (state.showDeleteAlbumPopupBool === true) {\n        return _objectSpread({}, state, {\n          showDeleteAlbumPopupBool: false\n        });\n      } else {\n        return _objectSpread({}, state, {\n          showDeleteAlbumPopupBool: true,\n          albumToDeleteId: action.payload\n        });\n      }\n\n    case SHOW_DELETE_IMAGE_POPUP:\n      if (state.showDeleteImagePopupBool === true) {\n        return _objectSpread({}, state, {\n          showDeleteImagePopupBool: false\n        });\n      } else {\n        return _objectSpread({}, state, {\n          showDeleteImagePopupBool: true,\n          imageToDeleteId: action.payload\n        });\n      }\n\n    case SHOW_IMAGE_POPUP:\n      if (state.showImagePopupBool === true) {\n        return _objectSpread({}, state, {\n          showImagePopupBool: false\n        });\n      }\n\n      return _objectSpread({}, state, {\n        showImagePopupBool: true,\n        imageToShow: action.payload\n      });\n\n    case DELETE_ALBUM:\n      return _objectSpread({}, action.payload);\n\n    case DELETE_IMAGE:\n      return _objectSpread({}, action.payload);\n\n    default:\n      return state;\n  }\n});"
+          "source": "function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nimport { GET_ALBUMS, GET_ALBUM, ADD_IMAGE, CREATE_ALBUM, SHOW_DELETE_ALBUM_POPUP, SHOW_DELETE_IMAGE_POPUP, SHOW_IMAGE_POPUP, DELETE_ALBUM, DELETE_IMAGE } from \"../actions/albums\";\nexport default ((state, action) => {\n  switch (action.type) {\n    case GET_ALBUMS:\n      return _objectSpread({}, state, {\n        albums: action.payload.albums\n      });\n\n    case GET_ALBUM:\n      return {\n        album: action.payload.album\n      };\n\n    case CREATE_ALBUM:\n      return _objectSpread({}, action.payload);\n\n    case ADD_IMAGE:\n      return _objectSpread({}, state, action.payload);\n\n    case SHOW_DELETE_ALBUM_POPUP:\n      if (state.showDeleteAlbumPopupBool === true) {\n        return _objectSpread({}, state, {\n          showDeleteAlbumPopupBool: false\n        });\n      } else {\n        return _objectSpread({}, state, {\n          showDeleteAlbumPopupBool: true,\n          albumToDeleteId: action.payload\n        });\n      }\n\n    case SHOW_DELETE_IMAGE_POPUP:\n      if (state.showDeleteImagePopupBool === true) {\n        return _objectSpread({}, state, {\n          showDeleteImagePopupBool: false\n        });\n      } else {\n        return _objectSpread({}, state, {\n          showDeleteImagePopupBool: true,\n          imageToDeleteId: action.payload\n        });\n      }\n\n    case SHOW_IMAGE_POPUP:\n      if (state.showImagePopupBool === true) {\n        return _objectSpread({}, state, {\n          showImagePopupBool: false\n        });\n      } else {\n        return _objectSpread({}, state, {\n          showImagePopupBool: true,\n          imageToShow: action.payload\n        });\n      }\n\n    case DELETE_ALBUM:\n      return _objectSpread({}, state, {\n        redirectToHome: true\n      });\n\n    case DELETE_IMAGE:\n      return _objectSpread({}, state, action.payload);\n\n    default:\n      return state;\n  }\n});"
         },
         {
           "id": "./src/root.js",
@@ -5879,7 +5900,7 @@
           "name": "./src/server/routes.js",
           "index": 28,
           "index2": 28,
-          "size": 3260,
+          "size": 3283,
           "cacheable": true,
           "built": false,
           "optional": false,
@@ -5936,7 +5957,7 @@
           ],
           "optimizationBailout": [],
           "depth": 3,
-          "source": "const AlbumModel = require(\"./AlbumModel\");\n\nimport { createPlugin } from \"fusion-core\";\nimport bodyParser from \"koa-bodyparser\";\nexport default true &&\n/*#__PURE__*/\ncreatePlugin({\n  middleware() {\n    const parseBody = bodyParser();\n    return async (ctx, next) => {\n      // get all albums\n      if (ctx.method === \"GET\" && ctx.path === \"/api/getAlbums\") {\n        const albums = await AlbumModel.find({});\n        ctx.body = {\n          message: \"status ok\",\n          albums\n        }; // find album by id\n      } else if (ctx.method === \"GET\" && ctx.path.startsWith(\"/api/findAlbum/\")) {\n        const albumId = ctx.path.match(/findAlbum\\/(.*)/)[1];\n        const album = await AlbumModel.findOne({\n          _id: albumId\n        });\n        ctx.body = {\n          message: \"status ok\",\n          album\n        }; // create album\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/create-album\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          albumName\n        } = ctx.request.body;\n        const newAlbum = new AlbumModel({\n          name: albumName\n        });\n        const result = await newAlbum.save();\n        ctx.body = {\n          message: \"status ok\",\n          albumId: result._id\n        }; // add images\n      } else if (ctx.method === \"PUT\" && ctx.path.startsWith(\"/api/add-image\")) {\n        const albumId = ctx.path.match(/add-image\\/(.*)/)[1];\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          image\n        } = ctx.request.body;\n        const album = await AlbumModel.findOne({\n          _id: albumId\n        });\n        let currentAlbum = album.images;\n        currentAlbum.push(image);\n        const result = await AlbumModel.findOneAndUpdate({\n          _id: albumId\n        }, {\n          $set: {\n            images: currentAlbum\n          }\n        }, {\n          new: true\n        });\n        ctx.body = {\n          message: \"status ok\",\n          result\n        }; // delete album\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/delete-album\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          albumId\n        } = ctx.request.body;\n        const result = await AlbumModel.findOneAndRemove({\n          _id: albumId\n        });\n        ctx.body = {\n          message: \"status ok\",\n          result\n        }; // delete image\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/delete-image\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          imageToDelete,\n          albumId\n        } = ctx.request.body;\n        const album = await AlbumModel.findOne({\n          _id: albumId\n        });\n        const imagesArray = album.images;\n\n        for (let i = 0; i < imagesArray.length; i++) {\n          let idString = String(imagesArray[i]._id);\n\n          if (idString === imageToDelete) {\n            imagesArray.splice(i, 1);\n          }\n        }\n\n        const result = await AlbumModel.findOneAndUpdate({\n          _id: albumId\n        }, {\n          $set: {\n            images: imagesArray\n          }\n        }, {\n          new: true\n        });\n        ctx.body = {\n          message: \"status ok\",\n          result\n        };\n      }\n\n      return next();\n    };\n  }\n\n});"
+          "source": "const AlbumModel = require(\"./AlbumModel\");\n\nimport { createPlugin } from \"fusion-core\";\nimport bodyParser from \"koa-bodyparser\";\nexport default true &&\n/*#__PURE__*/\ncreatePlugin({\n  middleware() {\n    const parseBody = bodyParser();\n    return async (ctx, next) => {\n      // get all albums\n      if (ctx.method === \"GET\" && ctx.path === \"/api/getAlbums\") {\n        const albums = await AlbumModel.find({});\n        ctx.body = {\n          message: \"all albums found\",\n          albums\n        }; // find album by id\n      } else if (ctx.method === \"GET\" && ctx.path.startsWith(\"/api/findAlbum/\")) {\n        const albumId = ctx.path.match(/findAlbum\\/(.*)/)[1];\n        const album = await AlbumModel.findOne({\n          _id: albumId\n        });\n        ctx.body = {\n          message: \"album found\",\n          album\n        }; // create album\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/create-album\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          albumName\n        } = ctx.request.body;\n        const newAlbum = new AlbumModel({\n          name: albumName\n        });\n        const result = await newAlbum.save();\n        ctx.body = {\n          message: \"album created\",\n          albumId: result._id\n        }; // add images\n      } else if (ctx.method === \"PUT\" && ctx.path.startsWith(\"/api/add-image\")) {\n        const albumId = ctx.path.match(/add-image\\/(.*)/)[1];\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          image\n        } = ctx.request.body;\n        const album = await AlbumModel.findOne({\n          _id: albumId\n        });\n        let currentAlbum = album.images;\n        currentAlbum.push(image);\n        const result = await AlbumModel.findOneAndUpdate({\n          _id: albumId\n        }, {\n          $set: {\n            images: currentAlbum\n          }\n        }, {\n          new: true\n        });\n        ctx.body = {\n          message: \"image added\",\n          result\n        }; // delete album\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/delete-album\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          albumId\n        } = ctx.request.body;\n        const result = await AlbumModel.findOneAndDelete({\n          _id: albumId\n        });\n        ctx.body = {\n          message: \"album deleted\",\n          result\n        }; // delete image\n      } else if (ctx.method === \"POST\" && ctx.path === \"/api/delete-image\") {\n        await parseBody(ctx, () => Promise.resolve());\n        let {\n          imageToDelete,\n          albumId\n        } = ctx.request.body;\n        const album = await AlbumModel.findOne({\n          _id: albumId\n        });\n        const imagesArray = album.images;\n\n        for (let i = 0; i < imagesArray.length; i++) {\n          let idString = String(imagesArray[i]._id);\n\n          if (idString === imageToDelete) {\n            imagesArray.splice(i, 1);\n          }\n        }\n\n        const result = await AlbumModel.findOneAndUpdate({\n          _id: albumId\n        }, {\n          $set: {\n            images: imagesArray\n          }\n        }, {\n          new: true\n        });\n        ctx.body = {\n          message: \"image deleted\",\n          result\n        };\n      }\n\n      return next();\n    };\n  }\n\n});"
         },
         {
           "id": "axios",
@@ -5971,14 +5992,9 @@
               "name": "./src/main.js"
             },
             {
-              "id": "./src/root.js",
-              "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/root.js",
-              "name": "./src/root.js"
-            },
-            {
-              "id": "./src/pages/home.js",
-              "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
-              "name": "./src/pages/home.js"
+              "id": "./src/reducers/albums.js",
+              "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/reducers/albums.js",
+              "name": "./src/reducers/albums.js"
             },
             {
               "id": "./src/actions/albums.js",
@@ -6338,7 +6354,16 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony side effect evaluation",
               "userRequest": "fusion-plugin-react-router",
-              "loc": "6:0-50"
+              "loc": "4:0-54"
+            },
+            {
+              "moduleId": "./src/pages/album.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+              "module": "./src/pages/album.js",
+              "moduleName": "./src/pages/album.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "fusion-plugin-react-router",
+              "loc": "7:0-50"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -6347,7 +6372,16 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "fusion-plugin-react-router",
-              "loc": "36:377-381"
+              "loc": "35:92-100"
+            },
+            {
+              "moduleId": "./src/pages/album.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+              "module": "./src/pages/album.js",
+              "moduleName": "./src/pages/album.js",
+              "type": "harmony import specifier",
+              "userRequest": "fusion-plugin-react-router",
+              "loc": "39:377-381"
             },
             {
               "moduleId": "./src/pages/home.js",
@@ -7041,7 +7075,7 @@
               "moduleName": "./src/Components/create-album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "29:11-16"
+              "loc": "30:11-16"
             },
             {
               "moduleId": "./src/Components/create-album.js",
@@ -7050,7 +7084,7 @@
               "moduleName": "./src/Components/create-album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "31:7-12"
+              "loc": "32:7-12"
             },
             {
               "moduleId": "./src/Components/create-album.js",
@@ -7059,7 +7093,7 @@
               "moduleName": "./src/Components/create-album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "31:63-68"
+              "loc": "32:63-68"
             },
             {
               "moduleId": "./src/Components/create-album.js",
@@ -7068,7 +7102,7 @@
               "moduleName": "./src/Components/create-album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "34:8-13"
+              "loc": "35:8-13"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -7095,7 +7129,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "31:11-16"
+              "loc": "33:11-16"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -7104,7 +7138,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "33:7-12"
+              "loc": "35:7-12"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -7113,7 +7147,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "35:45-50"
+              "loc": "37:45-50"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -7122,7 +7156,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "35:78-83"
+              "loc": "37:78-83"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -7131,7 +7165,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "37:25-30"
+              "loc": "39:25-30"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -7140,7 +7174,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "39:7-12"
+              "loc": "41:7-12"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -7149,7 +7183,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "42:18-23"
+              "loc": "44:18-23"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -7158,7 +7192,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "45:18-23"
+              "loc": "47:18-23"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -7167,7 +7201,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "45:51-56"
+              "loc": "47:51-56"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -7176,7 +7210,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "47:25-30"
+              "loc": "49:25-30"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -7185,7 +7219,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "49:7-12"
+              "loc": "51:7-12"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -7194,7 +7228,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "52:18-23"
+              "loc": "54:18-23"
             },
             {
               "moduleId": "./src/Components/image-popup.js",
@@ -7284,7 +7318,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "11:20-29"
+              "loc": "12:20-29"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7293,7 +7327,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "34:11-16"
+              "loc": "35:11-16"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7302,7 +7336,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "36:7-12"
+              "loc": "35:72-77"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7311,7 +7345,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "36:78-83"
+              "loc": "37:9-14"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7320,7 +7354,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "36:126-131"
+              "loc": "39:7-12"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7329,7 +7363,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "36:197-202"
+              "loc": "39:78-83"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7338,7 +7372,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "36:245-250"
+              "loc": "39:126-131"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7347,7 +7381,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "36:310-315"
+              "loc": "39:197-202"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7356,7 +7390,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "36:357-362"
+              "loc": "39:245-250"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7365,7 +7399,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "39:16-21"
+              "loc": "39:310-315"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7374,7 +7408,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "41:7-12"
+              "loc": "39:357-362"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7383,7 +7417,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "43:31-36"
+              "loc": "42:16-21"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7392,7 +7426,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "46:17-22"
+              "loc": "44:7-12"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7401,7 +7435,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "48:8-13"
+              "loc": "46:31-36"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7410,7 +7444,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "50:7-12"
+              "loc": "49:17-22"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7419,7 +7453,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "52:49-54"
+              "loc": "51:8-13"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7428,7 +7462,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "54:7-12"
+              "loc": "53:7-12"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7437,7 +7471,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "56:16-21"
+              "loc": "55:49-54"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7446,7 +7480,25 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "58:7-12"
+              "loc": "57:7-12"
+            },
+            {
+              "moduleId": "./src/pages/album.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+              "module": "./src/pages/album.js",
+              "moduleName": "./src/pages/album.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "59:16-21"
+            },
+            {
+              "moduleId": "./src/pages/album.js",
+              "moduleIdentifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
+              "module": "./src/pages/album.js",
+              "moduleName": "./src/pages/album.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "61:7-12"
             },
             {
               "moduleId": "./src/pages/home.js",
@@ -7740,7 +7792,7 @@
               "moduleName": "./src/Components/create-album.js",
               "type": "harmony import specifier",
               "userRequest": "react-redux",
-              "loc": "46:15-22"
+              "loc": "47:15-22"
             },
             {
               "moduleId": "./src/Components/delete-popup.js",
@@ -7758,7 +7810,7 @@
               "moduleName": "./src/Components/delete-popup.js",
               "type": "harmony import specifier",
               "userRequest": "react-redux",
-              "loc": "105:15-22"
+              "loc": "107:15-22"
             },
             {
               "moduleId": "./src/Components/image-popup.js",
@@ -7785,7 +7837,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony side effect evaluation",
               "userRequest": "react-redux",
-              "loc": "5:0-38"
+              "loc": "6:0-38"
             },
             {
               "moduleId": "./src/pages/album.js",
@@ -7794,7 +7846,7 @@
               "moduleName": "./src/pages/album.js",
               "type": "harmony import specifier",
               "userRequest": "react-redux",
-              "loc": "117:15-22"
+              "loc": "121:15-22"
             },
             {
               "moduleId": "./src/pages/home.js",

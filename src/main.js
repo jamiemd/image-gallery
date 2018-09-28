@@ -26,7 +26,8 @@ export default function start() {
     app.register(GetInitialStateToken, async ctx => ({
       showDeleteImagePopupBool: false,
       showImagePopupBool: false,
-      showDeleteAlbumPopupBool: false
+      showDeleteAlbumPopupBool: false,
+      redirectToHome: false
     }));
 
   return app;

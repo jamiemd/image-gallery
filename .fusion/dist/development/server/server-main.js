@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "fc2cc26b55eadc9cee2a";
+/******/ 	var hotCurrentHash = "47a5a72073972f0f04d3";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1446,6 +1446,7 @@ class CreateAlbum extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     _defineProperty(this, "handleSubmit", event => {
       event.preventDefault();
       const albumName = this.state.value;
+      console.log("history in crease", this.props.history);
       this.props.createAlbum(albumName, this.props.history);
     });
 
@@ -1511,7 +1512,9 @@ class DeletePopup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     });
 
     _defineProperty(this, "handleDeleteAlbumClick", albumId => {
+      console.log("handleDeleteAlbumClick called");
       this.props.showDeleteAlbumPopup();
+      console.log("handleDeleteAlbumClick called");
       this.props.deleteAlbum(albumId);
     });
 
@@ -1816,7 +1819,7 @@ const deleteAlbum = albumId => {
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(`${ROOT_URL}/delete-album`, {
       albumId
     }).then(res => {
-      disptach({
+      dispatch({
         type: DELETE_ALBUM,
         payload: res.data
       });
@@ -1831,7 +1834,7 @@ const deleteImage = (imageToDelete, albumId) => {
       imageToDelete,
       albumId
     }).then(res => {
-      disptach({
+      dispatch({
         type: DELETE_IMAGE,
         payload: res.data
       });
@@ -1891,7 +1894,8 @@ function start() {
   true && app.register(fusion_plugin_react_redux__WEBPACK_IMPORTED_MODULE_4__["GetInitialStateToken"], async ctx => ({
     showDeleteImagePopupBool: false,
     showImagePopupBool: false,
-    showDeleteAlbumPopupBool: false
+    showDeleteAlbumPopupBool: false,
+    redirectToHome: false
   }));
   return app;
 }
@@ -1909,15 +1913,16 @@ function start() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _actions_albums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/albums */ "./src/actions/albums.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! fusion-plugin-react-router */ "fusion-plugin-react-router");
-/* harmony import */ var fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fusion-plugin-react-router */ "fusion-plugin-react-router");
+/* harmony import */ var fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _actions_albums__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/albums */ "./src/actions/albums.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Components_add_image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/add-image */ "./src/Components/add-image.js");
 /* harmony import */ var _Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Components/delete-popup */ "./src/Components/delete-popup.js");
 /* harmony import */ var _Components_image_popup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Components/image-popup */ "./src/Components/image-popup.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1950,9 +1955,11 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.redirectToHome ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+      to: "/"
+    }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: albumContainer
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeleteAlbumPopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeleteImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_image_popup__WEBPACK_IMPORTED_MODULE_6__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeleteAlbumPopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeleteImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_image_popup__WEBPACK_IMPORTED_MODULE_6__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       style: homeLink,
       to: "/"
     }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1977,7 +1984,7 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       style: imageContainer,
       src: image.imagePreviewUrl
-    })))))));
+    }))))))));
   }
 
 }
@@ -2022,22 +2029,23 @@ const deleteAlbumButton = {
 };
 
 const mapStateToProps = state => {
-  console.log("state", state);
+  console.log("state in album", state);
   return {
     album: state.album || {
       images: []
     },
     showDeleteAlbumPopupBool: state.showDeleteAlbumPopupBool,
     showDeleteImagePopupBool: state.showDeleteImagePopupBool,
-    showImagePopupBool: state.showImagePopupBool
+    showImagePopupBool: state.showImagePopupBool,
+    redirectToHome: state.redirectToHome
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, {
-  findAlbum: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["findAlbum"],
-  showDeleteAlbumPopup: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["showDeleteAlbumPopup"],
-  showDeleteImagePopup: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["showDeleteImagePopup"],
-  showImagePopup: _actions_albums__WEBPACK_IMPORTED_MODULE_1__["showImagePopup"]
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, {
+  findAlbum: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["findAlbum"],
+  showDeleteAlbumPopup: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["showDeleteAlbumPopup"],
+  showDeleteImagePopup: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["showDeleteImagePopup"],
+  showImagePopup: _actions_albums__WEBPACK_IMPORTED_MODULE_2__["showImagePopup"]
 })(Album));
 
 /***/ }),
@@ -2190,8 +2198,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["default"] = ((state, action) => {
-  console.log("action.payload", action.payload);
-
   switch (action.type) {
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["GET_ALBUMS"]:
       return _objectSpread({}, state, {
@@ -2238,18 +2244,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return _objectSpread({}, state, {
           showImagePopupBool: false
         });
+      } else {
+        return _objectSpread({}, state, {
+          showImagePopupBool: true,
+          imageToShow: action.payload
+        });
       }
 
+    case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["DELETE_ALBUM"]:
       return _objectSpread({}, state, {
-        showImagePopupBool: true,
-        imageToShow: action.payload
+        redirectToHome: true
       });
 
-    case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["DELETE_ALBUM"]:
-      return _objectSpread({}, action.payload);
-
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["DELETE_IMAGE"]:
-      return _objectSpread({}, action.payload);
+      return _objectSpread({}, state, action.payload);
 
     default:
       return state;
@@ -2353,7 +2361,7 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
       if (ctx.method === "GET" && ctx.path === "/api/getAlbums") {
         const albums = await AlbumModel.find({});
         ctx.body = {
-          message: "status ok",
+          message: "all albums found",
           albums
         }; // find album by id
       } else if (ctx.method === "GET" && ctx.path.startsWith("/api/findAlbum/")) {
@@ -2362,7 +2370,7 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
           _id: albumId
         });
         ctx.body = {
-          message: "status ok",
+          message: "album found",
           album
         }; // create album
       } else if (ctx.method === "POST" && ctx.path === "/api/create-album") {
@@ -2375,7 +2383,7 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
         });
         const result = await newAlbum.save();
         ctx.body = {
-          message: "status ok",
+          message: "album created",
           albumId: result._id
         }; // add images
       } else if (ctx.method === "PUT" && ctx.path.startsWith("/api/add-image")) {
@@ -2399,7 +2407,7 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
           new: true
         });
         ctx.body = {
-          message: "status ok",
+          message: "image added",
           result
         }; // delete album
       } else if (ctx.method === "POST" && ctx.path === "/api/delete-album") {
@@ -2407,11 +2415,11 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
         let {
           albumId
         } = ctx.request.body;
-        const result = await AlbumModel.findOneAndRemove({
+        const result = await AlbumModel.findOneAndDelete({
           _id: albumId
         });
         ctx.body = {
-          message: "status ok",
+          message: "album deleted",
           result
         }; // delete image
       } else if (ctx.method === "POST" && ctx.path === "/api/delete-image") {
@@ -2443,7 +2451,7 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
           new: true
         });
         ctx.body = {
-          message: "status ok",
+          message: "image deleted",
           result
         };
       }
