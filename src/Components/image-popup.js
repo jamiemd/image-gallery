@@ -12,7 +12,6 @@ class ImagePopup extends Component {
   };
 
   handleDelete = imageToDelete => {
-    console.log("imageId in popup delete", imageToDelete);
     this.props.showImagePopup();
   };
 

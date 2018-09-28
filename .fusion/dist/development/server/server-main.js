@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "47a5a72073972f0f04d3";
+/******/ 	var hotCurrentHash = "fea51c5e24c2a5718ea9";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1446,7 +1446,6 @@ class CreateAlbum extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     _defineProperty(this, "handleSubmit", event => {
       event.preventDefault();
       const albumName = this.state.value;
-      console.log("history in crease", this.props.history);
       this.props.createAlbum(albumName, this.props.history);
     });
 
@@ -1512,9 +1511,7 @@ class DeletePopup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     });
 
     _defineProperty(this, "handleDeleteAlbumClick", albumId => {
-      console.log("handleDeleteAlbumClick called");
       this.props.showDeleteAlbumPopup();
-      console.log("handleDeleteAlbumClick called");
       this.props.deleteAlbum(albumId);
     });
 
@@ -1590,7 +1587,6 @@ const text = {
 };
 
 const mapStateToProps = state => {
-  console.log("state in delete", state);
   return {
     albumId: state.album._id,
     imageToDeleteId: state.imageToDeleteId,
@@ -1637,7 +1633,6 @@ class ImagePopup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     });
 
     _defineProperty(this, "handleDelete", imageToDelete => {
-      console.log("imageId in popup delete", imageToDelete);
       this.props.showImagePopup();
     });
   }
@@ -1738,7 +1733,6 @@ const ROOT_URL = "http://localhost:3000/api"; // get all albums
 const getAlbums = () => {
   return dispatch => {
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(`${ROOT_URL}/getAlbums`).then(res => {
-      console.log("res.data", res.data);
       dispatch({
         type: GET_ALBUMS,
         payload: res.data
@@ -1783,7 +1777,6 @@ const addImage = (image, albumId) => {
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.put(`${ROOT_URL}/add-image/${albumId}`, {
       image
     }).then(res => {
-      console.log("res.data in add image", res.data);
       dispatch({
         type: ADD_IMAGE,
         payload: res.data
@@ -1955,36 +1948,40 @@ class Album extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.redirectToHome ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
-      to: "/"
-    }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      style: albumContainer
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeleteAlbumPopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeleteImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_image_popup__WEBPACK_IMPORTED_MODULE_6__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-      style: homeLink,
-      to: "/"
-    }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      style: titleContainer
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      style: albumName
-    }, this.props.album.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      style: deleteAlbumButton,
-      onClick: () => this.handleDeleteAlbumClick(this.props.album._id)
-    }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_add_image__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      albumId: this.props.match.params.id
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      style: imagesBox
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      style: imagesContainer
-    }, this.props.album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      key: i
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      onClick: () => this.handleDeleteImageClick(image._id)
-    }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      onClick: () => this.handleImagePopupClick(image.imagePreviewUrl)
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      style: imageContainer,
-      src: image.imagePreviewUrl
-    }))))))));
+    if (this.props.album._id !== this.props.match.params.id) {
+      return null;
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.redirectToHome ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+        to: "/"
+      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: albumContainer
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeleteAlbumPopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showDeleteImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_delete_popup__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.showImagePopupBool ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_image_popup__WEBPACK_IMPORTED_MODULE_6__["default"], null) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_plugin_react_router__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        style: homeLink,
+        to: "/"
+      }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: titleContainer
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: albumName
+      }, this.props.album.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: deleteAlbumButton,
+        onClick: () => this.handleDeleteAlbumClick(this.props.album._id)
+      }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_add_image__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        albumId: this.props.match.params.id
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: imagesBox
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: imagesContainer
+      }, this.props.album.images.map((image, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        key: i
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: () => this.handleDeleteImageClick(image._id)
+      }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: () => this.handleImagePopupClick(image.imagePreviewUrl)
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        style: imageContainer,
+        src: image.imagePreviewUrl
+      }))))))));
+    }
   }
 
 }
@@ -2029,7 +2026,7 @@ const deleteAlbumButton = {
 };
 
 const mapStateToProps = state => {
-  console.log("state in album", state);
+  console.log("state", state);
   return {
     album: state.album || {
       images: []
@@ -2083,7 +2080,6 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    console.log("this.props", this.props);
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: homeContainer
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Image Gallery"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_create_album_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -2213,7 +2209,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return _objectSpread({}, action.payload);
 
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["ADD_IMAGE"]:
-      return _objectSpread({}, state, action.payload);
+      return _objectSpread({}, state, {
+        album: _objectSpread({}, state.album, {
+          images: action.payload.newAlbum.images
+        })
+      });
 
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["SHOW_DELETE_ALBUM_POPUP"]:
       if (state.showDeleteAlbumPopupBool === true) {
@@ -2257,7 +2257,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
 
     case _actions_albums__WEBPACK_IMPORTED_MODULE_0__["DELETE_IMAGE"]:
-      return _objectSpread({}, state, action.payload);
+      return _objectSpread({}, state, {
+        album: _objectSpread({}, state.album, {
+          images: action.payload.newAlbum.images
+        })
+      });
 
     default:
       return state;
@@ -2397,7 +2401,7 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
         });
         let currentAlbum = album.images;
         currentAlbum.push(image);
-        const result = await AlbumModel.findOneAndUpdate({
+        const newAlbum = await AlbumModel.findOneAndUpdate({
           _id: albumId
         }, {
           $set: {
@@ -2408,7 +2412,7 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
         });
         ctx.body = {
           message: "image added",
-          result
+          newAlbum
         }; // delete album
       } else if (ctx.method === "POST" && ctx.path === "/api/delete-album") {
         await parseBody(ctx, () => Promise.resolve());
@@ -2441,7 +2445,7 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
           }
         }
 
-        const result = await AlbumModel.findOneAndUpdate({
+        const newAlbum = await AlbumModel.findOneAndUpdate({
           _id: albumId
         }, {
           $set: {
@@ -2452,7 +2456,7 @@ Object(fusion_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"])({
         });
         ctx.body = {
           message: "image deleted",
-          result
+          newAlbum
         };
       }
 

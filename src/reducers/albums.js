@@ -28,7 +28,10 @@ export default (state, action) => {
     case ADD_IMAGE:
       return {
         ...state,
-        ...action.payload
+        album: {
+          ...state.album,
+          images: action.payload.newAlbum.images
+        }
       };
     case SHOW_DELETE_ALBUM_POPUP:
       if (state.showDeleteAlbumPopupBool === true) {
@@ -77,7 +80,10 @@ export default (state, action) => {
     case DELETE_IMAGE:
       return {
         ...state,
-        ...action.payload
+        album: {
+          ...state.album,
+          images: action.payload.newAlbum.images
+        }
       };
     default:
       return state;

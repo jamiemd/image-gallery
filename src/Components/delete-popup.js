@@ -21,10 +21,7 @@ class DeletePopup extends Component {
   };
 
   handleDeleteAlbumClick = albumId => {
-    console.log("handleDeleteAlbumClick called");
     this.props.showDeleteAlbumPopup();
-    console.log("handleDeleteAlbumClick called");
-
     this.props.deleteAlbum(albumId);
   };
 
@@ -127,7 +124,6 @@ const text = {
 };
 
 const mapStateToProps = state => {
-  console.log("state in delete", state);
   return {
     albumId: state.album._id,
     imageToDeleteId: state.imageToDeleteId,

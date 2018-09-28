@@ -18,7 +18,6 @@ export const getAlbums = () => {
     axios
       .get(`${ROOT_URL}/getAlbums`)
       .then(res => {
-        console.log("res.data", res.data);
         dispatch({
           type: GET_ALBUMS,
           payload: res.data
@@ -71,7 +70,6 @@ export const addImage = (image, albumId) => {
     axios
       .put(`${ROOT_URL}/add-image/${albumId}`, { image })
       .then(res => {
-        console.log("res.data in add image", res.data);
         dispatch({
           type: ADD_IMAGE,
           payload: res.data

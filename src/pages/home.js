@@ -16,7 +16,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log("this.props", this.props);
     return (
       <div style={homeContainer}>
         <h1>Image Gallery</h1>

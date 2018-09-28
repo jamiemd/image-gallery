@@ -37,14 +37,14 @@ export default __NODE__ &&
           const album = await AlbumModel.findOne({ _id: albumId });
           let currentAlbum = album.images;
           currentAlbum.push(image);
-          const result = await AlbumModel.findOneAndUpdate(
+          const newAlbum = await AlbumModel.findOneAndUpdate(
             { _id: albumId },
             {
               $set: { images: currentAlbum }
             },
             { new: true }
           );
-          ctx.body = { message: "image added", result };
+          ctx.body = { message: "image added", newAlbum };
           // delete album
         } else if (ctx.method === "POST" && ctx.path === "/api/delete-album") {
           await parseBody(ctx, () => Promise.resolve());
@@ -63,14 +63,14 @@ export default __NODE__ &&
               imagesArray.splice(i, 1);
             }
           }
-          const result = await AlbumModel.findOneAndUpdate(
+          const newAlbum = await AlbumModel.findOneAndUpdate(
             { _id: albumId },
             {
               $set: { images: imagesArray }
             },
             { new: true }
           );
-          ctx.body = { message: "image deleted", result };
+          ctx.body = { message: "image deleted", newAlbum };
         }
         return next();
       };

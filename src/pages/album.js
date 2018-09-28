@@ -36,58 +36,65 @@ class Album extends Component {
   };
 
   render() {
-    return (
-      <div>
-        {this.props.redirectToHome ? (
-          <Redirect to="/" />
-        ) : (
-          <div style={albumContainer}>
-            <div>
-              {this.props.showDeleteAlbumPopupBool ? <DeletePopup /> : null}
-            </div>
-            <div>
-              {this.props.showDeleteImagePopupBool ? <DeletePopup /> : null}
-            </div>
-            <div>{this.props.showImagePopupBool ? <ImagePopup /> : null}</div>
-            <Link style={homeLink} to="/">
-              Home
-            </Link>
-            <div style={titleContainer}>
-              <div style={albumName}>{this.props.album.name}</div>
-              <div
-                style={deleteAlbumButton}
-                onClick={() =>
-                  this.handleDeleteAlbumClick(this.props.album._id)
-                }
-              >
-                &times;
+    if (this.props.album._id !== this.props.match.params.id) {
+      return null;
+    } else {
+      return (
+        <div>
+          {this.props.redirectToHome ? (
+            <Redirect to="/" />
+          ) : (
+            <div style={albumContainer}>
+              <div>
+                {this.props.showDeleteAlbumPopupBool ? <DeletePopup /> : null}
               </div>
-            </div>
-            <AddImage albumId={this.props.match.params.id} />
-            <div style={imagesBox}>
-              <div style={imagesContainer}>
-                {this.props.album.images.map((image, i) => (
-                  <div key={i}>
-                    <button
-                      onClick={() => this.handleDeleteImageClick(image._id)}
-                    >
-                      &times;
-                    </button>
-                    <div
-                      onClick={() =>
-                        this.handleImagePopupClick(image.imagePreviewUrl)
-                      }
-                    >
-                      <img style={imageContainer} src={image.imagePreviewUrl} />
+              <div>
+                {this.props.showDeleteImagePopupBool ? <DeletePopup /> : null}
+              </div>
+              <div>{this.props.showImagePopupBool ? <ImagePopup /> : null}</div>
+              <Link style={homeLink} to="/">
+                Home
+              </Link>
+              <div style={titleContainer}>
+                <div style={albumName}>{this.props.album.name}</div>
+                <div
+                  style={deleteAlbumButton}
+                  onClick={() =>
+                    this.handleDeleteAlbumClick(this.props.album._id)
+                  }
+                >
+                  &times;
+                </div>
+              </div>
+              <AddImage albumId={this.props.match.params.id} />
+              <div style={imagesBox}>
+                <div style={imagesContainer}>
+                  {this.props.album.images.map((image, i) => (
+                    <div key={i}>
+                      <button
+                        onClick={() => this.handleDeleteImageClick(image._id)}
+                      >
+                        &times;
+                      </button>
+                      <div
+                        onClick={() =>
+                          this.handleImagePopupClick(image.imagePreviewUrl)
+                        }
+                      >
+                        <img
+                          style={imageContainer}
+                          src={image.imagePreviewUrl}
+                        />
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        )}
-      </div>
-    );
+          )}
+        </div>
+      );
+    }
   }
 }
 
@@ -138,7 +145,7 @@ const deleteAlbumButton = {
 };
 
 const mapStateToProps = state => {
-  console.log("state in album", state);
+  console.log("state", state);
   return {
     album: state.album || { images: [] },
     showDeleteAlbumPopupBool: state.showDeleteAlbumPopupBool,
