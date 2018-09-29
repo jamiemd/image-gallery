@@ -30,7 +30,7 @@ class Home extends Component {
                     src={album.images[0].imagePreviewUrl}
                   />
                 ) : (
-                  <div>add image</div>
+                  <div style={imagePreview}>Add Image</div>
                 )}
               </div>
               <div style={albumTitle}>{album.name}</div>

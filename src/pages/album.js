@@ -125,7 +125,7 @@ const titleContainer = {
 const albumName = {
   fontSize: "25px",
   textAlign: "center",
-  fontWeight: "500"
+  fontWeight: "600"
 };
 
 const imagesContainer = {
