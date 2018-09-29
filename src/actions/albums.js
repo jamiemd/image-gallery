@@ -10,7 +10,7 @@ export const SHOW_IMAGE_POPUP = "SHOW_IMAGE_POPUP";
 export const DELETE_ALBUM = "DELETE_ALBUM";
 export const DELETE_IMAGE = "DELETE_IMAGE";
 
-const ROOT_URL = "http://localhost:3000/api";
+// const ROOT_URL = "http://localhost:3000/api";
 
 // get all albums
 export const getAlbums = () => {
