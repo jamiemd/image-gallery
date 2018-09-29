@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const connect = mongoose.connect(
-  "mongodb://localhost/image-gallery",
+  process.env.MONGODB_URI || "mongodb://localhost/image-gallery",
   { useNewUrlParser: true }
 );
 mongoose.Promise = global.Promise;

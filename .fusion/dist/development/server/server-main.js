@@ -25,7 +25,7 @@ module.exports =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "dc4be8d3aa8014e0ae82";
+/******/ 	var hotCurrentHash = "314e1f9b77789f4f4910";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -2424,7 +2424,7 @@ const root = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(fusion_p
 
 const mongoose = __webpack_require__(/*! mongoose */ "mongoose");
 
-const connect = mongoose.connect("mongodb://localhost/image-gallery", {
+const connect = mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/image-gallery", {
   useNewUrlParser: true
 });
 mongoose.Promise = global.Promise;

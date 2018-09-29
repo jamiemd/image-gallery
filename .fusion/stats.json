@@ -2,26 +2,28 @@
   "errors": [],
   "warnings": [],
   "version": "4.16.4",
-  "hash": "dc4be8d3aa8014e0ae82",
+  "hash": "314e1f9b77789f4f4910",
   "children": [
     {
       "errors": [],
       "warnings": [],
-      "hash": "dc4be8d3aa8014e0ae82",
-      "time": 309,
-      "builtAt": 1538176374034,
+      "hash": "314e1f9b77789f4f4910",
+      "time": 60,
+      "builtAt": 1538179003495,
       "publicPath": "",
       "outputPath": "/Users/jamie/GitHub/image-gallery/.fusion/dist/development/server",
       "assetsByChunkName": {
         "main": [
           "server-main.js",
-          "server-main.js.map"
+          "main.dc4be8d3aa8014e0ae82.hot-update.js",
+          "server-main.js.map",
+          "main.dc4be8d3aa8014e0ae82.hot-update.js.map"
         ]
       },
       "assets": [
         {
           "name": "server-main.js",
-          "size": 106199,
+          "size": 106226,
           "chunks": [
             "main"
           ],
@@ -31,8 +33,37 @@
           "emitted": true
         },
         {
+          "name": "main.dc4be8d3aa8014e0ae82.hot-update.js",
+          "size": 1414,
+          "chunks": [
+            "main"
+          ],
+          "chunkNames": [
+            "main"
+          ],
+          "emitted": true
+        },
+        {
+          "name": "dc4be8d3aa8014e0ae82.hot-update.json",
+          "size": 46,
+          "chunks": [],
+          "chunkNames": [],
+          "emitted": true
+        },
+        {
           "name": "server-main.js.map",
-          "size": 82570,
+          "size": 82597,
+          "chunks": [
+            "main"
+          ],
+          "chunkNames": [
+            "main"
+          ],
+          "emitted": true
+        },
+        {
+          "name": "main.dc4be8d3aa8014e0ae82.hot-update.js.map",
+          "size": 857,
           "chunks": [
             "main"
           ],
@@ -50,7 +81,9 @@
           ],
           "assets": [
             "server-main.js",
-            "server-main.js.map"
+            "main.dc4be8d3aa8014e0ae82.hot-update.js",
+            "server-main.js.map",
+            "main.dc4be8d3aa8014e0ae82.hot-update.js.map"
           ],
           "children": {},
           "childAssets": {}
@@ -63,7 +96,9 @@
           ],
           "assets": [
             "server-main.js",
-            "server-main.js.map"
+            "main.dc4be8d3aa8014e0ae82.hot-update.js",
+            "server-main.js.map",
+            "main.dc4be8d3aa8014e0ae82.hot-update.js.map"
           ],
           "children": {},
           "childAssets": {}
@@ -72,18 +107,20 @@
       "chunks": [
         {
           "id": "main",
-          "rendered": false,
+          "rendered": true,
           "initial": true,
           "entry": true,
-          "size": 41113,
+          "size": 41140,
           "names": [
             "main"
           ],
           "files": [
             "server-main.js",
-            "server-main.js.map"
+            "main.dc4be8d3aa8014e0ae82.hot-update.js",
+            "server-main.js.map",
+            "main.dc4be8d3aa8014e0ae82.hot-update.js.map"
           ],
-          "hash": "98e19b0edcbcadd6ebf6",
+          "hash": "7b08303dc72ad78bf737",
           "siblings": [],
           "parents": [],
           "children": [],
@@ -1595,7 +1632,7 @@
               "index2": 17,
               "size": 2255,
               "cacheable": true,
-              "built": true,
+              "built": false,
               "optional": false,
               "prefetched": false,
               "chunks": [
@@ -1863,9 +1900,9 @@
               "name": "./src/server/AlbumModel.js",
               "index": 29,
               "index2": 26,
-              "size": 454,
+              "size": 481,
               "cacheable": true,
-              "built": false,
+              "built": true,
               "optional": false,
               "prefetched": false,
               "chunks": [
@@ -1914,7 +1951,7 @@
               "providedExports": null,
               "optimizationBailout": [],
               "depth": 4,
-              "source": "const mongoose = require(\"mongoose\");\n\nconst connect = mongoose.connect(\"mongodb://localhost/image-gallery\", {\n  useNewUrlParser: true\n});\nmongoose.Promise = global.Promise;\nconst AlbumSchema = new mongoose.Schema({\n  name: {\n    type: String,\n    required: true,\n    unique: true\n  },\n  images: [{\n    file: {\n      type: String\n    },\n    imagePreviewUrl: {\n      type: String\n    }\n  }]\n});\nmodule.exports = mongoose.model(\"AlbumSchema\", AlbumSchema);"
+              "source": "const mongoose = require(\"mongoose\");\n\nconst connect = mongoose.connect(process.env.MONGODB_URI || \"mongodb://localhost/image-gallery\", {\n  useNewUrlParser: true\n});\nmongoose.Promise = global.Promise;\nconst AlbumSchema = new mongoose.Schema({\n  name: {\n    type: String,\n    required: true,\n    unique: true\n  },\n  images: [{\n    file: {\n      type: String\n    },\n    imagePreviewUrl: {\n      type: String\n    }\n  }]\n});\nmodule.exports = mongoose.model(\"AlbumSchema\", AlbumSchema);"
             },
             {
               "id": "./src/server/routes.js",
@@ -3781,9 +3818,9 @@
               "chunks": [
                 "main"
               ],
-              "issuer": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
-              "issuerId": "./src/pages/album.js",
-              "issuerName": "./src/pages/album.js",
+              "issuer": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
+              "issuerId": "./src/pages/home.js",
+              "issuerName": "./src/pages/home.js",
               "issuerPath": [
                 {
                   "id": 0,
@@ -3806,9 +3843,9 @@
                   "name": "./src/root.js"
                 },
                 {
-                  "id": "./src/pages/album.js",
-                  "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
-                  "name": "./src/pages/album.js"
+                  "id": "./src/pages/home.js",
+                  "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
+                  "name": "./src/pages/home.js"
                 }
               ],
               "failed": false,
@@ -5572,7 +5609,7 @@
           "index2": 17,
           "size": 2255,
           "cacheable": true,
-          "built": true,
+          "built": false,
           "optional": false,
           "prefetched": false,
           "chunks": [
@@ -5840,9 +5877,9 @@
           "name": "./src/server/AlbumModel.js",
           "index": 29,
           "index2": 26,
-          "size": 454,
+          "size": 481,
           "cacheable": true,
-          "built": false,
+          "built": true,
           "optional": false,
           "prefetched": false,
           "chunks": [
@@ -5891,7 +5928,7 @@
           "providedExports": null,
           "optimizationBailout": [],
           "depth": 4,
-          "source": "const mongoose = require(\"mongoose\");\n\nconst connect = mongoose.connect(\"mongodb://localhost/image-gallery\", {\n  useNewUrlParser: true\n});\nmongoose.Promise = global.Promise;\nconst AlbumSchema = new mongoose.Schema({\n  name: {\n    type: String,\n    required: true,\n    unique: true\n  },\n  images: [{\n    file: {\n      type: String\n    },\n    imagePreviewUrl: {\n      type: String\n    }\n  }]\n});\nmodule.exports = mongoose.model(\"AlbumSchema\", AlbumSchema);"
+          "source": "const mongoose = require(\"mongoose\");\n\nconst connect = mongoose.connect(process.env.MONGODB_URI || \"mongodb://localhost/image-gallery\", {\n  useNewUrlParser: true\n});\nmongoose.Promise = global.Promise;\nconst AlbumSchema = new mongoose.Schema({\n  name: {\n    type: String,\n    required: true,\n    unique: true\n  },\n  images: [{\n    file: {\n      type: String\n    },\n    imagePreviewUrl: {\n      type: String\n    }\n  }]\n});\nmodule.exports = mongoose.model(\"AlbumSchema\", AlbumSchema);"
         },
         {
           "id": "./src/server/routes.js",
@@ -7758,9 +7795,9 @@
           "chunks": [
             "main"
           ],
-          "issuer": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
-          "issuerId": "./src/pages/album.js",
-          "issuerName": "./src/pages/album.js",
+          "issuer": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
+          "issuerId": "./src/pages/home.js",
+          "issuerName": "./src/pages/home.js",
           "issuerPath": [
             {
               "id": 0,
@@ -7783,9 +7820,9 @@
               "name": "./src/root.js"
             },
             {
-              "id": "./src/pages/album.js",
-              "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/album.js",
-              "name": "./src/pages/album.js"
+              "id": "./src/pages/home.js",
+              "identifier": "/Users/jamie/GitHub/image-gallery/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/jamie/GitHub/image-gallery/src/pages/home.js",
+              "name": "./src/pages/home.js"
             }
           ],
           "failed": false,
