@@ -16,7 +16,7 @@ export const DELETE_IMAGE = "DELETE_IMAGE";
 export const getAlbums = () => {
   return dispatch => {
     axios
-      .get(`${ROOT_URL}/getAlbums`)
+      .get(`/api/getAlbums`)
       .then(res => {
         dispatch({
           type: GET_ALBUMS,
@@ -33,7 +33,7 @@ export const getAlbums = () => {
 export const findAlbum = albumId => {
   return dispatch => {
     axios
-      .get(`${ROOT_URL}/findAlbum/${albumId}`)
+      .get(`/api/findAlbum/${albumId}`)
       .then(res => {
         dispatch({
           type: GET_ALBUM,
@@ -50,7 +50,7 @@ export const findAlbum = albumId => {
 export const createAlbum = (albumName, history) => {
   return dispatch => {
     axios
-      .post(`${ROOT_URL}/create-album`, { albumName })
+      .post(`/api/create-album`, { albumName })
       .then(res => {
         dispatch({
           type: CREATE_ALBUM,
@@ -68,7 +68,7 @@ export const createAlbum = (albumName, history) => {
 export const addImage = (image, albumId) => {
   return dispatch => {
     axios
-      .put(`${ROOT_URL}/add-image/${albumId}`, { image })
+      .put(`/api/add-image/${albumId}`, { image })
       .then(res => {
         dispatch({
           type: ADD_IMAGE,
@@ -108,7 +108,7 @@ export const showImagePopup = imageToShow => {
 export const deleteAlbum = albumId => {
   return dispatch => {
     axios
-      .post(`${ROOT_URL}/delete-album`, { albumId })
+      .post(`/api/delete-album`, { albumId })
       .then(res => {
         dispatch({
           type: DELETE_ALBUM,
@@ -124,7 +124,7 @@ export const deleteAlbum = albumId => {
 export const deleteImage = (imageToDelete, albumId) => {
   return dispatch => {
     axios
-      .post(`${ROOT_URL}/delete-image`, { imageToDelete, albumId })
+      .post(`/api/delete-image`, { imageToDelete, albumId })
       .then(res => {
         dispatch({
           type: DELETE_IMAGE,
